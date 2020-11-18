@@ -23,7 +23,7 @@
     </head>
     <body class="hold-transition sidebar-mini">
         <div class="wrapper">
-            {{-- @include('pages.admin.includes.header-nav') --}}
+             @include('pages.includes.admin.header-nav')
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <a href="#" class="brand-link">
                     <img src="{{ asset('assets/images/footer-logo.png') }}" alt="{{ config('app.name') }}" class="brand-image img-circle elevation-3" style="opacity: .8">
