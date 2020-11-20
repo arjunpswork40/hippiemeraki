@@ -59,7 +59,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="./blog.html">News</a></li>
-                                <li><a href="./contact.html">Contact</a></li>
+                                <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
                             </ul>
                         </nav>
                         <div class="nav-right search-switch">

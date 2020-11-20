@@ -40,9 +40,18 @@ class HomeController extends BaseController
         return $this->renderView($this->getView('home.welcome'), [], 'Home');
     }
 
+    /**
+     * About US page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function aboutUs()
     {
-        return $this->renderView($this->getView('about-us.index'),[],'Aout US');
+        return $this->renderView($this->getView('about-us.index'),[],'About US');
     }
 
+    public function contact()
+    {
+        return $this->renderView($this->getView('contact.index'),[],'Contact');
+    }
 }
