@@ -13,8 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.user.welcome');
+//Route::get('/', function () {
+//    return view('pages.user.home.welcome');
+//});
+
+Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\User'], function() {
+    Route::get('/', 'HomeController@index')->name('home');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
