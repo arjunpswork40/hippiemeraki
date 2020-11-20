@@ -1,4 +1,4 @@
-@include('layouts.welcomeHome')
+@extends('layouts.welcomeHome')
 
 @section('content')
 <section class="contact-section spad">

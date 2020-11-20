@@ -21,6 +21,8 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/about-us','HomeController@aboutUs')->name('about-us');
     Route::get('/contact','HomeController@contact')->name('contact');
+    Route::get('/room','HomeController@room')->name('room');
+
 
 });
 

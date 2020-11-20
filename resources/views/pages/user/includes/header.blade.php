@@ -48,7 +48,7 @@
                         <nav class="mainmenu">
                             <ul>
                                 <li class="{{ request()->is('/') || request()->is('/*')? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
-                                <li><a href="./rooms.html">Rooms</a></li>
+                                <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
                                 <li class="{{ request()->is('about-us') || request()->is('about-us/*')? 'active' : '' }}"><a href="{{ route('about-us') }}">About Us</a></li>
                                 <li><a href="./pages.html">Pages</a>
                                     <ul class="dropdown">

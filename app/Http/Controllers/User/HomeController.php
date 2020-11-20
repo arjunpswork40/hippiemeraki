@@ -50,8 +50,24 @@ class HomeController extends BaseController
         return $this->renderView($this->getView('about-us.index'),[],'About US');
     }
 
+    /**
+     * Contact page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function contact()
     {
         return $this->renderView($this->getView('contact.index'),[],'Contact');
+    }
+
+    /**
+     * Room page
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function room()
+    {
+        return $this->renderView($this->getView('room.index'),[],'Room');
+
     }
 }
