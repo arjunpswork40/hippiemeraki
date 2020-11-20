@@ -70,4 +70,9 @@ class HomeController extends BaseController
         return $this->renderView($this->getView('room.index'),[],'Room');
 
     }
+
+    public function blog()
+    {
+        return $this->renderView($this->getView('news.blog'),[],'News');
+    }
 }

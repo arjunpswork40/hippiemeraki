@@ -23,8 +23,14 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
     Route::get('/contact','HomeController@contact')->name('contact');
     Route::get('/room','HomeController@room')->name('room');
 
+    Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
+        Route::get('/news','HomeController@blog')->name('blog');
 
-});
+    });
+
+
+
+    });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('pages.admin.dashboard');

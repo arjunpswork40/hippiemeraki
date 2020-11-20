@@ -58,7 +58,7 @@
                                         <li><a href="#">Premium Room</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="./blog.html">News</a></li>
+                                <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">News</a></li>
                                 <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
                             </ul>
                         </nav>
