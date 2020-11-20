@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\User'], function() {
     Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/about-us','HomeController@aboutUs')->name('about-us');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

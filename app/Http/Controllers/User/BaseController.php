@@ -19,7 +19,7 @@ class BaseController extends Controller
     public function __construct(Request $request)
     {
         parent::__construct($request);
-        $this->_view = 'pages.user.';
+        $this->_view = 'pages.';
         View::share('menu', (new SiteSettingsService())->getSettings(SiteSettingsConstants::MENU));
         View::share('socialMediaLinks', (new SiteSettingsService())->getSettings(SiteSettingsConstants::SOCIAL_MEDIA_LINKS));
     }

@@ -24,8 +24,8 @@ class HomeController extends BaseController
     {
         parent::__construct($request);
         $this->middleware('guest');
-        $this->addBaseRoute('home');
-        $this->addBaseView('home');
+        $this->addBaseRoute('user');
+        $this->addBaseView('user');
         $this->_pageService = new PageService();
     }
 
@@ -37,7 +37,12 @@ class HomeController extends BaseController
     public function index()
     {
 //        $pageData = $this->_pageService->getPage(PageConstant::HOME_PAGE);
-        return $this->renderView($this->getView('welcome'), [], 'Home');
+        return $this->renderView($this->getView('home.welcome'), [], 'Home');
+    }
+
+    public function aboutUs()
+    {
+        return $this->renderView($this->getView('about-us.index'),[],'Aout US');
     }
 
 }
