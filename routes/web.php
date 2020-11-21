@@ -34,6 +34,6 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
 
     });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified'])->get('/admin', function () {
     return view('pages.admin.dashboard');
 })->name('dashboard');
