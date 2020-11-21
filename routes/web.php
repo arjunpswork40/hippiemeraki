@@ -25,6 +25,8 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
 
     Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
         Route::get('/news','HomeController@blog')->name('blog');
+        Route::get('/news/detais','HomeController@details')->name('blog-details');
+
 
     });
 

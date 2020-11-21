@@ -75,4 +75,10 @@ class HomeController extends BaseController
     {
         return $this->renderView($this->getView('news.blog'),[],'News');
     }
+
+    public function details()
+    {
+        return $this->renderView($this->getView('news.blog-details'),[],'Blog Details');
+
+    }
 }
