@@ -10,9 +10,9 @@
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
-                <a href="#" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
+                <a href="" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-tachometer-alt"></i>
-                    <p>{{ __('Home') }}</p>
+                    <p>{{ __('Booking') }}</p>
                 </a>
             </li>
 
@@ -21,22 +21,16 @@
             <li class="nav-item">
                 <a class="nav-link {{ request()->is('admin/page-management') || request()->is('admin/page-management/*') ? 'active' : '' }}" href="#">
                     <i class="fas fa-copy nav-icon"></i>
-                    <p>{{ __('Pages') }}</p>
+                    <p>{{ __('Rooms') }}</p>
                 </a>
             </li>
-            <li class="nav-header">SITE SETTINGS</li>
-            <li class="nav-item">
+            <li class="nav-item  user-panel mb-3">
                 <a href="#" class="nav-link {{ request()->is('admin/contact-us-request') || request()->is('admin/contact-us-request/*')? 'active' : '' }}">
                     <i class="nav-icon fas fa-mail-bulk"></i>
-                    <p>{{ __('Contact Us Request') }}</p>
+                    <p>{{ __('Blogs') }}</p>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link {{ request()->is('admin/site-settings') || request()->is('admin/site-settings/*') ? 'active' : '' }}" href="#">
-                    <i class="fas fa-cogs nav-icon"></i>
-                    <p>{{ __('Settings') }}</p>
-                </a>
-            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('logout') }}"
                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

@@ -7,6 +7,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], fu
 
     Auth::routes();
     Route::group(['middleware' => ['auth:admin']], function () {
+        Route::get('/', 'HomeController@index')->name('booking');
 
     });
 });
