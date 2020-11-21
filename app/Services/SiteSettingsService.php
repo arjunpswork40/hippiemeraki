@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Http\Constants\PageConstant;
 use App\Http\Constants\SiteSettingsConstants;
 
-use App\Http\Models\SiteSettings;
+use App\Models\SiteSettings;
 
 
 class SiteSettingsService
