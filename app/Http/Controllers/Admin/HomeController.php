@@ -87,26 +87,5 @@ class HomeController extends BaseController
         ]);
     }
 
-    public function blogUpdate(Request $request)
-    {
 
-        $blog = Blog::where('id',$request->blog_id);
-
-        $blog->update([
-            'title' => $request['tite'],
-            'description' => $request['description'],
-            'priority' => $request['priority']
-        ]);
-
-        return back();
-    }
-
-    public function blogDelete($id)
-    {
-        $blog = Blog::find($id);
-
-        $blog->delete();
-
-        return back();
-    }
 }
