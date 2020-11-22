@@ -95,7 +95,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
+                        <button type="submit" class="btn btn-primary submit">Save changes</button>
                     </div>
                 </form>
 
@@ -217,17 +217,17 @@
                     // loaderselector.fadeOut();
                     console.log(output);
 
-                    let result=JSON.parse(output);
-
-                    if(result['status']=="1"){
-                        swal("Status Changed!",result['status'], "success",{
+                    // let result=JSON.parse(output);
+console.log("result is",output);
+                    if(output['status']=="1"){
+                        swal("Status Changed!",output['message'], "success",{
                             buttons: false,
                             timer: 1500,
-                        }).then(()=>{callback();});
-                        $('.dataTable').DataTable().ajax.reload();
+                        });
+                        window.location.reload();
 
-                    }else if(result[0]=="error"){
-                        swal("Failed!",a[1], "error").then(()=>{callback();});
+                    }else if(output[0]=="error"){
+                        swal("Failed!",output[1], "error").then(()=>{callback();});
 
                     }else{
                         // loaderselector.fadeOut();
@@ -255,6 +255,8 @@
 
     });
 
+
+ 
 
 
     </script>

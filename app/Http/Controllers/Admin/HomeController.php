@@ -73,17 +73,18 @@ class HomeController extends BaseController
     {
 
         // dd($request);
-        $blog=Blog::where('id',$request->blog_id)->get();
+        $blog=Blog::where('id',$request->blog_id);
         // dd($blog);
         $blog->update([
-            'title' => "aa",
+            'status' => $request->value,
             
         ]);
 
       
       
         return response()->json([
-            'status'=>'1'
+            'status'=>'1',
+            'message'=>'Status was changed succesfully'
         ]);
     }
 
