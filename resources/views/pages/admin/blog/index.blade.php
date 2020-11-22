@@ -19,7 +19,7 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body text-center">
+                        <div class="modal-body text-left">
                             <form action="{{ route('blog-store') }}" method="POST" role="form" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
@@ -37,7 +37,7 @@
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Thumbnail Image</label>
                                     <input type="file" class="form-control-file" name="thumbnail_image" id="exampleFormControlFile1">
-                                </div>
+                               </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Banner Image</label>
                                     <input type="file" class="form-control-file" name="banner_image" id="exampleFormControlFile1">
@@ -53,6 +53,61 @@
                     </div>
                 </div>
             </div>
+
+{{-- end modal  --}}
+
+
+{{-- edit modal  --}}
+
+<div class="modal fade" id="editBlog" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Edit Blog</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <form action="{{ route('blog-store') }}" method="POST" role="form" enctype="multipart/form-data">
+                    @csrf
+<input type="text" name="blog_id">
+                    {{-- <input type="text" class="blog_id"> --}}
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Title</label>
+                        <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Titile">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Description</label>
+                        <input type="text" class="form-control" name="description" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Desription">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Priority</label>
+                        <input type="number" class="form-control" name="priority" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Priority">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Thumbnail Image</label>
+                        <input type="file" class="form-control-file" name="thumbnail_image" id="exampleFormControlFile1">
+                   </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Banner Image</label>
+                        <input type="file" class="form-control-file" name="banner_image" id="exampleFormControlFile1">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{{-- end modal  --}}
+
+
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -92,7 +147,7 @@
 
                     </td>
                     <td>
-                        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalCenter">
+                    <button type="button" class="btn btn-outline-success editElement" data-toggle="modal" data-target="#editBlog" data-id="{{$blog->id}}">
                             View/Edit
                         </button>
                          </td>
@@ -187,6 +242,21 @@
 
             });
         });
+
+
+
+        $(".table").on('click','.editElement' , function(e){
+
+
+            let elementId= e.target.getAttribute('data-id') ;
+
+            let blogIdInput=document.querySelector("#editBlog input[name='blog_id']");
+            blogIdInput.value=elementId;
+
+    });
+
+
+
     </script>
 
 
