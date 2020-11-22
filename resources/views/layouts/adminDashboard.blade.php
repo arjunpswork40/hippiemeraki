@@ -16,6 +16,13 @@
         <link rel="stylesheet" href="{{ asset('/ad-lte/dist/css/adminlte.min.css') }}">
         <link rel="stylesheet" href="{{ asset('/ad-lte/plugins/toastr/toastr.min.css') }}">
         <link rel="stylesheet" href="{{ asset('/ad-lte/plugins/summernote/summernote-bs4.css') }}">
+
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="{{ asset('/ad-lte/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('/ad-lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="{{ asset('/ad-lte/dist/css/adminlte.min.css') }}">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 {{--        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">--}}
@@ -36,7 +43,7 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1 class="m-0 text-dark"> title</h1>
+                                <h1 class="m-0 text-dark"> {{ $title }}</h1>
                             </div>
                             {{-- @include('pages.admin.includes.breadcrumb') --}}
                         </div>
@@ -67,6 +74,14 @@
         <script src="{{ asset('/ad-lte/plugins/summernote/summernote-bs4.min.js') }}"></script>
 {{--        <script src="{{ asset('js/common.js') }}"></script>--}}
         {{-- @include('pages.admin.includes.toastr') --}}
+        <script src="{{ asset('/ad-lte/dist/js/demo.js') }}"></script>
+
+        <!-- DataTables -->
+        <script src="{{ asset('/ad-lte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('/ad-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+        <script src="{{ asset('/ad-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+        <script src="{{ asset('/ad-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+
         <script>
             $(document).ready(function() {
                 var App = {
