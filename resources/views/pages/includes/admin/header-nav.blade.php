@@ -1,3 +1,10 @@
+<style type="text/css">
+  
+    .inActive{
+  color: #3276b1 !important;
+  background-color: #fff !important;
+  }
+  </style>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">

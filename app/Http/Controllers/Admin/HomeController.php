@@ -3,24 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Constants\FileDestinations;
-use App\Http\Constants\OrderConstants;
 use App\Http\Constants\UserConstants;
 use App\Http\Helpers\Core\DateHelper;
 use App\Http\Helpers\Core\FileManager;
-use App\Http\Models\ContactUs;
-use App\Http\Models\Executive;
-use App\Http\Models\Order;
 
 use App\Http\Models\Service;
 use App\Http\Models\User;
 use App\Models\Blog;
 use App\Services\AdminHomePageService;
-use App\Services\ContactUsService;
 use Illuminate\Filesystem\FilesystemManager;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-
+// use Illuminate\Database\Eloquent\Collection;
 
 class HomeController extends BaseController
 {
@@ -72,5 +67,25 @@ class HomeController extends BaseController
         }
         return back();
     }
+
+
+    public function statusUpdate(Request $request)
+    {
+
+        // dd($request);
+        $blog=Blog::where('id',$request->blog_id)->get();
+        // dd($blog);
+        $blog->update([
+            'title' => "aa",
+            
+        ]);
+
+      
+      
+        return response()->json([
+            'status'=>'1'
+        ]);
+    }
+
 
 }

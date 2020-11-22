@@ -1,6 +1,7 @@
 @extends('layouts.adminDashboard')
 
 @section('content')
+
     <div class="card">
         <div class="card-header text-right">
             <h3 class="card-title">List of blogs</h3>
@@ -84,8 +85,8 @@
 
                         <div class="status-box">
                             <div  class="btn-group status-toggle">
-                                <a class="btn btn-primary btn-sm {{ $blog->status !=3? "active":"noActive"}}" data-toggle="{{ $blog->id }}" data-status="1">ON</a>
-                                <a class="btn btn-primary btn-sm {{ $blog->status ==3? "active":"noActive"}}" data-toggle="{{ $blog->id }}" data-status="3">OFF</a>
+                                <a class="btn btn-primary btn-sm {{ $blog->status !=3? "active":"inActive"}}" data-toggle="{{ $blog->id }}" data-status="1">ON</a>
+                                <a class="btn btn-primary btn-sm {{ $blog->status ==3? "active":"inActive"}}" data-toggle="{{ $blog->id }}" data-status="3">OFF</a>
                             </div>
                         </div>
 
@@ -135,37 +136,42 @@
                 "responsive": true,
             });
         });
-        $(".table").on('click','.status_radio_config a' , function(e){
+        $(".table").on('click','.status-box a' , function(e){
 
-            var selected = $(this).data('title');
+            var selected = $(this).data('status');
             var toggle = $(this).data('toggle');
             console.log(toggle);
             $('#'+toggle).prop('value', selected);
-            $('a[data-toggle="'+toggle+'"]').not('[data-title="'+selected+'"]').removeClass('active').addClass('noActive');
-            $('a[data-toggle="'+toggle+'"][data-title="'+selected+'"]').removeClass('noActive').addClass('active');
-            let stat_value={'sc_id':toggle,'svalue':selected};
+            $('a[data-toggle="'+toggle+'"]').not('[data-status="'+selected+'"]').removeClass('active').addClass('inActive');
+            $('a[data-toggle="'+toggle+'"][data-title="'+selected+'"]').removeClass('inActive').addClass('active');
+            let status_data={'blog_id':toggle,'value':selected};
+            $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
             $.ajax({
-                url: './',
+                url: '{{route("status-update")}}',
                 method: 'POST',
-                data: {'one':'value'},
+                data: status_data,
                 // beforeSend: ()=>{
                 //   loaderselector.fadeIn();
 
                 // },
                 success: (output)=>{
                     // loaderselector.fadeOut();
-                    // console.log(output);
+                    console.log(output);
 
-                    let output=JSON.parse(output);
+                    let result=JSON.parse(output);
 
-                    if(output[0]=="success"){
-                        swal("Status Changed!",a[1], "success",{
+                    if(result['status']=="1"){
+                        swal("Status Changed!",result['status'], "success",{
                             buttons: false,
                             timer: 1500,
                         }).then(()=>{callback();});
                         $('.dataTable').DataTable().ajax.reload();
 
-                    }else if(output[0]=="error"){
+                    }else if(result[0]=="error"){
                         swal("Failed!",a[1], "error").then(()=>{callback();});
 
                     }else{
