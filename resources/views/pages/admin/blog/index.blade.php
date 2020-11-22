@@ -84,13 +84,17 @@
 
                         <div class="status-box">
                             <div  class="btn-group status-toggle">
-                                <a class="btn btn-primary btn-sm {{ $blog->status !=3? "active":"noActive"}}" data-toggle="{{ $blog->id }}" data-title="1">ON</a>
-                                <a class="btn btn-primary btn-sm {{ $blog->status ==3? "active":"noActive"}}" data-toggle="{{ $blog->id }}" data-title="3">OFF</a>
+                                <a class="btn btn-primary btn-sm {{ $blog->status !=3? "active":"noActive"}}" data-toggle="{{ $blog->id }}" data-status="1">ON</a>
+                                <a class="btn btn-primary btn-sm {{ $blog->status ==3? "active":"noActive"}}" data-toggle="{{ $blog->id }}" data-status="3">OFF</a>
                             </div>
                         </div>
 
                     </td>
-                    <td><a href="#">View/Edit</a> </td>
+                    <td>
+                        <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModalCenter">
+                            View/Edit
+                        </button>
+                         </td>
 
 
                     </tr>
@@ -140,8 +144,42 @@
             $('a[data-toggle="'+toggle+'"]').not('[data-title="'+selected+'"]').removeClass('active').addClass('noActive');
             $('a[data-toggle="'+toggle+'"][data-title="'+selected+'"]').removeClass('noActive').addClass('active');
             let stat_value={'sc_id':toggle,'svalue':selected};
-            ajaxJsonTransfer(stat_value,'./statuschange_config.php', 'post','#ajaxloader');
+            $.ajax({
+                url: './',
+                method: 'POST',
+                data: {'one':'value'},
+                // beforeSend: ()=>{
+                //   loaderselector.fadeIn();
 
+                // },
+                success: (output)=>{
+                    // loaderselector.fadeOut();
+                    // console.log(output);
+
+                    let output=JSON.parse(output);
+
+                    if(output[0]=="success"){
+                        swal("Status Changed!",a[1], "success",{
+                            buttons: false,
+                            timer: 1500,
+                        }).then(()=>{callback();});
+                        $('.dataTable').DataTable().ajax.reload();
+
+                    }else if(output[0]=="error"){
+                        swal("Failed!",a[1], "error").then(()=>{callback();});
+
+                    }else{
+                        // loaderselector.fadeOut();
+
+                    }
+
+                },
+                error:(err)=>{
+                    swal("Failed!","Oops Something Went Wrong", "error");
+
+                }
+
+            });
         });
     </script>
 
