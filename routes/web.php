@@ -45,6 +45,8 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
             Route::get('/admin/blog', 'HomeController@blog')->name('blog');
             Route::post('/admin/blog/store', 'HomeController@blogStore')->name('blog-store');
             Route::post('/admin/blog/store/status', 'HomeController@statusUpdate')->name('status-update');
+            Route::post('/admin/blog/store/update', 'HomeController@blogUpdate')->name('blog-update');
+            Route::get('/admin/blog/delete/{id}', 'HomeController@blogDelete')->name('blog-delete');
 
 
         });

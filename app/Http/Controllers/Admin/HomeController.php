@@ -77,15 +77,36 @@ class HomeController extends BaseController
         // dd($blog);
         $blog->update([
             'title' => "aa",
-            
+
         ]);
 
-      
-      
+
+
         return response()->json([
             'status'=>'1'
         ]);
     }
 
+    public function blogUpdate(Request $request)
+    {
 
+        $blog = Blog::where('id',$request->blog_id);
+
+        $blog->update([
+            'title' => $request['tite'],
+            'description' => $request['description'],
+            'priority' => $request['priority']
+        ]);
+
+        return back();
+    }
+
+    public function blogDelete($id)
+    {
+        $blog = Blog::find($id);
+
+        $blog->delete();
+
+        return back();
+    }
 }

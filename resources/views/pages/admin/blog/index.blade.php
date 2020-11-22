@@ -69,7 +69,7 @@
                 </button>
             </div>
             <div class="modal-body text-center">
-                <form action="{{ route('blog-store') }}" method="POST" role="form" enctype="multipart/form-data">
+                <form action="{{ route('blog-update') }}" method="POST" role="form" enctype="multipart/form-data">
                     @csrf
 <input type="text" name="blog_id">
                     {{-- <input type="text" class="blog_id"> --}}
@@ -146,11 +146,15 @@
                         </div>
 
                     </td>
-                    <td>
+                    <td class="text-center">
+                        <div class="btn-group btn-group-sm">
                     <button type="button" class="btn btn-outline-success editElement" data-toggle="modal" data-target="#editBlog" data-id="{{$blog->id}}">
-                            View/Edit
-                        </button>
-                         </td>
+                            <i class="fas fa-edit"></i>
+                        </button> &nbsp;
+
+                        <a href="{{ route('blog-delete',$blog->id) }}" title="delete" class="btn btn-outline-danger"><i class="fas fa-trash"></i> </a>
+                        </div>
+                    </td>
 
 
                     </tr>
