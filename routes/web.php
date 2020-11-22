@@ -40,8 +40,11 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
 
 //Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function() {
 
-    Route::group([ 'namespace' => 'App\Http\Controllers\Admin','middleware' => ['auth:sanctum','verified']], function () {
-        Route::get('/admin', 'HomeController@booking')->name('dashboard');
+        Route::group([ 'namespace' => 'App\Http\Controllers\Admin','middleware' => ['auth:sanctum','verified']], function () {
+            Route::get('/admin', 'HomeController@booking')->name('dashboard');
+            Route::get('/admin/blog', 'HomeController@blog')->name('blog');
+            Route::post('/admin/blog/store', 'HomeController@blogStore')->name('blog-store');
 
-    });
+
+        });
 //});
