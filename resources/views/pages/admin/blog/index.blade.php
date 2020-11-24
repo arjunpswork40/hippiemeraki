@@ -25,22 +25,38 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Title</label>
                                     <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Titile">
+                                    @error('title')
+                                    
+                                        <div class="text-danger">{{ $message }}</div>
+                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Description</label>
                                     <input type="text" class="form-control" name="description" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Desription">
+                                    @error('description')
+                                     <div class="text-danger">{{ $message }}</div>
+                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Priority</label>
                                     <input type="number" class="form-control" name="priority" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Priority">
+                                    @error('priority')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror  
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Thumbnail Image</label>
                                     <input type="file" class="form-control-file" name="thumbnail_image" id="exampleFormControlFile1">
-                               </div>
+                                    @error('thumbnail_image')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror  
+                                </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Banner Image</label>
                                     <input type="file" class="form-control-file" name="banner_image" id="exampleFormControlFile1">
+                                    @error('banner_image')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror  
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
