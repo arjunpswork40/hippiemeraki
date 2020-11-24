@@ -17,12 +17,15 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 use App\Http\Requests\BlogStoreRequest;
+use UxWeb\SweetAlert\SweetAlert;
+
 
 
 // use Illuminate\Database\Eloquent\Collection;
 
 class HomeController extends BaseController
 {
+    
 
     public function __construct(Request $request)
     {
@@ -69,6 +72,9 @@ class HomeController extends BaseController
                 $blog->save();
             }
         }
+
+        alert()->success('😀 ', 'Created Successfully');
+        // SweetAlert::message('Welcome back!');
         return back();
     }
 
@@ -135,6 +141,8 @@ class HomeController extends BaseController
         $blog = Blog::find($id);
 
         $blog->delete();
+        alert()->success(' 🗑', 'Deleted Successfully');
+
 
         return back();
     }

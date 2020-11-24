@@ -34,6 +34,8 @@ class BlogStoreRequest extends FormRequest
     }
     public function messages()
     {
+
+        
         return [
             'title.required' => 'title field is required',
             'description.required' => 'Description field can not be empty',

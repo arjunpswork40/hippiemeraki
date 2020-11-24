@@ -13,13 +13,14 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inertiajs/inertia-laravel": "^0.2.4",
+        "kodeine/laravel-meta": "master",
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^1.6",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.0",
         "tightenco/ziggy": "^0.9.4",
-        "kodeine/laravel-meta": "master"
+        "uxweb/sweet-alert": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
