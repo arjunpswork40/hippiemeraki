@@ -35,6 +35,7 @@
                  height: 50px;
                  object-fit: cover;
                  border: 2px ridge #cf8031;
+                 min-width: 48px;
             }
             </style>
 

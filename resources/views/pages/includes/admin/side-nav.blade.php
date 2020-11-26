@@ -26,7 +26,7 @@
             </li>
             <li class="nav-item  user-panel mb-3">
                 <a href="{{ route('blog') }}" class="nav-link {{ request()->is('admin/blog') || request()->is('admin/blog/*')? 'active' : '' }}">
-                    <i class="nav-icon fas fa-mail-bulk"></i>
+                  <i class="nav-icon fas fa-mail-bulk"></i>
                     <p>{{ __('Blogs') }}</p>
                 </a>
             </li>

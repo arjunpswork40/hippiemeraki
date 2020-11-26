@@ -9,7 +9,7 @@
                 Add Blog
             </button>
 
-            <!-- Modal -->
+            <!--New  Modal -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -20,7 +20,7 @@
                             </button>
                         </div>
                         <div class="modal-body text-left">
-                            <form action="{{ route('blog-store') }}" method="POST" role="form" enctype="multipart/form-data">
+                            <form  method="POST" action={{ route('blog-store') }} role="form" enctype="multipart/form-data" id="newBlogForm">
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Title</label>
@@ -46,21 +46,21 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Thumbnail Image</label>
-                                    <input type="file" class="form-control-file" name="thumbnail_image" >
+                                    <input type="file" class="form-control-file" name="thumbnail_image" accept="image/*" >
                                     @error('thumbnail_image')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror  
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Banner Image</label>
-                                    <input type="file" class="form-control-file" name="banner_image" >
+                                    <input type="file" class="form-control-file" name="banner_image" accept="image/*" >
                                     @error('banner_image')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror  
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Create</button>
+                                    <button type="submit" class="btn btn-primary submit">Create</button>
                                 </div>
                             </form>
 
@@ -85,7 +85,7 @@
                 </button>
             </div>
             <div class="modal-body text-center">
-                <form action="{{ route('blog-update') }}" method="POST" role="form" enctype="multipart/form-data">
+                <form action="{{ route('blog-update') }}" method="POST" role="form" enctype="multipart/form-data" id="editBlogForm">
                     @csrf
 <input type="text" name="blog_id">
                     {{-- <input type="text" class="blog_id"> --}}
@@ -97,17 +97,17 @@
                         <label for="exampleInputEmail1">Description</label>
                         <input type="text" class="form-control" name="description" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Desription">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group"
                         <label for="exampleInputEmail1">Priority</label>
                         <input type="number" class="form-control" name="priority" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Priority">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Thumbnail Image</label>
-                        <input type="file" class="form-control-file" name="thumbnail_image" id="exampleFormControlFile1">
+                        <input type="file" required class="form-control-file" name="thumbnail_image" accept="image/*">
                    </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Banner Image</label>
-                        <input type="file" class="form-control-file" name="banner_image" id="exampleFormControlFile1">
+                        <input type="file" required class="form-control-file" name="banner_image" accept="image/*">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -164,9 +164,9 @@
                     </td>
                 <td class="text-center">
                         <div class="btn-group btn-group-sm">
-                    <button type="button" class="btn btn-outline-success editElement" data-toggle="modal" data-target="#editBlog" data-id="{{$blog->id}}">
+                    <a href="{{ route('blog-edit',$blog->id)}}'" class="btn btn-outline-success " >
                             <i class="fas fa-edit"></i>
-                        </button> &nbsp;
+                        </a> &nbsp;
 
                         <a href="{{ route('blog-delete',$blog->id) }}" title="delete" class="btn btn-outline-danger"><i class="fas fa-trash"></i> </a>
                         </div>
@@ -195,6 +195,7 @@
 @endsection
 
 @push('scripts')
+<script src="{{ asset('/jsFunctions/ctFunctions.js')}}"></script>
     <script>
         $(function () {
             $("#example1").DataTable({
@@ -276,7 +277,29 @@ console.log("result is",output);
     });
 
 
- 
+//  new blog submit 
+// ajaxFormSubmit(
+//     {{ route('blog-store') }},
+//     'POST',
+//     formData,
+//     form,
+//     submitButton
+// ) 
+
+
+$('#newBlogForm').on("click", '.submit', function (e) {
+    e.preventDefault();
+    let title=$('#newBlogForm input[name="title"]').val();
+    let file=document.querySelector("#newBlogForm input[name=thumbnail_image]").value;
+    let file2=document.querySelector("#newBlogForm input[name=banner_image]").value;
+
+    if(title!="" && file!="" && file2!=""){
+        $('#newBlogForm').submit();
+    }
+    else{
+       swal("👀PS !", "Please Fill Title and Image Atlest ! ", "error");
+    }
+});
 
 
     </script>

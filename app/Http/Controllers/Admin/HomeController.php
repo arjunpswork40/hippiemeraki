@@ -48,7 +48,7 @@ class HomeController extends BaseController
 
     }
 
-    public function blogStore(BlogStoreRequest $request)
+    public function blogStore(Request $request)
     {
         $blog = Blog::create([
             'title' => $request['title'],
@@ -147,5 +147,10 @@ class HomeController extends BaseController
         return back();
     }
 
+    public function blogEdit($id)
+    {
+        $blog = Blog::where('id',$id)->get();
+        return view('pages.admin.blog.edit',compact('blog'),'Edit Blog');
+    }
 
 }
