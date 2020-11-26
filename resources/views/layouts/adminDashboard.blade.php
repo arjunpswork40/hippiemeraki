@@ -25,12 +25,25 @@
         <link rel="stylesheet" href="{{ asset('/ad-lte/dist/css/adminlte.min.css') }}">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <style>
+            td img{
+                 width: 19% !important;
+                 display: block;
+                 height: 50px;
+                 object-fit: cover;
+                 border: 2px ridge #cf8031;
+            }
+            </style>
+
 
 {{--        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">--}}
         @stack('styles')
     </head>
     <body class="hold-transition sidebar-mini">
+        @include('sweet::alert')
         <div class="wrapper">
              @include('pages.includes.admin.header-nav')
             <aside class="main-sidebar sidebar-dark-primary elevation-4">

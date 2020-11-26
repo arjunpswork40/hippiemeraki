@@ -14,7 +14,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">Create Blog</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -24,27 +24,43 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Title</label>
-                                    <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Titile">
+                                    <input type="text" class="form-control" name="title"  aria-describedby="emailHelp" placeholder="Titile">
+                                    @error('title')
+
+                                        <div class="text-danger">{{ $message }}</div>
+                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Description</label>
-                                    <input type="text" class="form-control" name="description" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Desription">
+                                    <input type="text" class="form-control" name="description"  aria-describedby="emailHelp" placeholder="Desription">
+                                    @error('description')
+                                     <div class="text-danger">{{ $message }}</div>
+                                     @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Priority</label>
-                                    <input type="number" class="form-control" name="priority" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Priority">
+                                    <input type="number" class="form-control" name="priority"  aria-describedby="emailHelp" placeholder="Priority">
+                                    @error('priority')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror  
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Thumbnail Image</label>
-                                    <input type="file" class="form-control-file" name="thumbnail_image" id="exampleFormControlFile1">
-                               </div>
+                                    <input type="file" class="form-control-file" name="thumbnail_image" >
+                                    @error('thumbnail_image')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror  
+                                </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Banner Image</label>
-                                    <input type="file" class="form-control-file" name="banner_image" id="exampleFormControlFile1">
+                                    <input type="file" class="form-control-file" name="banner_image" >
+                                    @error('banner_image')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror  
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                    <button type="submit" class="btn btn-primary">Create</button>
                                 </div>
                             </form>
 
@@ -95,7 +111,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary submit">Save changes</button>
+                        <button type="submit" class="btn btn-primary submit">Update</button>
                     </div>
                 </form>
 
@@ -146,7 +162,7 @@
                         </div>
 
                     </td>
-                    <td class="text-center">
+                <td class="text-center">
                         <div class="btn-group btn-group-sm">
                     <button type="button" class="btn btn-outline-success editElement" data-toggle="modal" data-target="#editBlog" data-id="{{$blog->id}}">
                             <i class="fas fa-edit"></i>

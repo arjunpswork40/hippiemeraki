@@ -48,6 +48,7 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
             Route::post('/admin/blog/store/update', 'HomeController@blogUpdate')->name('blog-update');
             Route::get('/admin/blog/delete/{id}', 'HomeController@blogDelete')->name('blog-delete');
 
-
+            Route::post('/admin/blog/store/update', 'HomeController@blogUpdate')->name('blog-update');
+            Route::get('/admin/blog/delete/{id}', 'HomeController@blogDelete')->name('blog-delete');
         });
 //});
