@@ -18,8 +18,9 @@ class PageHelper
     {
         $file = asset('assets/images/placeholder.png');
         if (null != $imageName) {
-            if (FileManager::checkFileExist($imageName, FileDestinations::PAGES_IMAGES)) {
-                $file = FileManager::getFileUrl($imageName, FileDestinations::PAGES_IMAGES);
+            if (FileManager::checkFileExist($imageName, FileDestinations::BLOG_IMAGES)) {
+                $file = FileManager::getFileUrl($imageName, FileDestinations::BLOG_IMAGES);
+
             }
         }
         return $file;

@@ -42,21 +42,21 @@
                                     <input type="number" class="form-control" name="priority"  aria-describedby="emailHelp" placeholder="Priority">
                                     @error('priority')
                                     <div class="text-danger">{{ $message }}</div>
-                                    @enderror  
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Thumbnail Image</label>
                                     <input type="file" class="form-control-file" name="thumbnail_image" accept="image/*" >
                                     @error('thumbnail_image')
                                     <div class="text-danger">{{ $message }}</div>
-                                    @enderror  
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Banner Image</label>
                                     <input type="file" class="form-control-file" name="banner_image" accept="image/*" >
                                     @error('banner_image')
                                     <div class="text-danger">{{ $message }}</div>
-                                    @enderror  
+                                    @enderror
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -84,38 +84,38 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body text-center">
-                <form action="{{ route('blog-update') }}" method="POST" role="form" enctype="multipart/form-data" id="editBlogForm">
-                    @csrf
-<input type="text" name="blog_id">
-                    {{-- <input type="text" class="blog_id"> --}}
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Title</label>
-                        <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Titile">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Description</label>
-                        <input type="text" class="form-control" name="description" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Desription">
-                    </div>
-                    <div class="form-group"
-                        <label for="exampleInputEmail1">Priority</label>
-                        <input type="number" class="form-control" name="priority" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Priority">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlFile1">Thumbnail Image</label>
-                        <input type="file" required class="form-control-file" name="thumbnail_image" accept="image/*">
-                   </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlFile1">Banner Image</label>
-                        <input type="file" required class="form-control-file" name="banner_image" accept="image/*">
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary submit">Update</button>
-                    </div>
-                </form>
+{{--            <div class="modal-body text-center">--}}
+    {{--                <form action="{{ route('blog-update') }}" method="POST" role="form" enctype="multipart/form-data" id="editBlogForm">--}}
+    {{--                    @csrf--}}
+    {{--<input type="text" name="blog_id">--}}
+    {{--                    --}}{{-- <input type="text" class="blog_id"> --}}
+    {{--                    <div class="form-group">--}}
+    {{--                        <label for="exampleInputEmail1">Title</label>--}}
+    {{--                        <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Titile">--}}
+    {{--                    </div>--}}
+    {{--                    <div class="form-group">--}}
+    {{--                        <label for="exampleInputEmail1">Description</label>--}}
+    {{--                        <input type="text" class="form-control" name="description" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Desription">--}}
+    {{--                    </div>--}}
+    {{--                    <div class="form-group"--}}
+    {{--                        <label for="exampleInputEmail1">Priority</label>--}}
+    {{--                        <input type="number" class="form-control" name="priority" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Priority">--}}
+    {{--                    </div>--}}
+    {{--                    <div class="form-group">--}}
+    {{--                        <label for="exampleFormControlFile1">Thumbnail Image</label>--}}
+    {{--                        <input type="file" required class="form-control-file" name="thumbnail_image" accept="image/*">--}}
+    {{--                   </div>--}}
+    {{--                    <div class="form-group">--}}
+    {{--                        <label for="exampleFormControlFile1">Banner Image</label>--}}
+    {{--                        <input type="file" required class="form-control-file" name="banner_image" accept="image/*">--}}
+    {{--                    </div>--}}
+    {{--                    <div class="modal-footer">--}}
+    {{--                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>--}}
+    {{--                        <button type="submit" class="btn btn-primary submit">Update</button>--}}
+    {{--                    </div>--}}
+    {{--                </form>--}}
 
-            </div>
+{{--            </div>--}}
 
         </div>
     </div>
@@ -164,7 +164,7 @@
                     </td>
                 <td class="text-center">
                         <div class="btn-group btn-group-sm">
-                    <a href="{{ route('blog-edit',$blog->id)}}'" class="btn btn-outline-success " >
+                    <a href="{{ route('blog-edit',$blog->id)}}" class="btn btn-outline-success " >
                             <i class="fas fa-edit"></i>
                         </a> &nbsp;
 
@@ -277,14 +277,14 @@ console.log("result is",output);
     });
 
 
-//  new blog submit 
+//  new blog submit
 // ajaxFormSubmit(
 //     {{ route('blog-store') }},
 //     'POST',
 //     formData,
 //     form,
 //     submitButton
-// ) 
+// )
 
 
 $('#newBlogForm').on("click", '.submit', function (e) {

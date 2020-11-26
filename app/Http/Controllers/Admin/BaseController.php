@@ -16,7 +16,7 @@ class BaseController extends Controller
         parent::__construct($request);
         $this->middleware('auth:sanctum');
         $this->_view = 'pages.';
-        $this->addBaseRoute('admin.');
+        $this->addBaseRoute('blog');
     }
 
 }
