@@ -7,6 +7,7 @@ use App\Http\Constants\PageConstant;
 use App\Http\Models\Service;
 use App\Http\Models\UserTimeEntry;
 
+use App\Models\Blog;
 use App\Services\PageService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -73,12 +74,15 @@ class HomeController extends BaseController
 
     public function blog()
     {
-        return $this->renderView($this->getView('news.blog'),[],'News');
+        $newses = Blog::all();
+        $date = Carbon::now();
+        return $this->renderView($this->getView('news.blog'),compact('newses','date'),'News');
     }
 
-    public function details()
+    public function details($blog)
     {
-        return $this->renderView($this->getView('news.blog-details'),[],'Blog Details');
+        $details = Blog::where('id',$blog)->first();
+        return $this->renderView($this->getView('news.blog-details'),compact('details'),'Blog Details');
 
     }
 }
