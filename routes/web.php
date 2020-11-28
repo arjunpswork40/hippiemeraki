@@ -49,5 +49,18 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
             Route::get('/admin/blog/update/{id}','HomeController@blogEdit')->name('blog-edit');
             Route::post('/admin/blog/store/{id}', 'HomeController@blogUpdate')->name('blog-update');
             Route::get('/admin/blog/delete/{id}', 'HomeController@blogDelete')->name('blog-delete');
+
+            Route::get('/admin/room', 'RoomController@index')->name('admin.room');
+            Route::post('/admin/room/store/status', 'RoomController@statusUpdate')->name('room-status-update');
+            Route::post('/admin/room/store', 'RoomController@roomStore')->name('room-store');
+            Route::get('/admin/room/delete/{id}', 'RoomController@roomDelete')->name('room-delete');
+            Route::get('/admin/room/update/{id}','RoomController@roomEdit')->name('room-edit');
+            Route::post('/admin/room/store/{id}', 'RoomController@roomUpdate')->name('room-update');
+
+
+
+
+
+
         });
 //});

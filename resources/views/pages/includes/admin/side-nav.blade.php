@@ -1,7 +1,7 @@
 <div class="sidebar">
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-            <img src="" class="img-circle elevation-2" alt="User Image">
+            <img src="{{ asset('/zubis/img/newlogo.jpg') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
             <a href="#" class="d-block" align="center">admin</a>
@@ -19,7 +19,7 @@
 
             <li class="nav-header">PAGE MANAGEMENT</li>
             <li class="nav-item">
-                <a class="nav-link {{ request()->is('admin/page-management') || request()->is('admin/page-management/*') ? 'active' : '' }}" href="#">
+                <a class="nav-link {{ request()->is('admin/room') || request()->is('admin/room/*') ? 'active' : '' }}" href="{{ route('admin.room') }}">
                     <i class="fas fa-copy nav-icon"></i>
                     <p>{{ __('Rooms') }}</p>
                 </a>

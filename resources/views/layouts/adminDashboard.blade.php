@@ -30,12 +30,26 @@
 
         <style>
             td img{
-                 width: 19% !important;
-                 display: block;
-                 height: 50px;
-                 object-fit: cover;
-                 border: 2px ridge #cf8031;
-                 min-width: 48px;
+                width: 73px !important;
+                height: 50px;
+                object-fit: contain;
+                border: 2px ridge #cf8031;
+                min-width: 48px;
+                background: #31afcf40;
+            }
+            .btn-primary{
+                /*background-color: #cf8031;*/
+            }
+            .brand-link .brand-image{
+                border-radius: 0;
+                box-shadow: none !important;
+            }
+            #editBlogForm img{
+                width: 10%;
+                margin-left: 26px;
+                object-fit: cover;
+                box-shadow: 0 0 15px -9px #000;
+                border-radius: 2px;
             }
             </style>
 
@@ -49,7 +63,7 @@
              @include('pages.includes.admin.header-nav')
             <aside class="main-sidebar sidebar-dark-primary elevation-4">
                 <a href="#" class="brand-link">
-                    <img src="{{ asset('assets/images/footer-logo.png') }}" alt="{{ config('app.name') }}" class="brand-image img-circle elevation-3" style="opacity: .8">
+                    <img src="{{ asset('zubis/img/logo.png') }}" alt="{{ config('app.name') }}" class="brand-image img-circle elevation-3" style="opacity: .8">
                     <span class="brand-text font-weight-light"> &nbsp;</span>
                 </a>
                 @include('pages.includes.admin.side-nav')

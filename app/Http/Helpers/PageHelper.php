@@ -25,4 +25,15 @@ class PageHelper
         }
         return $file;
     }
+    public static function getRoomsImagePath($imageName)
+    {
+        $file = asset('assets/images/placeholder.png');
+        if (null != $imageName) {
+            if (FileManager::checkFileExist($imageName, FileDestinations::ROOM_IMAGES)) {
+                $file = FileManager::getFileUrl($imageName, FileDestinations::ROOM_IMAGES);
+
+            }
+        }
+        return $file;
+    }
 }

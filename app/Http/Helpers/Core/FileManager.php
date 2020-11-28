@@ -330,5 +330,15 @@ class FileManager
         }
         return $file;
     }
+    public static function getRoomsImagePath($imageName)
+    {
+        $file = asset('zubis/img/logo.png');
+        if (null != $imageName){
+            if (FileManager::checkFileExist($imageName,FileDestinations::ROOM_IMAGES)){
+                $file = FileManager::getFileUrl($imageName,FileDestinations::ROOM_IMAGES);
+            }
+        }
+        return $file;
+    }
 
 }

@@ -1,5 +1,5 @@
 <style type="text/css">
-  
+
     .inActive{
   color: #3276b1 !important;
   background-color: #fff !important;
@@ -23,17 +23,17 @@
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <img src="" class="user-image img-circle elevation-2" alt="Admin profile picture">
+                <img src="{{ asset('/zubis/img/newlogo.jpg') }}" class="user-image img-circle elevation-2" alt="Admin profile picture">
                 <span class="d-none d-md-inline"></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <!-- Admin image -->
                 <li class="user-header bg-primary">
-                    <img src="" class="img-circle elevation-2" alt="">
+                    <img src="{{ asset('/zubis/img/newlogo.jpg') }}" class="img-circle elevation-2" alt="">
 
                     <p>
 {{--                        {{ ProfileHelper::getFullName(AuthConstants::GUARD_ADMIN) }}--}}
-                        <small>Member since </small>
+                        <small>Member since 2019</small>
                     </p>
                 </li>
                 <!-- Menu Footer-->
