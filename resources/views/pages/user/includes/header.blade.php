@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="logo">
-                        <a href="./index.html">
+                        <a href="">
                             <img src="{{ asset('/zubis/img/logo.png') }}" alt="">
                         </a>
                     </div>
@@ -50,10 +50,10 @@
                                 <li class="{{ request()->is('/') || request()->is('/*')? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
                                 <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
                                 <li class="{{ request()->is('about-us') || request()->is('about-us/*')? 'active' : '' }}"><a href="{{ route('about-us') }}">About Us</a></li>
-                                <li><a href="./pages.html">Pages</a>
+                                <li><a href="#">Pages</a>
                                     <ul class="dropdown">
-                                        <li><a href="./room-details.html">Room Details</a></li>
-                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                        <li><a href="">Room Details</a></li>
+                                        <li><a href="">Blog Details</a></li>
                                         <li><a href="#">Family Room</a></li>
                                         <li><a href="#">Premium Room</a></li>
                                     </ul>
