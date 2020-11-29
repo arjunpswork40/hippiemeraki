@@ -7,17 +7,17 @@
                     <div class="ft-about">
                         <div class="logo">
                             <a href="#">
-                                <img src="{{ asset('/zubis/img/footer-logo.png') }}" alt="">
+                                <img src="{{ asset('/zubis/img/logo/z-logo-full-horizontal.png') }}" alt="">
                             </a>
                         </div>
                         <p>We inspire and reach millions of travelers<br /> across 90 local websites</p>
-                        <div class="fa-social">
+                        {{-- <div class="fa-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
                             <a href="#"><i class="fa fa-tripadvisor"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="col-lg-3 offset-lg-1">
@@ -32,12 +32,15 @@
                 </div>
                 <div class="col-lg-3 offset-lg-1">
                     <div class="ft-newslatter">
-                        <h6>New latest</h6>
+                        <h6>Connect With Us</h6>
                         <p>Get the latest updates and offers.</p>
-                        <form action="#" class="fn-form">
-                            <input type="text" placeholder="Email">
-                            <button type="submit"><i class="fa fa-send"></i></button>
-                        </form>
+                        <div class="fa-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-tripadvisor"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -46,18 +49,19 @@
     <div class="copyright-option">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7">
+                {{-- <div class="col-lg-7">
                     <ul>
                         <li><a href="#">Contact</a></li>
                         <li><a href="#">Terms of use</a></li>
                         <li><a href="#">Privacy</a></li>
                         <li><a href="#">Environmental Policy</a></li>
                     </ul>
-                </div>
-                <div class="col-lg-5">
+                </div> --}}
+                <div class="col-lg-12">
                     <div class="co-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://algomonkey.com" target="_blank">ALGOMONKEY</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Zubis Inn
+<!-- <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">CretiveTechies</a> -->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
                 </div>
             </div>
         </div>

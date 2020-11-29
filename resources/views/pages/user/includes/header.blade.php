@@ -17,9 +17,9 @@
                             <a href="#"><i class="fa fa-tripadvisor"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
                         </div>
-                        <a href="#" class="bk-btn">Booking Now</a>
-                        <div class="language-option">
-                            <img src="{{ asset('/zubis/img/flag.jpg') }}" alt="">
+                        <a href="#" class="bk-btn">Book Now</a>
+                        <!-- <div class="language-option">
+                            <img src="img/flag.jpg" alt="">
                             <span>EN <i class="fa fa-angle-down"></i></span>
                             <div class="flag-dropdown">
                                 <ul>
@@ -27,7 +27,7 @@
                                     <li><a href="#">Fr</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <div class="col-lg-2">
                     <div class="logo">
                         <a href="">
-                            <img src="{{ asset('/zubis/img/logo.png') }}" alt="">
+                            <img src="{{ asset('/zubis/img/logo/z-logo-full-horizontal.png') }}" alt="">
                         </a>
                     </div>
                 </div>
@@ -48,8 +48,10 @@
                         <nav class="mainmenu">
                             <ul>
                                 <li class="{{ request()->is('/') || request()->is('/*')? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
-                                <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
                                 <li class="{{ request()->is('about-us') || request()->is('about-us/*')? 'active' : '' }}"><a href="{{ route('about-us') }}">About Us</a></li>
+                                <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
+                                <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">News</a></li>
+                                <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="">Room Details</a></li>
@@ -58,13 +60,11 @@
                                         <li><a href="#">Premium Room</a></li>
                                     </ul>
                                 </li>
-                                <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">News</a></li>
-                                <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
                             </ul>
                         </nav>
-                        <div class="nav-right search-switch">
+                        {{-- <div class="nav-right search-switch">
                             <i class="icon_search"></i>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

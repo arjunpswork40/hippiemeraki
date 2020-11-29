@@ -14,11 +14,15 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
-
-    <!-- Css Styles -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    
+   <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('/zubis/css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/elegant-icons.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/zubis/css/flaticon-extra/flaticon-extras.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/flaticon.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/owl.carousel.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/nice-select.css') }}" type="text/css">
@@ -26,69 +30,186 @@
     <link rel="stylesheet" href="{{ asset('/zubis/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/style.css') }}" type="text/css">
+
+
+    <style>
+        body,p,h1,h2,h3,h4,h5,h6,span,div{
+            font-family: 'Lato', sans-serif !important;
+        
+        }
+        
+        .menu-item .logo img{
+            object-fit: contain;
+            margin-top: -8px;
+            width: 100%;
+            max-width: 164px;
+            background: #fff;
+            padding: 6px;
+        }
+        .footer-section  .logo img{
+            object-fit: contain;
+            margin-top: -8px;
+            width: 100%;
+            max-width: 173px;
+            box-shadow: 2px 3px 8px 3px #131313;
+            background: #fff;
+            border-radius: 3px;
+            padding: 3px;
+        
+        }
+        .footer-section .copyright-option .co-text{
+        text-align:center;
+        }
+        .footer-section .copyright-option {
+            padding: 9px 0;
+        }
+        .co-text p{
+            margin:0 0 2px 0;
+            font-size:14px;
+        }
+        .menu-item .logo{
+            height:85px;
+        }
+        .footer-section {
+            background: #0b0c11;
+        }
+        .footer-section a{
+            color:#ff9200;
+        }
+        .blog-item.set-bg:hover {
+            transform: translateY(-2px) translateX(-5px) scale(1.01);
+            box-shadow: 0 5px 16px 1px rgb(203 137 72 / 23%), 0 1px 4px 0 rgb(113 66 42 / 20%);
+            transition-timing-function: ease-out;
+            transition: 0.39s;
+        }
+        .fa-social{
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .footer-section .footer-text .ft-contact h6 {
+            color: #cf8031;
+        }
+        .footer-section .footer-text .ft-newslatter h6 {
+            color: #cf8031;
+        }
+        .section-title span,.service-item i {
+            color: #cf8031;
+        }
+         
+        .menu-item .nav-menu .mainmenu li a:after {
+         
+            background: #cf8031;}
+            .hero-text h1{
+                font-size: 124px;
+                margin-bottom: 30px;
+            }
+            .hero-text p{
+                font-family: 'Dancing Script', cursive !important;
+                font-size: 31px;
+            }
+        
+        @media only screen and (max-width: 991px){
+        .offcanvas-menu-wrapper .header-configure-area .bk-btn {
+            background: #cf8031;
+        }
+        .offcanvas-menu-wrapper .top-widget li i {
+            color:#cf8031;
+            }
+            .offcanvas-menu-wrapper .top-social a {
+            color: #ff9200;
+        }
+        .offcanvas-menu-wrapper .canvas-close {
+            border: 1px solid #cf8031;
+        }
+        
+        .canvas-close .icon_close{
+            color:#cf8031; 
+        }
+        .hero-text h1{
+            line-height: 49px;
+            font-size: 72px;
+        }
+         .hero-text p{
+                font-size: 24px;
+            }
+        
+        }
+        
+        
+        
+        </style>
+        
+        
+
+
+
+
 </head>
 
 <body>
-<!-- Page Preloder -->
-<div id="preloder">
-    <div class="loader"></div>
-</div>
 
-<!-- Offcanvas Menu Section Begin -->
-<div class="offcanvas-menu-overlay"></div>
-<div class="canvas-open">
-    <i class="icon_menu"></i>
-</div>
-<div class="offcanvas-menu-wrapper">
-    <div class="canvas-close">
-        <i class="icon_close"></i>
+       <!-- Page Preloder -->
+       <div id="preloder">
+        <div class="loader"></div>
     </div>
-    <div class="search-icon  search-switch">
-        <i class="icon_search"></i>
+
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="canvas-open">
+        <i class="icon_menu"></i>
     </div>
-    <div class="header-configure-area">
-        <div class="language-option">
-            <img src="{{asset('/zubis/img/flag.jpg')}}" alt="">
-            <span>EN <i class="fa fa-angle-down"></i></span>
-            <div class="flag-dropdown">
-                <ul>
-                    <li><a href="#">Zi</a></li>
-                    <li><a href="#">Fr</a></li>
-                </ul>
-            </div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <i class="icon_close"></i>
         </div>
-        <a href="#" class="bk-btn">Booking Now</a>
-    </div>
-    <nav class="mainmenu mobile-menu">
-        <ul>
-            <li class="active"><a href="./index.html">Home</a></li>
-            <li><a href="./rooms.html">Rooms</a></li>
-            <li><a href="./about-us.html">About Us</a></li>
-            <li><a href="./pages.html">Pages</a>
-                <ul class="dropdown">
-                    <li><a href="./room-details.html">Room Details</a></li>
-                    <li><a href="#">Deluxe Room</a></li>
-                    <li><a href="#">Family Room</a></li>
-                    <li><a href="#">Premium Room</a></li>
-                </ul>
-            </li>
-            <li><a href="./blog.html">News</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+    <!--     <div class="search-icon  search-switch">
+            <i class="icon_search"></i>
+        </div> -->
+        <div class="header-configure-area">
+           <!--  <div class="language-option">
+                <img src="img/flag.jpg" alt="">
+                <span>EN <i class="fa fa-angle-down"></i></span>
+                <div class="flag-dropdown">
+                    <ul>
+                        <li><a href="#">Zi</a></li>
+                        <li><a href="#">Fr</a></li>
+                    </ul>
+                </div>
+            </div> -->
+            <a href="#" class="bk-btn">Book Now</a>
+        </div>
+        <nav class="mainmenu mobile-menu">
+            <ul>
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li><a href="./about-us.html">About Us</a></li>
+                <li><a href="./rooms.html">Rooms</a></li>
+                <li><a href="./blog.html">News</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+
+                <li><a href="./pages.html">Pages</a>
+                    <ul class="dropdown">
+                        <li><a href="./room-details.html">Room Details</a></li>
+                        <li><a href="#">Deluxe Room</a></li>
+                        <li><a href="#">Family Room</a></li>
+                        <li><a href="#">Premium Room</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+        <div class="top-social">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-tripadvisor"></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+        </div>
+        <ul class="top-widget">
+            <li><i class="fa fa-phone"></i> (91) 345 67890</li>
+            <li><i class="fa fa-envelope"></i> info.zubisinn@gmail.com</li>
         </ul>
-    </nav>
-    <div id="mobile-menu-wrap"></div>
-    <div class="top-social">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-tripadvisor"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
     </div>
-    <ul class="top-widget">
-        <li><i class="fa fa-phone"></i> (12) 345 67890</li>
-        <li><i class="fa fa-envelope"></i> info.zubisinn@gmail.com</li>
-    </ul>
-</div>
-<!-- Offcanvas Menu Section End -->
+    <!-- Offcanvas Menu Section End -->
 
 @include('pages.user.includes.header')
 

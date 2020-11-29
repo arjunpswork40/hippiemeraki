@@ -7,9 +7,8 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="hero-text">
-                    <h1>Zubis inn A Luxury Hotel</h1>
-                    <p>Here are the best hotel booking sites, including recommendations for international
-                        travel and for finding low-priced hotel rooms.</p>
+                    <h1>Zubis Inn </h1>
+                    <p>Make yourself at home , Luxury 3 star hotel</p>
                     <a href="#" class="primary-btn">Discover Now</a>
                 </div>
             </div>
@@ -63,13 +62,14 @@
                 <div class="about-text">
                     <div class="section-title">
                         <span>About Us</span>
-                        <h2>Intercontinental LA <br />Westlake Hotel</h2>
+                        {{-- <h2> Zubis INN</h2> --}}
                     </div>
-                    <p class="f-para">ZubisInn.com is a leading online accommodation site. We’re passionate about
-                        travel. Every day, we inspire and reach millions of travelers across 90 local websites in 41
-                        languages.</p>
-                    <p class="s-para">So when it comes to booking the perfect hotel, vacation rental, resort,
-                        apartment, guest house, or tree house, we’ve got you covered.</p>
+                    <p class="f-para">Zubis Inn is a luxury 3 Star Hotel, located in wayanad, that is widely recognized for providing
+                        luxurious accommodations and premium amenities. Designed with luxury rooms , Zubis Inn
+                        has been acclaimed as one of the most romantic places in the region.</p>
+                        <p class="s-para">Our heartfelt hospitality,
+                            impeccable service, fine cuisine, amazing river rafting, and eco-experiences make Zubis Inn
+                            the premier destination in Kerala.</p>
                     <a href="#" class="primary-btn about-btn">Read More</a>
                 </div>
             </div>
@@ -97,23 +97,17 @@
             <div class="col-lg-12">
                 <div class="section-title">
                     <span>What We Do</span>
-                    <h2>Discover Our Services</h2>
+                    <h2>Discover Our Packages</h2>
                 </div>
             </div>
         </div>
+        
         <div class="row">
+
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
-                    <i class="flaticon-036-parking"></i>
-                    <h4>Travel Plan</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="service-item">
-                    <i class="flaticon-033-dinner"></i>
-                    <h4>Catering Service</h4>
+                    <i class="flaticon-042-menu"></i>
+                    <h4>Advance Booking</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna.</p>
                 </div>
@@ -121,15 +115,23 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon-026-bed"></i>
-                    <h4>Babysitting</h4>
+                    <h4>Honeymoon Bliss</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
-                    <i class="flaticon-024-towel"></i>
-                    <h4>Laundry</h4>
+                    <i class="flaticon2-family-1"></i>
+                    <h4>Family Vacations</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna.</p>
+                </div>
+            </div>
+                            <div class="col-lg-4 col-sm-6">
+                <div class="service-item">
+                    <i class="flaticon-001-luggage"></i>
+                    <h4>Weekend Holidays</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna.</p>
                 </div>
@@ -137,20 +139,21 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon-044-clock-1"></i>
-                    <h4>Hire Driver</h4>
+                    <h4>Outbound Experimental Training Program</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
-                    <i class="flaticon-012-cocktail"></i>
-                    <h4>Drinks & Beaverages</h4>
+                    <i class="flaticon2-handshake"></i>
+                    <h4>Bussiness Travel</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna.</p>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 <!-- Services Section End -->
@@ -352,7 +355,7 @@
             <div class="col-lg-4">
                 <div class="blog-item set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-1.jpg') }}">
                     <div class="bi-text">
-                        <span class="b-tag">Travel Trip</span>
+                        {{-- <span class="b-tag">Travel Trip</span> --}}
                         <h4><a href="#">Tremblant In Canada</a></h4>
                         <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
                     </div>
@@ -361,7 +364,7 @@
             <div class="col-lg-4">
                 <div class="blog-item set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-2.jpg') }}">
                     <div class="bi-text">
-                        <span class="b-tag">Camping</span>
+                        {{-- <span class="b-tag">Camping</span> --}}
                         <h4><a href="#">Choosing A Static Caravan</a></h4>
                         <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
                     </div>
@@ -370,7 +373,7 @@
             <div class="col-lg-4">
                 <div class="blog-item set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-3.jpg') }}">
                     <div class="bi-text">
-                        <span class="b-tag">Event</span>
+                        {{-- <span class="b-tag">Event</span> --}}
                         <h4><a href="#">Copper Canyon</a></h4>
                         <div class="b-time"><i class="icon_clock_alt"></i> 21th April, 2019</div>
                     </div>
@@ -379,7 +382,7 @@
             <div class="col-lg-8">
                 <div class="blog-item small-size set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-wide.jpg') }}">
                     <div class="bi-text">
-                        <span class="b-tag">Event</span>
+                        {{-- <span class="b-tag">Event</span> --}}
                         <h4><a href="#">Trip To Iqaluit In Nunavut A Canadian Arctic City</a></h4>
                         <div class="b-time"><i class="icon_clock_alt"></i> 08th April, 2019</div>
                     </div>
@@ -388,7 +391,7 @@
             <div class="col-lg-4">
                 <div class="blog-item small-size set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-10.jpg') }}">
                     <div class="bi-text">
-                        <span class="b-tag">Travel</span>
+                        {{-- <span class="b-tag">Travel</span> --}}
                         <h4><a href="#">Traveling To Barcelona</a></h4>
                         <div class="b-time"><i class="icon_clock_alt"></i> 12th April, 2019</div>
                     </div>
