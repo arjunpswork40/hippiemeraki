@@ -11,9 +11,12 @@ use App\Services\PageService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
+use UxWeb\SweetAlert\SweetAlert;
+
 class BookingController extends BaseController
 
 {
+    
 
     protected $_pageService;
 
@@ -33,14 +36,24 @@ class BookingController extends BaseController
 
    public function availability(Request $request)
    {
-       $check = Room_Details::where('category',$request->category)->first();
+    // dd($request);
 
-       if ($check->available_room_count != 0){
-           return $this->renderView($this->getView('check-availability'),['check'],'Available Rooms');
+       $checkOne = Room_Details::where('category',$request->category)->first();
+        // $checkTwo = Booked::where('check_out','>=',$request->check_in)->count();
+
+        // 'SELECT room_id FROM Bookings WHERE check_in_date<="'.$ci_date.'" AND check_out_date >= "'.$co_date.'") ';
+
+// dd($checkOne);
+
+       if ($checkOne->available_room_count != 0){
+           return $this->renderView($this->getView('booking.index'),['checkOne'],'Available Rooms');
+       }
+       elseif($checkTwo!=null){
+        return $this->renderView($this->getView('booking.index'),['checkTwo'],'Available Rooms');
        }
        else{
           $available = Room_Details::where('available_room_count','>',0)->get();
-          return $this->renderView($this->getView('check-availability'),compact('check','available'),'Available Rooms');
+          return $this->renderView($this->getView('bookin.index'),compact('checkOne','available'),'Available Rooms');
        }
    }
 

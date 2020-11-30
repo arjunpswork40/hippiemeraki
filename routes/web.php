@@ -27,9 +27,10 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
         Route::get('/news','HomeController@blog')->name('blog');
         Route::get('/news/detais/{newsId}','HomeController@details')->name('blog-details');
 
-
+        
     });
 
+    Route::post('/checkAvailability','BookingController@availability')->name('checkAvailability');
 
 
     });

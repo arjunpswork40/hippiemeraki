@@ -14,33 +14,36 @@
             </div>
             <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
                 <div class="booking-form">
-                    <h3>Booking Your Hotel</h3>
-                    <form action="#">
+                    <h3>Book Online</h3>
+                <form action="{{route('checkAvailability')}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    {{-- @method('put') --}}
                         <div class="check-date">
                             <label for="date-in">Check In:</label>
-                            <input type="text" class="date-input" id="date-in">
-                            <i class="icon_calendar"></i>
+                            <input type="date" class="date-input" id="date-in" name="checkIn">
+                            {{-- <i class="icon_calendar"></i> --}}
                         </div>
                         <div class="check-date">
                             <label for="date-out">Check Out:</label>
-                            <input type="text" class="date-input" id="date-out">
-                            <i class="icon_calendar"></i>
+                            <input type="date" class="date-input" id="date-out" name="checkOut">
+                            {{-- <i class="icon_calendar"></i> --}}
                         </div>
                         <div class="select-option">
-                            <label for="guest">Guests:</label>
-                            <select id="guest">
-                                <option value="">2 Adults</option>
-                                <option value="">3 Adults</option>
+                            <label for="guest">Room Category:</label>
+                            <select id="guest" name="category">
+                                @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
+                                <option value="{{$type}}" >{{$type}}</option>
+                                @endforeach
                             </select>
                         </div>
-                        <div class="select-option">
+                        {{-- <div class="select-option">
                             <label for="room">Room:</label>
                             <select id="room">
                                 <option value="">1 Room</option>
                                 <option value="">2 Room</option>
                             </select>
-                        </div>
-                        <button type="submit">Check Availability</button>
+                        </div> --}}
+                        <button type="submit" >Check Availability</button>
                     </form>
                 </div>
             </div>
