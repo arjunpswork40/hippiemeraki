@@ -13,6 +13,7 @@ class FileDestinations
     const BLOG_IMAGES = 'blog/';
     const ROOM_IMAGES = 'room/';
     const PAGES_IMAGES = 'pages/';
+    const ID_PROOF = 'idProof/';
 
 }
 
