@@ -7,6 +7,11 @@
    .fa-edit{
       pointer-events:none;
   }
+
+    .dropdown-item{
+        background-color: #007bff;
+        color: #fff;
+    }
   </style>
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->

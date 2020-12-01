@@ -21,13 +21,13 @@
                         <div class="modal-body text-left">
                             <form  method="POST" action={{ route('room-store') }} role="form" enctype="multipart/form-data" id="newBlogForm">
                                 @csrf
-                                <div class="form-group">
+                                <div class="form-group primary">
                                     <label for="exampleInputEmail1">Category Name</label>
-                                    <input type="text" class="form-control" name="category_name"  aria-describedby="emailHelp" placeholder="Category Name">
-                                    @error('category_name')
-
-                                    <div class="text-danger">{{ $message }}</div>
-                                    @enderror
+                                    <select id="guest" name="category_name" class="btn btn-outline-primary dropdown-item btn-lg">
+                                        @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
+                                            <option value="{{$type}}" {{old('category_name') == $type?'selected':''}}>{{$type}}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <div class="form-group">

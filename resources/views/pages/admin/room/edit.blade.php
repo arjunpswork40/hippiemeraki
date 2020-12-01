@@ -12,12 +12,12 @@
             @csrf
             <div class="card-body">
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Category Name</label>
-                    <input type="text" class="form-control" value="{{$room->category_name}}" name="category_name"  aria-describedby="emailHelp" placeholder="Category Name">
-                    @error('category_name')
-
-                    <div class="text-danger">{{ $message }}</div>
-                    @enderror
+                    <label for="exampleInputEmail1">Category Name</label><br>
+                    <select id="guest" name="category_name" class="btn btn-outline-primary dropdown-item btn-lg">
+                        @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
+                            <option value="{{$type}}" {{old('category_name') == $type?'selected':''}}>{{$type}}</option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="form-group">
