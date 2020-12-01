@@ -20,13 +20,13 @@
                     {{-- @method('put') --}}
                         <div class="check-date">
                             <label for="date-in">Check In:</label>
-                            <input type="date" class="date-input" id="date-in" name="checkIn">
-                            {{-- <i class="icon_calendar"></i> --}}
+                            <input type="text" class="date-input" id="date-in" name="checkIn" onchange="checkEnteredDate()" autocomplete="off">
+                            <i class="icon_calendar"></i>
                         </div>
                         <div class="check-date">
                             <label for="date-out">Check Out:</label>
-                            <input type="date" class="date-input" id="date-out" name="checkOut">
-                            {{-- <i class="icon_calendar"></i> --}}
+                            <input type="text" class="date-input" id="date-out" name="checkOut" onchange="checkEnteredDate()" autocomplete="off">
+                            <i class="icon_calendar"></i>
                         </div>
                         <div class="select-option">
                             <label for="guest">Room Category:</label>
@@ -43,7 +43,7 @@
                                 <option value="">2 Room</option>
                             </select>
                         </div> --}}
-                        <button type="submit" >Check Availability</button>
+                        <button id="checkAvailabilityButton" type="submit" disabled >Select Dates</button>
                     </form>
                 </div>
             </div>
@@ -56,6 +56,38 @@
     </div>
 </section>
 <!-- Hero Section End -->
+<script>
+function checkEnteredDate(){
+    let checkIn=document.querySelector('#date-in').value;
+    let checkOut=document.querySelector('#date-out').value;
+    let checkButton=document.querySelector('#checkAvailabilityButton');
+    console.log(checkOut);
+if(checkIn!=="" && checkOut!="")
+{
+if(checkIn>checkOut){
+
+    swal("Oops !","Check-In 📅 should be smaller than Check-Out date","error");
+    checkButton.setAttribute("disabled", "");
+    checkButton.innerHTML="Select Dates";
+    checkButton.style.cssText=`border: 1px solid #dfa974;
+    color: #dfa974;
+    font-weight: 500;
+`;
+
+}
+else{
+    checkButton.removeAttribute('disabled');
+    checkButton.style.cssText=`border: 3px solid #f98f28;color: #d37c27;
+    font-weight: 700`;
+    checkButton.innerHTML="Check Availability";
+}
+
+}
+
+}
+</script>
+
+
 
 <!-- About Us Section Begin -->
 <section class="aboutus-section spad">

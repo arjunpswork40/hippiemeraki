@@ -41,6 +41,8 @@ class BookingController extends BaseController
        $checkOne = Room_Details::where('category',$request->category)->first();
         // $checkTwo = Booked::where('check_out','>=',$request->check_in)->count();
 
+        // dd($checkOne);
+
         // 'SELECT room_id FROM Bookings WHERE check_in_date<="'.$ci_date.'" AND check_out_date >= "'.$co_date.'") ';
 
 // dd($checkOne);

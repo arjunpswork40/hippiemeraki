@@ -135,7 +135,9 @@
             }
         
         }
-        
+        .booking-form form button{
+            border-radius: 7px;
+        }
         
         
         </style>
@@ -237,6 +239,8 @@
 <script src="{{ asset('/zubis/js/jquery.slicknav.js') }}"></script>
 <script src="{{ asset('/zubis/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('/zubis/js/main.js') }}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 @include('pages.user.includes.toastr')
 </body>
