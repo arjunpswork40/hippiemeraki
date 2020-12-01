@@ -1,6 +1,9 @@
 @extends('layouts.welcomeHome')
-
+@push('styles')
+<link rel="stylesheet" href="{{ asset('/zubis/css/nice-select.css') }}" type="text/css">
+@endpush
 @section('content')
+
 <!-- Hero Section Begin -->
 <section class="hero-section">
     <div class="container">
@@ -32,7 +35,7 @@
                             <label for="guest">Room Category:</label>
                             <select id="guest" name="category">
                                 @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
-                                <option value="{{$type}}" >{{$type}}</option>
+                                <option value="{{$key}}" >{{$type}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -438,3 +441,7 @@ else{
 <!-- Blog Section End -->
 
 @endsection
+
+@push('scripts')
+<script src="{{ asset('/zubis/js/jquery.nice-select.min.js') }}"></script>
+@endpush

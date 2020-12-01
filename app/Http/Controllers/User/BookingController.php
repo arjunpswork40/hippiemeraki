@@ -36,26 +36,38 @@ class BookingController extends BaseController
 
    public function availability(Request $request)
    {
-    // dd($request);
+    
+// dd($request);
+       $checkOne = Room_Details::where('id',$request->category)->first();
+        $checkTwo = Booked::where('category_id',$request->category)
+        ->wheredate('check_out',$request->checkIn)
+        ->sum('booked_room_count');
+    
 
-       $checkOne = Room_Details::where('category',$request->category)->first();
-        // $checkTwo = Booked::where('check_out','>=',$request->check_in)->count();
-
-        // dd($checkOne);
+        $userSelectedDates=['checkIn'=>$request->checkIn,
+        'checkOut'=>$request->checkOut];
+        $userSelectedcategory=$request->category;
+        // dd($userSelectedDates);
+        // dd($checkTwo);
 
         // 'SELECT room_id FROM Bookings WHERE check_in_date<="'.$ci_date.'" AND check_out_date >= "'.$co_date.'") ';
 
 // dd($checkOne);
 
        if ($checkOne->available_room_count != 0){
-           return $this->renderView($this->getView('booking.index'),['checkOne'],'Available Rooms');
+           return $this->renderView($this->getView('booking.index'),compact('checkOne','userSelectedDates','userSelectedcategory'),'Available Rooms');
        }
-       elseif($checkTwo!=null){
-        return $this->renderView($this->getView('booking.index'),['checkTwo'],'Available Rooms');
+       elseif($checkTwo){
+           $checkOne=false;
+        return $this->renderView($this->getView('booking.index'),compact('checkTwo','checkOne','userSelectedDates','userSelectedcategory'),'Available Rooms');
        }
        else{
-          $available = Room_Details::where('available_room_count','>',0)->get();
-          return $this->renderView($this->getView('bookin.index'),compact('checkOne','available'),'Available Rooms');
+        $checkOne=false;
+        $checkTwo-false;
+           $available = Room_Details::where('available_room_count','>',0)->get();
+        // @dd($available);
+         $userSelectedcategory=1;
+          return $this->renderView($this->getView('booking.index'),compact('available','checkOne','checkTwo','userSelectedDates','userSelectedcategory'),'Available Rooms');
        }
    }
 

@@ -25,12 +25,12 @@
     <link rel="stylesheet" href="{{ asset('/zubis/css/flaticon-extra/flaticon-extras.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/flaticon.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/owl.carousel.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/zubis/css/nice-select.css') }}" type="text/css">
+    {{-- <link rel="stylesheet" href="{{ asset('/zubis/css/nice-select.css') }}" type="text/css"> --}}
     <link rel="stylesheet" href="{{ asset('/zubis/css/jquery-ui.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/style.css') }}" type="text/css">
-
+    @stack('styles')
 
     <style>
         body,p,h1,h2,h3,h4,h5,h6,span,div{
@@ -234,7 +234,8 @@
 <script src="{{ asset('/zubis/js/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('/zubis/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/zubis/js/jquery.magnific-popup.min.js') }}"></script>
-<script src="{{ asset('/zubis/js/jquery.nice-select.min.js') }}"></script>
+{{-- <script src="{{ asset('/zubis/js/jquery.nice-select.min.js') }}"></script> --}}
+@stack('scripts')
 <script src="{{ asset('/zubis/js/jquery-ui.min.js') }}"></script>
 <script src="{{ asset('/zubis/js/jquery.slicknav.js') }}"></script>
 <script src="{{ asset('/zubis/js/owl.carousel.min.js') }}"></script>

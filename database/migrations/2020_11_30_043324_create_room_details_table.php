@@ -17,6 +17,7 @@ class CreateRoomDetailsTable extends Migration
         Schema::create('room_details', function (Blueprint $table) {
             $table->id();
             $table->string('category')->nullable();
+            $table->integer('rate')->nullable();
             $table->integer('total_room_count')->nullable();
             $table->integer('available_room_count')->nullable();
             // $table->timestamps();
