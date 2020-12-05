@@ -25,7 +25,7 @@ use UxWeb\SweetAlert\SweetAlert;
 
 class HomeController extends BaseController
 {
-
+    
 
     public function __construct(Request $request)
     {
@@ -48,7 +48,7 @@ class HomeController extends BaseController
 
     }
 
-    public function blogStore(Request $request)
+    public function blogStore(BlogStoreRequest $request)
     {
         $blog = Blog::create([
             'title' => $request['title'],
@@ -83,63 +83,56 @@ class HomeController extends BaseController
     {
 
         // dd($request);
-        $blog=Blog::where('id',$request->blog_id);
+        $blog=Blog::where('id',$request->blog_id)->get();
         // dd($blog);
         $blog->update([
-            'status' => $request->value,
+            'title' => "aa",
 
         ]);
 
 
 
         return response()->json([
-            'status'=>'1',
-            'message'=>'Status was changed succesfully'
+            'status'=>'1'
         ]);
     }
 
-    public function blogUpdate(Request $request,$id)
+    public function blogUpdate(Request $request)
     {
         // dd($request);
-//        if($request->blog_id){
-        $blog = Blog::where('id',$id)->firstOrFail();
+        if($request->blog_id){
+        $blog = Blog::where('id',$request->blog_id)->firstOrFail();
+
         $blog->update([
             'title' => $request['title'],
             'description' => $request['description'],
             'priority' => $request['priority']
         ]);
-
-         if ($request->has('thumbnail_image') && is_file($request->thumbnail_image)){
+        
+        // if ($request->has('thumbnail_image') && is_file($request->thumbnail_image)){
             $banner1 = FileManager::upload(FileDestinations::BLOG_IMAGES,'thumbnail_image',FileManager::FILE_TYPE_IMAGE);
             if ($banner1['status']){
                 $blog->thumbnail_image = $banner1['data']['fileName'];
 
                 $blog->save();
             }
-         }
-         if ($request->has('banner_image') && is_file($request->banner_image)){
+        // }
+        // if ($request->has('banner_image') && is_file($request->banner_image)){
             $banner2 = FileManager::upload(FileDestinations::BLOG_IMAGES,'banner_image',FileManager::FILE_TYPE_IMAGE);
             if ($banner2['status']){
                 $blog->banner_image = $banner2['data']['fileName'];
 
                 $blog->save();
             }
-         }
-        $blogs = Blog::all();
+        // }
+        return back();
 
-        alert()->success('😀 ', 'Updated Successfully');
-
-        return redirect('admin/blog');
-//        return $this->renderView($this->getView('blog.index'), compact('blogs'), 'Blogs');
-
-//        return back();
-
-
-//        return back();
-//        }
-//        else{
-//            return back();
-//        }
+        
+        return back();
+        }
+        else{
+            return back();
+        }
     }
 
     public function blogDelete($id)
@@ -153,10 +146,5 @@ class HomeController extends BaseController
         return back();
     }
 
-    public function blogEdit($id)
-    {
-        $blog = Blog::where('id',$id)->first();
-        return $this->renderView($this->getView('blog.edit'), compact('blog'), 'Blog Edit');
-    }
 
 }
