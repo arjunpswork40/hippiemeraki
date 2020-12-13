@@ -239,7 +239,7 @@
                     console.log(output);
 
                     // let result=JSON.parse(output);
-console.log("result is",output);
+                    console.log("result is",output);
                     if(output['status']=="1"){
                         swal("Status Changed!",output['message'], "success",{
                             buttons: false,

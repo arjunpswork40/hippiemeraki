@@ -1,7 +1,7 @@
 @extends('layouts.welcomeHome')
 
 @section('content')
-
+{{-- <span class="b-tag">{{$news->title}}</span> --}}
     <!-- Blog Section Begin -->
     <section class="blog-section blog-page spad">
         <div class="container">
@@ -10,12 +10,32 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="blog-item set-bg" data-setbg="{{ \App\Http\Helpers\PageHelper::getImagePath($news->thumbnail_image) }}">
                         <div class="bi-text">
-                            <span class="b-tag">{{$news->title}}</span>
-                            <h4><a href="{{ route('news.blog-details',$news->id) }}">Tremblant In Canada</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i>{{$date}}</div>
+                            {{-- <span class="b-tag">{{$news->title}}</span> --}}
+                            <h4><a href="{{ route('news.blog-details',$news->id) }}"  >{{$news->title}}</a></h4>
+                            {{-- <div class="b-time"><i class="icon_clock_alt"></i>{{$date}}</div> --}}
                         </div>
                     </div>
                 </div>
+                <style>
+                    .blog-item .bi-text {
+                    
+                    /* background: #ffffffa1;
+                     */
+                     -webkit-backdrop-filter: blur(10px);
+                    backdrop-filter: blur(10px);
+                    background-color: rgb(201 196 196 / 17%);
+
+                    font-weight: 600;
+                    }
+                    .blog-item .bi-text h4 a{
+                        color: #000;
+                        font-size: 22px;
+                        font-weight: 600;
+                    }
+
+                </style>
+
+
                 @endforeach
 
                 {{--                <div class="col-lg-4 col-md-6">--}}
@@ -90,11 +110,11 @@
 {{--                        </div>--}}
 {{--                    </div>--}}
 {{--                </div>--}}
-                <div class="col-lg-12">
+                {{-- <div class="col-lg-12">
                     <div class="load-more">
                         <a href="#" class="primary-btn">Load More</a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>

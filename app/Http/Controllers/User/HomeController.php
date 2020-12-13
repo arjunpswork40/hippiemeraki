@@ -37,8 +37,9 @@ class HomeController extends BaseController
      */
     public function index()
     {
+        $paymentStatus="waiting";
 //        $pageData = $this->_pageService->getPage(PageConstant::HOME_PAGE);
-        return $this->renderView($this->getView('home.welcome'), [], 'Home');
+        return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
     }
 
     /**

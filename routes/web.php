@@ -31,7 +31,11 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
     });
 
     Route::post('/checkAvailability','BookingController@availability')->name('checkAvailability');
-
+    Route::post('/payement-initiation','BookingController@payementInitiation')->name('payment-initiation');
+    Route::post('/calculate-room-amount','BookingController@calculateRoomAmount')->name('calculateRoomAmount');
+    Route::post('/payment-response', 'BookingController@paymentConfirmation')->name('payment-confirmation');
+    Route::get('/payment-failed', 'BookingController@paymentfailed')->name('payment-failed');
+    Route::post('/payment-confirm', 'BookingController@bookingConfirmingView')->name('payment-confirming-view');
 
     });
 
@@ -58,8 +62,7 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
             Route::get('/admin/room/update/{id}','RoomController@roomEdit')->name('room-edit');
             Route::post('/admin/room/store/{id}', 'RoomController@roomUpdate')->name('room-update');
 
-
-
+            
 
 
 

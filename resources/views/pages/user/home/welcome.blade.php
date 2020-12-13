@@ -5,6 +5,10 @@
 @section('content')
 
 <!-- Hero Section Begin -->
+
+
+
+
 <section class="hero-section">
     <div class="container">
         <div class="row">
@@ -444,4 +448,32 @@ else{
 
 @push('scripts')
 <script src="{{ asset('/zubis/js/jquery.nice-select.min.js') }}"></script>
+@endpush
+
+@push('payment')
+
+
+
+
+@if($paymentStatus!=="waiting"){
+
+@if($paymentStatus=="success"){
+    <script>
+         
+        swal("Good Job","Payment Successfull","success").then(()=>{
+            window.location.replace('/');
+        }
+        );
+    </script>
+}
+@elseif ($paymentStatus=="failed"){
+    <script>
+        swal("Error","Payment Failed","error");
+
+    </script>
+}
+@endif
+
+}
+@endif
 @endpush

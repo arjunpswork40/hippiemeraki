@@ -38,7 +38,7 @@
 
                     <p>
 {{--                        {{ ProfileHelper::getFullName(AuthConstants::GUARD_ADMIN) }}--}}
-                        <small>Member since 2019</small>
+                        <small>Member since 2020</small>
                     </p>
                 </li>
                 <!-- Menu Footer-->
