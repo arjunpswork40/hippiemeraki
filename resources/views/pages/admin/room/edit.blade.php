@@ -21,6 +21,14 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="exampleFormControlFile1">Rate</label>
+                    <input type="text" class="form-control-file" name="rate">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Total Rooms</label>
+                    <input type="text" class="form-control-file" name="total_rooms">
+                </div>
+                <div class="form-group">
                     <label for="exampleFormControlFile1">Thumbnail Image</label>
                     <input type="file" class="form-control-file" name="thumbnail_image" accept="image/*" >
                     @error('thumbnail_image')

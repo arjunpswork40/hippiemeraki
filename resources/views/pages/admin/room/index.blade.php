@@ -3,10 +3,10 @@
 @section('content')
     <div class="card">
         <div class="card-header text-right">
-            <h3 class="card-title">List of Rooms</h3>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                Add Room Details
-            </button>
+{{--            <h3 class="card-title">List of Rooms</h3>--}}
+{{--            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">--}}
+{{--                Add Room Details--}}
+{{--            </button>--}}
 
             <!--New  Modal -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -36,6 +36,14 @@
                                     @error('thumbnail_image')
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Rate</label>
+                                    <input type="text" class="form-control-file" name="rate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Total Rooms</label>
+                                    <input type="text" class="form-control-file" name="total_rooms">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -112,6 +120,9 @@
                     <th>id</th>
                     <th>Thumbnail Image</th>
                     <th>Category Name</th>
+                    <th>Rate</th>
+                    <th>Total Rooms</th>
+                    <th>Online Bookable Rooms</th>
                     <th>Status</th>
                     <th>Manage</th>
                 </tr>
@@ -124,7 +135,10 @@
                         </td>
                         <td><img src="{{ \App\Http\Helpers\Core\FileManager::getRoomsImagePath($room->thumbnail_image) }}" style="width: 25%;display: block">
                         </td>
-                        <td>{{ $room->category_name }}</td>
+                        <td>{{ $room->category}}</td>
+                        <td>{{ $room->rate}}</td>
+                        <td>{{ $room->total_room_count}}</td>
+                        <td>{{ $room->available_room_count}}</td>
                         <td>
 
                             <div class="status-box">
@@ -154,6 +168,9 @@
                     <th>id</th>
                     <th>Thumbnail Image</th>
                     <th>Category Name</th>
+                    <th>Rate</th>
+                    <th>Total Rooms</th>
+                    <th>Online Bookable Rooms</th>
                     <th>Status</th>
                     <th>Manage</th>
                 </tr>

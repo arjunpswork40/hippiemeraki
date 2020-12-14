@@ -14,7 +14,9 @@ class Room_Details extends Model
     protected $fillable = [
         'category',
         'total_room_count',
-        'available_room_count'
+        'available_room_count',
+        'thumbnail_image',
+        'status',
     ];
 
     public $timestamps = false;

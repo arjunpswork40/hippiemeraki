@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-    
+
                 @elseif($checkTwo)
                 <div class="col-lg-4 col-md-6">
                     <div class="room-item">
@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-            
+
                 @else
                 @foreach($available as $available_room)
                 <div class="col-lg-4 col-md-6">
@@ -119,10 +119,10 @@
                 </div>
                @endforeach
                 @endif
-               
+
                 <div class="col-lg-12">
                     <div class="bookingForm">
-                        <form method="POST" action="{{ route('payment-confirming-view')}}">
+                        <form method="POST" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}">
                             @csrf
 
                             <input type="number" class="totalAmount" name="totalAmount">
@@ -136,16 +136,16 @@
                                 <option  value="{{$key}}" >{{$type}}</option>
                                 @endif
                                 @endforeach
-                            </select> 
+                            </select>
                             @else
                             <select  name="category" class="form-control btn btn-lg categoryId"  style="display: none">
                                 @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
                                 {{-- @dd($userSelectedcategory) --}}
                                 <option  value="{{$key}}" {{$userSelectedcategory == $key?'selected':''}} >{{$type}}</option>
                                 @endforeach
-                            </select> 
-                              @endif  
-                                                    
+                            </select>
+                              @endif
+
                             </div>
                             <div class="form-group">
                                 <label >Check In</label>
@@ -158,29 +158,44 @@
                             <div class="form-group">
                               <label >Guest Count</label>
                               <input type="number" name="guestCount" class="form-control" >
+                                @error('guestCount')
+                                <span id="guestCount-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <label >Room Count</label>
                                 <input type="number" name="roomCount" class="form-control roomCount"  >
+                                @error('roomCount')
+                                <span id="roomCount-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
+                                @enderror
                               </div>
-                        
+
                               <div class="form-group">
                                 <label >Your Name</label>
                                 <input type="text" name="username" class="form-control" >
+                                  @error('username')
+                                  <span id="username-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
+                                  @enderror
                               </div>
                               <div class="form-group">
                                 <label >Your Phone Number</label>
                                 <input type="number" name="contactNumber" class="form-control" >
+                                  @error('contactNumber')
+                                  <span id="contactNumber-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
+                                  @enderror
                               </div>
                               <div class="form-group">
-                                <label ><E-></E->mail</label>
+                                <label >E-mail</label>
                                 <input type="email" name="email" class="form-control" >
+
                               </div>
                               <div class="form-group">
                                 <label >Id Proof</label>
-                                <input type="file" name="idProof" class="form-control" accept="image/*,.pdf" >
+                                <input type="file" name="idProof" class="form-control" accept="image/*,.pdf" required>
                               </div>
-                            
+                              @error('idProof')
+                              <span id="email-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
+                             @enderror
                             <button type="submit" class="btn btn-default">Submit</button>
                           </form>
 
@@ -208,8 +223,8 @@
 
 <script>
 $(document).ready(function(){
-  
-  
+
+
 console.log("working function");
     $(".roomCount").change( function() {
         let amountInfo=$('#totalAmount');
@@ -261,11 +276,11 @@ console.log("working function");
 
             });
         });
-  
+
 
 
 });
 
 </script>
- 
+
 @endpush

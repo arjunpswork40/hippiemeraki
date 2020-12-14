@@ -6,6 +6,7 @@ use App\Http\Constants\FileDestinations;
 use App\Http\Helpers\Core\FileManager;
 
 use App\Models\Room;
+use App\Models\Room_Details;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -17,7 +18,7 @@ class RoomController extends BaseController
 
     public function index()
     {
-        $rooms = Room::all();
+        $rooms = Room_Details::all();
 
         return $this->renderView($this->getView('admin.room.index'), compact('rooms'), 'Rooms');
 
@@ -27,7 +28,7 @@ class RoomController extends BaseController
     {
 
         // dd($request);
-        $blog=Room::where('id',$request->room_id);
+        $blog=Room_Details::where('id',$request->room_id);
         // dd($blog);
         $blog->update([
             'status' => $request->value,
@@ -44,7 +45,7 @@ class RoomController extends BaseController
 
     public function roomStore(Request $request)
     {
-        $room = Room::create([
+        $room = Room_Details::create([
             'category_name' => $request['category_name'],
         ]);
 
@@ -64,7 +65,7 @@ class RoomController extends BaseController
 
     public function roomDelete($id)
     {
-        $room = Room::find($id);
+        $room = Room_Details::find($id);
 
         $room->delete();
         alert()->success(' 🗑', 'Deleted Successfully');
@@ -75,15 +76,17 @@ class RoomController extends BaseController
 
     public function roomEdit($id)
     {
-        $room = Room::where('id',$id)->first();
+        $room = Room_Details::where('id',$id)->first();
         return $this->renderView($this->getView('admin.room.edit'), compact('room'), 'Room Edit');
     }
 
     public function roomUpdate(Request $request, $id)
     {
-        $room = Room::where('id',$id)->firstOrFail();
+        $room = Room_Details::where('id',$id)->firstOrFail();
         $room->update([
             'category_name' => $request['category_name'],
+            'rate' => $request['rate'],
+            'total_room_count' => $request['total_rooms'],
         ]);
 
         if ($request->has('thumbnail_image') && is_file($request->thumbnail_image)){
