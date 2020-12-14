@@ -1,6 +1,22 @@
 @extends('layouts.welcomeHome')
 
 @section('content')
+<style>
+.bookingForm{
+    display:flex;
+    justify-content: space-around;
+}
+
+.bookingAmountDetails{
+    border: 1px solid #000;
+    height: fit-content;
+    padding: 16px;
+
+}
+    </style>
+
+
+
     <!-- Rooms Section Begin -->
     <section class="rooms-section spad">
         <div class="container">
@@ -105,49 +121,79 @@
                 @endif
                
                 <div class="col-lg-12">
-                    <div class="room-pagination">
-                        <form >
+                    <div class="bookingForm">
+                        <form method="POST" action="{{ route('payment-confirming-view')}}">
+                            @csrf
+
+                            <input type="number" class="totalAmount" name="totalAmount">
                             <div class="form-group">
                               <label >Category</label>
-                              <select  name="scategory" class="form-control btn btn-lg" style="display: block">
+                              @if ($available)
+                              <select  name="category" class="form-control btn btn-lg categoryId" style="display: block">
+                                @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
+                                {{-- @dd($userSelectedcategory) --}}
+                                @if($key != $userSelectedcategory)
+                                <option  value="{{$key}}" >{{$type}}</option>
+                                @endif
+                                @endforeach
+                            </select> 
+                            @else
+                            <select  name="category" class="form-control btn btn-lg categoryId"  style="display: none">
                                 @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
                                 {{-- @dd($userSelectedcategory) --}}
                                 <option  value="{{$key}}" {{$userSelectedcategory == $key?'selected':''}} >{{$type}}</option>
                                 @endforeach
-                            </select>                        
+                            </select> 
+                              @endif  
+                                                    
                             </div>
                             <div class="form-group">
                                 <label >Check In</label>
-                            <input type="text" class="form-control" value="{{$userSelectedDates['checkIn']}}" >
+                            <input type="text" name="checkIn" class="form-control" readonly value="{{$userSelectedDates['checkIn']}}" >
                               </div>
                               <div class="form-group">
                                 <label >Check Out</label>
-                                <input type="text" class="form-control" value="{{$userSelectedDates['checkOut']}}">
+                                <input type="text" name="checkOut" class="form-control" readonly value="{{$userSelectedDates['checkOut']}}">
                               </div>
                             <div class="form-group">
                               <label >Guest Count</label>
-                              <input type="number" class="form-control" >
+                              <input type="number" name="guestCount" class="form-control" >
                             </div>
                             <div class="form-group">
                                 <label >Room Count</label>
-                                <input type="number" class="form-control" >
+                                <input type="number" name="roomCount" class="form-control roomCount"  >
                               </div>
                         
                               <div class="form-group">
                                 <label >Your Name</label>
-                                <input type="text" class="form-control" >
+                                <input type="text" name="username" class="form-control" >
                               </div>
                               <div class="form-group">
                                 <label >Your Phone Number</label>
-                                <input type="number" class="form-control" >
+                                <input type="number" name="contactNumber" class="form-control" >
+                              </div>
+                              <div class="form-group">
+                                <label ><E-></E->mail</label>
+                                <input type="email" name="email" class="form-control" >
                               </div>
                               <div class="form-group">
                                 <label >Id Proof</label>
-                                <input type="file" class="form-control" accept="image/*,.pdf" >
+                                <input type="file" name="idProof" class="form-control" accept="image/*,.pdf" >
                               </div>
                             
                             <button type="submit" class="btn btn-default">Submit</button>
                           </form>
+
+
+<div class="bookingAmuountDetails">
+    <h3>Total Amount</h3>
+    <h4 id="totalAmount"> 458</h4>
+</div>
+
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -158,4 +204,68 @@
 
 
 @endsection
+@push('scripts')
 
+<script>
+$(document).ready(function(){
+  
+  
+console.log("working function");
+    $(".roomCount").change( function() {
+        let amountInfo=$('#totalAmount');
+        let categoryId=document.querySelector('.categoryId').value;
+        let roomCount=document.querySelector('.roomCount').value;
+        console.log(categoryId,roomCount);
+
+    $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+            $.ajax({
+                url: '{{route("calculateRoomAmount")}}',
+                method: 'POST',
+                data: {'categoryId':categoryId,'roomCount':roomCount},
+                // beforeSend: ()=>{
+                //   loaderselector.fadeIn();
+
+                // },
+                success: (output)=>{
+                    // loaderselector.fadeOut();
+                    // console.log(output);
+
+                    // let result=JSON.parse(output);
+                    console.log(output);
+                    amountInfo.html(output['amount']);
+                    $('.totalAmount').val(output['amount']);
+                    // if(output['status']=="1"){
+                    //     swal("Status Changed!",output['message'], "success",{
+                    //         buttons: false,
+                    //         timer: 1500,
+                    //     });
+                    //     window.location.reload();
+
+                    // }else if(output[0]=="error"){
+                    //     swal("Failed!",output[1], "error").then(()=>{callback();});
+
+                    // }else{
+                    //     // loaderselector.fadeOut();
+
+                    // }
+
+                },
+                error:(err)=>{
+                    swal("Failed!","Oops Something Went Wrong", "error");
+
+                }
+
+            });
+        });
+  
+
+
+});
+
+</script>
+ 
+@endpush

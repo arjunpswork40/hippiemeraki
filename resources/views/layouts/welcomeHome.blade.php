@@ -3,13 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Zubis INN Template">
+    <meta name="description" content="Zubis INN ">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <meta name="keywords" content="Zubis INN, unica, creative, html">
+    <meta name="keywords" content="Zubis INN, unica, Hotel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Zubis INN | Template</title>
+    <title>Zubis INN </title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
@@ -231,7 +232,9 @@
 <!-- Search model end -->
 
 <!-- Js Plugins -->
-<script src="{{ asset('/zubis/js/jquery-3.3.1.min.js') }}"></script>
+{{-- <script src="{{ asset('/zubis/js/jquery-3.3.1.min.js') }}"></script> --}}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script src="{{ asset('/zubis/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('/zubis/js/jquery.magnific-popup.min.js') }}"></script>
 {{-- <script src="{{ asset('/zubis/js/jquery.nice-select.min.js') }}"></script> --}}
@@ -242,7 +245,7 @@
 <script src="{{ asset('/zubis/js/main.js') }}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-
+@stack('payment')
 @include('pages.user.includes.toastr')
 </body>
 

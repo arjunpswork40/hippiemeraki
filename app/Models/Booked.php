@@ -16,11 +16,17 @@ class Booked extends Model
         'check_out',
         'guest_count',
         'booked_room_count',
-        'category',
+        'category_id',
+        'totalPrice',
+        'email',
         'guest_name',
         'guest_phone_number',
         'guest_permanent_address',
-        'guest_ID_proof'
+        'guest_ID_proof',
+        'status',
+        'order_id',
+        'receipt_id'
+        
     ];
 
     public $timestamps = false;
