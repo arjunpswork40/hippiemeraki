@@ -128,7 +128,11 @@ class BookingController extends BaseController
 
 
 
-dd($request);
+       $status = Booked::where('receipt_id',$request->receipt_id)->select('status')->first();
+    if($status->status === 3)
+    {
+
+//dd($request);
 
   // Create an object of razorpay
     $api = new Api($this->razorpayId, $this->razorpayKey);
@@ -136,26 +140,13 @@ dd($request);
 
 
     $order = $api->order->create(array(
-        'receipt' => $receiptId,
+        'receipt' => $request->receipt_id,
         'amount' => $request->all()['totalAmount'] * 100,
         'currency' => 'INR'
         )
       );
 
-    //   save data to db
-    // Booked::create([
-    //     'check_in' => $request->checkIn,
-    //     'check_out' => $request->checkOut,
-    //     'guest_count' => $request->guestCount,
-    //     'guest_name' => $request->username,
-    //     'booked_room_count' => $request->roomCount,
-    //     'guest_phone_number' => $request->contactNumber,
-    //     'email' => $request->email,
-    //     'guest_ID_proof' =>$request->idProof,
-    //     'order_id' => $order['id'],
-    //     'receipt_id' => $receiptId,
-    //     'category_id' => $request->category,
-    // ]);
+
 
 
 
@@ -164,6 +155,7 @@ dd($request);
 
     $response=[
         'orderId'=>$order['id'],
+        'receipt_id' => $request->receipt_id,
         'razorpayId'=>$this->razorpayId,
         'amount'=>$request->all()['totalAmount']*100,
         'name'=>$request->all()['username'],
@@ -175,10 +167,10 @@ dd($request);
     ];
 
     return view('pages.user.booking.payment.payment',compact('response'));
-    //    }
-    //    else{
-    //        return view('home.welcome');
-    //    }
+        }
+        else{
+            return view('pages.user.home.welcome');
+        }
 
 
 
@@ -244,7 +236,7 @@ public function paymentfailed(){
 
 public function bookingConfirmingView(RoomBookingRequest $request)
 {
-    dd($request);
+//    dd($request);
     $amount = Room_Details::where('id',$request->category)->select('rate')->first();
 
     $totalAmount = (int)$request->roomCount *(float)$amount->rate;
@@ -252,6 +244,7 @@ public function bookingConfirmingView(RoomBookingRequest $request)
     // Generate random receipt id
     $receiptId = Str::random(20);
     //   save data to db
+//    dd($request->idProof);
     $data = Booked::create([
        'check_in' => $request->checkIn,
        'check_out' => $request->checkOut,
@@ -261,10 +254,20 @@ public function bookingConfirmingView(RoomBookingRequest $request)
        'totalPrice' => $totalAmount,
        'guest_phone_number' => $request->contactNumber,
        'email' => $request->email,
-       'guest_ID_proof' =>$request->idProof,
        'receipt_id' => $receiptId,
        'category_id' => $request->category,
     ]);
+
+
+    if ($request->has('idProof') && is_file($request->idProof)){
+        $idProof = FileManager::upload(FileDestinations::ID_PROOF,'idProof',FileManager::FILE_TYPE_IMAGE);
+        if ($idProof['status']){
+            $data->guest_ID_proof = $idProof['data']['fileName'];
+
+            $data->save();
+        }
+    }
+
 
     $categoryName = Room_Details::where('id',$request->category)->select('category')->first();
 

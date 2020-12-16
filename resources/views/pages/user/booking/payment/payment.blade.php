@@ -16,7 +16,7 @@ var options = {
         document.querySelector('#rzpSignature').value=response.razorpay_signature;
 
         document.getElementById('rzpResponseSubmit').click();
- 
+
         // alert(response.razorpay_payment_id);
         // alert(response.razorpay_order_id);
         // alert(response.razorpay_signature)
@@ -57,13 +57,14 @@ document.getElementById('rzp-button1').onclick = function(e){
 
 <form action="{{ route('payment-confirmation') }}" method="POST"  enctype="multipart/form-data"  >
                        @csrf
-                       <input type="text" name="rzpPaymentId" id="rzpPaymentId">
+
+    <input type="text" name="receipt_id"  value={{$response['receipt_id']}}>
+    <input type="text" name="rzpPaymentId" id="rzpPaymentId">
                        <input type="text" name="rzpOrderId" id="rzpOrderId">
                        <input type="text" name="rzpSignature" id="rzpSignature">
-                   
-                      
-     
-                    
+
+
+
+
                      <button type="submit" class="btn btn-primary " id="rzpResponseSubmit" >Update</button>
-              </div>
             </form>

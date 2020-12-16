@@ -12,7 +12,7 @@
     height: fit-content;
     padding: 16px;
 
-}           
+}
     </style>
 
 
@@ -21,7 +21,7 @@
     <section class="rooms-section spad">
         <div class="container">
             <div class="row">
-             
+
                 <div class="col-lg-4 col-md-6">
                     <div class="room-item">
                         <img src="{{ asset('/zubis/img/room/room-1.jpg') }}" alt="">
@@ -41,7 +41,7 @@
                                 <tr>
                                     <td class="r-o">Check Out:</td>
                                     <td>{{$data->check_out}}</td>
-                                </tr>   
+                                </tr>
                                 <tr>
                                     <td class="r-o">Total Price:</td>
                                     <td>{{$data->totalPrice}}</td>
@@ -52,22 +52,23 @@
                         </div>
                     </div>
                 </div>
-    
-                 
-          
-               
+
+
+
+
                 <div class="col-lg-12">
                     <div class="bookingForm">
                         <form method="POST" action="{{ route('payment-initiation')}}">
                             @csrf
 
                             <input type="number" class="totalAmount" name="totalAmount" value="{{ $data->totalPrice}}">
-                            <input type="text" class="totalAmount" name="username" value="{{$data->guest_name}}">
-                            <input type="text" class="totalAmount" name="email" value="{{$data->email}}">
-                            <input type="number" class="totalAmount" name="contactNumber" value="{{$data->guest_phone_number}}">
+                            <input type="text" class="username" name="username" value="{{$data->guest_name}}">
+                            <input type="text" class="email" name="email" value="{{$data->email}}">
+                            <input type="text" class="receipt_id" name="receipt_id" value="{{$data->receipt_id}}">
+                            <input type="number" class="contactNumber" name="contactNumber" value="{{$data->guest_phone_number}}">
                             {{-- <input type="number" class="totalAmount" name="totalAmount"> --}}
-                           
-                            
+
+
                             <button type="submit" class="btn btn-default">Submit</button>
                           </form>
 
@@ -95,8 +96,8 @@
 
 <script>
 $(document).ready(function(){
-  
-  
+
+
 console.log("working function");
     $(".roomCount").change( function() {
         let amountInfo=$('#totalAmount');
@@ -148,11 +149,11 @@ console.log("working function");
 
             });
         });
-  
+
 
 
 });
 
 </script>
- 
+
 @endpush
