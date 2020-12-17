@@ -27,7 +27,7 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
         Route::get('/news','HomeController@blog')->name('blog');
         Route::get('/news/detais/{newsId}','HomeController@details')->name('blog-details');
 
-        
+
     });
 
     Route::post('/checkAvailability','BookingController@availability')->name('checkAvailability');
@@ -64,7 +64,7 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
             Route::get('/admin/room/update/{id}','RoomController@roomEdit')->name('room-edit');
             Route::post('/admin/room/store/{id}', 'RoomController@roomUpdate')->name('room-update');
 
-            
+
 
 
 

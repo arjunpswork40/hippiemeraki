@@ -124,7 +124,7 @@
                     <div class="bookingForm">
                         <form method="POST" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}">
                             @csrf
-
+                            {{ method_field('POST') }}
                             <input type="number" class="totalAmount" name="totalAmount">
                             <div class="form-group">
                               <label >Category</label>
@@ -215,8 +215,15 @@
         </div>
     </section>
     <!-- Rooms Section End -->
-
-
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 @endsection
 @push('scripts')

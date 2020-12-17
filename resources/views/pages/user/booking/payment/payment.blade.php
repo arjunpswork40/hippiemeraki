@@ -57,8 +57,9 @@ document.getElementById('rzp-button1').onclick = function(e){
 
 <form action="{{ route('payment-confirmation') }}" method="POST"  enctype="multipart/form-data"  >
                        @csrf
-
     <input type="text" name="receipt_id"  value={{$response['receipt_id']}}>
+    <input type="text" name="category_id"  value={{$response['category_id']}}>
+    <input type="text" name="booked_room_count"  value={{$response['booked_room_count']}}>
     <input type="text" name="rzpPaymentId" id="rzpPaymentId">
                        <input type="text" name="rzpOrderId" id="rzpOrderId">
                        <input type="text" name="rzpSignature" id="rzpSignature">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Constants\FileDestinations;
 use App\Http\Helpers\Core\FileManager;
+use App\Http\Requests\BookingConformingFormRequest;
 use App\Http\Requests\RoomBookingRequest;
 use App\Models\Booked;
 use App\Models\Guest;
@@ -127,8 +128,7 @@ class BookingController extends BaseController
     //   $receiptId = Str::random(20);
 
 
-
-       $status = Booked::where('receipt_id',$request->receipt_id)->select('status')->first();
+       $status = Booked::where('receipt_id',$request->receipt_id)->select('status','booked_room_count','category_id')->first();
     if($status->status === 3)
     {
 
@@ -162,6 +162,8 @@ class BookingController extends BaseController
         'currency'=>'INR',
         'email'=>$request->all()['email'],
         'contactNumber'=>$request->all()['contactNumber'],
+        'category_id' => $status->category_id,
+        'booked_room_count' => $status->booked_room_count,
         'address'=>"Wayanad",
         'description'=>'Wayanad'
     ];
@@ -169,7 +171,11 @@ class BookingController extends BaseController
     return view('pages.user.booking.payment.payment',compact('response'));
         }
         else{
-            return view('pages.user.home.welcome');
+            $paymentStatus="waiting";
+
+//            return view('pages.user.home.welcome');
+            return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
+
         }
 
 
@@ -178,34 +184,43 @@ class BookingController extends BaseController
 
    public function paymentConfirmation(Request $request)
    {
-    //    dd($request);
+       $status = Booked::where('receipt_id',$request->receipt_id)->select('status','booked_room_count','category_id')->first();
+       if($status->status === 3) {
+           $signatureStatus = $this->SignatureVerify(
+               $request->all()['rzpSignature'],
+               $request->all()['rzpPaymentId'],
+               $request->all()['rzpOrderId']
+           );
 
-      $signatureStatus = $this->SignatureVerify(
-            $request->all()['rzpSignature'],
-            $request->all()['rzpPaymentId'],
-            $request->all()['rzpOrderId']
-      );
 
+           if ($signatureStatus == true) {
+               // return view('payment-success-page');
+               $booked = Booked::where('receipt_id', $request->receipt_id);
+               $booked->update([
+                   'status' => 1,
+                   'rzp_payment_id' => $request->rzpPaymentId,
+               ]);
+               $roomCount = Room_Details::where('id', $request->category_id)->first();
+               $roomCount->update([
+                   'available_room_count' => $roomCount->available_room_count - $request->booked_room_count,
+               ]);
+               $paymentStatus = "success";
+               // alert()->success('😀 ', 'Payed Successfully');
+               return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
 
-      if($signatureStatus==true){
+           } else {
+               $paymentStatus = "failed";
 
-        // return view('payment-success-page');
-        $booked = Booked::where('order_id',$request->rzpOrderId);
-        $booked->update([
-            'status' =>1,
-            'rzp_payment_id' => $request->rzpPaymentId,
-        ]);
-        $paymentStatus = "success";
-        // alert()->success('😀 ', 'Payed Successfully');
-        return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
+               return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
+           }
+       }
+       else
+       {
+           $paymentStatus="waiting";
+//           return view('pages.user.home.welcome');
+           return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
 
-      }
-      else{
-        $paymentStatus = "failed";
-
-        return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
-      }
-
+       }
 
 
    }
@@ -234,7 +249,7 @@ public function paymentfailed(){
     return $this->renderView($this->getView('payment_status.paymentFailed'), [], 'Home');
 }
 
-public function bookingConfirmingView(RoomBookingRequest $request)
+public function bookingConfirmingView(Request $request)
 {
 //    dd($request);
     $amount = Room_Details::where('id',$request->category)->select('rate')->first();

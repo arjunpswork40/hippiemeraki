@@ -27,5 +27,13 @@ class RoomBookingRequest extends FormRequest
 //            'email' => 'required|email',
             'idProof' => 'file'
         ];
+
+    }
+    public function messages()
+    {
+        return [
+            'contactNumber.reuired' => 'A nice title is required for the post.',
+            'username.required' => 'Please add content for the post.',
+        ];
     }
 }

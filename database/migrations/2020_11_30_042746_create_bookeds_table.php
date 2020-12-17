@@ -21,7 +21,7 @@ class CreateBookedsTable extends Migration
             $table->integer('guest_count')->nullable();
             $table->integer('booked_room_count')->nullable();
             $table->string('guest_name')->nullable();
-            $table->integer('guest_phone_number')->nullable();
+            $table->string('guest_phone_number')->nullable();
             $table->text('guest_permanent_address')->nullable();
             $table->string('guest_ID_proof')->nullable();
             $table->tinyInteger('status')->nullable()->default(3)->comment('1:success; 3:pending; 4:failed;');
