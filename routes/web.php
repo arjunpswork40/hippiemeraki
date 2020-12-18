@@ -46,7 +46,7 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
 //Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'as' => 'admin.'], function() {
 
         Route::group([ 'namespace' => 'App\Http\Controllers\Admin','middleware' => ['auth:sanctum','verified']], function () {
-            Route::get('/admin', 'HomeController@booking')->name('dashboard');
+            Route::get('/admin', 'HomeController@bookingManagementTable')->name('dashboard');
             Route::get('/admin/blog', 'HomeController@blog')->name('blog');
             Route::post('/admin/blog/store', 'HomeController@blogStore')->name('blog-store');
             Route::post('/admin/blog/store/status', 'HomeController@statusUpdate')->name('status-update');
@@ -63,6 +63,7 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
             Route::get('/admin/room/delete/{id}', 'RoomController@roomDelete')->name('room-delete');
             Route::get('/admin/room/update/{id}','RoomController@roomEdit')->name('room-edit');
             Route::post('/admin/room/store/{id}', 'RoomController@roomUpdate')->name('room-update');
+            Route::get('/admin/booking/{booked:id}','HomeController@guestDetailsManagement')->name('guestDetailsManagement');
 
 
 

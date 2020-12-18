@@ -10,6 +10,7 @@ use App\Http\Helpers\Core\FileManager;
 use App\Http\Models\Service;
 use App\Http\Models\User;
 use App\Models\Blog;
+use App\Models\Booked;
 use App\Services\AdminHomePageService;
 use Illuminate\Filesystem\FilesystemManager;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ use UxWeb\SweetAlert\SweetAlert;
 
 class HomeController extends BaseController
 {
-    
+
 
     public function __construct(Request $request)
     {
@@ -34,10 +35,17 @@ class HomeController extends BaseController
         $this->addBaseView('admin');
     }
 
-    public function booking()
+    public function bookingManagementTable()
     {
-        return $this->renderView($this->getView('booking.index'), [], 'Booking');
+        $bookings = Booked::all();
+        return $this->renderView($this->getView('booking.index'), compact('bookings'), 'Booking');
 
+    }
+
+    public function guestDetailsManagement(Booked $booked)
+    {
+        $details = Booked::where('id',$booked->id)->first();
+        return $this->renderView($this->getView('booking.management'), compact('details'), 'Details');
     }
 
     public function blog()
@@ -108,7 +116,7 @@ class HomeController extends BaseController
             'description' => $request['description'],
             'priority' => $request['priority']
         ]);
-        
+
         // if ($request->has('thumbnail_image') && is_file($request->thumbnail_image)){
             $banner1 = FileManager::upload(FileDestinations::BLOG_IMAGES,'thumbnail_image',FileManager::FILE_TYPE_IMAGE);
             if ($banner1['status']){
@@ -127,7 +135,7 @@ class HomeController extends BaseController
         // }
         return back();
 
-        
+
         return back();
         }
         else{

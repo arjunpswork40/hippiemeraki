@@ -341,4 +341,15 @@ class FileManager
         return $file;
     }
 
+    public static function getIDImagePath($imageName)
+    {
+        $file = asset('zubis/img/logo.png');
+        if (null != $imageName){
+            if (FileManager::checkFileExist($imageName,FileDestinations::ID_PROOF)){
+                $file = FileManager::getFileUrl($imageName,FileDestinations::ID_PROOF);
+            }
+        }
+        return $file;
+    }
+
 }
