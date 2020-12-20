@@ -64,6 +64,7 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
             Route::get('/admin/room/update/{id}','RoomController@roomEdit')->name('room-edit');
             Route::post('/admin/room/store/{id}', 'RoomController@roomUpdate')->name('room-update');
             Route::get('/admin/booking/{booked:id}','HomeController@guestDetailsManagement')->name('guestDetailsManagement');
+            Route::post('/admin/booking/store/status', 'HomeController@checkInOutStatusUpdate')->name('checkinout-status-update');
 
 
 

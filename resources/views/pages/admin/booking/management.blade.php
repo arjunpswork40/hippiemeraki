@@ -48,9 +48,13 @@
 
         <tr>
             <th class="thwidth">Status </th>
-            <td class=" ">
+            <td class="status-box">
 
-
+                <div  class="btn-group status-toggle">
+                    <a class="btn btn-primary btn-sm {{ $details->room_status ==3? "active":"inActive"}}" data-toggle="{{ $details->id }}" data-status="3">Pending</a>
+                    <a class="btn btn-primary btn-sm {{ $details->room_status ==1? "active":"inActive"}}" data-toggle="{{ $details->id }}" data-status="1">CheckIn</a>
+                    <a class="btn btn-primary btn-sm {{ $details->room_status ==4? "active":"inActive"}}" data-toggle="{{ $details->id }}" data-status="4">CheckOut</a>
+                </div>
 
             </td>
         </tr>
@@ -67,3 +71,61 @@
 </div>
 
 @endsection
+
+@push('scripts')
+{{--    <script>--}}
+
+{{--        $(".table").on('click','.status-box a' , function(e){--}}
+
+{{--            var selected = $(this).data('status');--}}
+{{--            var toggle = $(this).data('toggle');--}}
+{{--            console.log(toggle);--}}
+{{--            $('#'+toggle).prop('value', selected);--}}
+{{--            $('a[data-toggle="'+toggle+'"]').not('[data-status="'+selected+'"]').removeClass('active').addClass('inActive');--}}
+{{--            $('a[data-toggle="'+toggle+'"][data-title="'+selected+'"]').removeClass('inActive').addClass('active');--}}
+{{--            let status_data={'booked_id':toggle,'value':selected};--}}
+{{--            $.ajaxSetup({--}}
+{{--                headers: {--}}
+{{--                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+{{--                }--}}
+{{--            });--}}
+{{--            $.ajax({--}}
+{{--                url: '{{route("checkinout-status-update")}}',--}}
+{{--                method: 'POST',--}}
+{{--                data: status_data,--}}
+{{--                // beforeSend: ()=>{--}}
+{{--                //   loaderselector.fadeIn();--}}
+
+{{--                // },--}}
+{{--                success: (output)=>{--}}
+{{--                    // loaderselector.fadeOut();--}}
+{{--                    console.log(output);--}}
+
+{{--                    // let result=JSON.parse(output);--}}
+{{--                    console.log("result is",output);--}}
+{{--                    if(output['status']=="1"){--}}
+{{--                        swal("Status Changed!",output['message'], "success",{--}}
+{{--                            buttons: false,--}}
+{{--                            timer: 1500,--}}
+{{--                        });--}}
+{{--                        window.location.reload();--}}
+
+{{--                    }else if(output[0]=="error"){--}}
+{{--                        swal("Failed!",output[1], "error").then(()=>{callback();});--}}
+
+{{--                    }else{--}}
+{{--                        // loaderselector.fadeOut();--}}
+
+{{--                    }--}}
+
+{{--                },--}}
+{{--                error:(err)=>{--}}
+{{--                    swal("Failed!","Oops Something Went Wrong", "error");--}}
+
+{{--                }--}}
+
+{{--            });--}}
+{{--        });--}}
+{{--    </script>--}}
+
+@endpush

@@ -13,6 +13,7 @@ use App\Services\PageService;
 use App\Models\Room;
 
 use Carbon\Carbon;
+use Illuminate\Support\MessageBag;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -252,6 +253,10 @@ public function paymentfailed(){
 public function bookingConfirmingView(Request $request)
 {
 //    dd($request);
+
+   $rr= $request->validate([
+        'contactNumber'=>'required',
+    ]);
     $amount = Room_Details::where('id',$request->category)->select('rate')->first();
 
     $totalAmount = (int)$request->roomCount *(float)$amount->rate;
@@ -287,7 +292,7 @@ public function bookingConfirmingView(Request $request)
     $categoryName = Room_Details::where('id',$request->category)->select('category')->first();
 
 
-    return view('pages.user.booking.payment.paymentConfirm',compact('data','categoryName'));
+    return view('pages.user.booking.payment.paymentConfirm',compact('data','rr','categoryName'));
 
 
 

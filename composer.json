@@ -19,6 +19,7 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.0",
+        "razorpay/razorpay": "2.*",
         "tightenco/ziggy": "^0.9.4",
         "uxweb/sweet-alert": "^2.0"
     },

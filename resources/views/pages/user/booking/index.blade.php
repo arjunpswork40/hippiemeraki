@@ -124,7 +124,7 @@
                     <div class="bookingForm">
                         <form method="POST" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}">
                             @csrf
-                            {{ method_field('POST') }}
+{{--                            {{ method_field('POST') }}--}}
                             <input type="number" class="totalAmount" name="totalAmount">
                             <div class="form-group">
                               <label >Category</label>

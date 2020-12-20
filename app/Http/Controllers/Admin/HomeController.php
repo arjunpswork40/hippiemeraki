@@ -11,6 +11,7 @@ use App\Http\Models\Service;
 use App\Http\Models\User;
 use App\Models\Blog;
 use App\Models\Booked;
+use App\Models\Room_Details;
 use App\Services\AdminHomePageService;
 use Illuminate\Filesystem\FilesystemManager;
 use Illuminate\Http\Request;
@@ -90,7 +91,6 @@ class HomeController extends BaseController
     public function statusUpdate(Request $request)
     {
 
-        // dd($request);
         $blog=Blog::where('id',$request->blog_id)->get();
         // dd($blog);
         $blog->update([
@@ -154,5 +154,23 @@ class HomeController extends BaseController
         return back();
     }
 
+    public function checkInOutStatusUpdate(Request $request)
+    {
+
+//        $booked=Booked::all();
+        $booked=Booked::where('id',$request->booked_id)->first();
+        dd($booked);
+        $booked->update([
+            'room_status' => $request->value,
+
+        ]);
+
+
+
+        return response()->json([
+            'status'=>'1',
+            'message'=>'Status was changed succesfully'
+        ]);
+    }
 
 }

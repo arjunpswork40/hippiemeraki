@@ -24,9 +24,10 @@ class Booked extends Model
         'guest_permanent_address',
         'guest_ID_proof',
         'status',
+        'room_status',
         'order_id',
         'receipt_id'
-        
+
     ];
 
     public $timestamps = false;
