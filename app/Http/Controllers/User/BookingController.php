@@ -252,15 +252,14 @@ public function paymentfailed(){
 
 public function bookingConfirmingView(Request $request)
 {
-//    dd($request);
-
-   $rr= $request->validate([
-        'contactNumber'=>'required',
-    ]);
+ 
+//    $rr= $request->validate([
+//         'contactNumber'=>'required',
+//     ]);
     $amount = Room_Details::where('id',$request->category)->select('rate')->first();
 
     $totalAmount = (int)$request->roomCount *(float)$amount->rate;
-    // dd($totalAmount);
+     
     // Generate random receipt id
     $receiptId = Str::random(20);
     //   save data to db
@@ -292,7 +291,7 @@ public function bookingConfirmingView(Request $request)
     $categoryName = Room_Details::where('id',$request->category)->select('category')->first();
 
 
-    return view('pages.user.booking.payment.paymentConfirm',compact('data','rr','categoryName'));
+    return view('pages.user.booking.payment.paymentConfirm',compact('data','categoryName'));
 
 
 

@@ -448,6 +448,18 @@ else{
 
 @push('scripts')
 <script src="{{ asset('/zubis/js/jquery.nice-select.min.js') }}"></script>
+
+
+<script>
+
+    window.onload = function() {
+        
+    document.querySelector('#guest').value="1";
+    };
+
+</script>
+
+
 @endpush
 
 @push('payment')

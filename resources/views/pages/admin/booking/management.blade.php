@@ -51,9 +51,9 @@
             <td class="status-box">
 
                 <div  class="btn-group status-toggle">
-                    <a class="btn btn-primary btn-sm {{ $details->room_status ==3? "active":"inActive"}}" data-toggle="{{ $details->id }}" data-status="3">Pending</a>
-                    <a class="btn btn-primary btn-sm {{ $details->room_status ==1? "active":"inActive"}}" data-toggle="{{ $details->id }}" data-status="1">CheckIn</a>
-                    <a class="btn btn-primary btn-sm {{ $details->room_status ==4? "active":"inActive"}}" data-toggle="{{ $details->id }}" data-status="4">CheckOut</a>
+                    <a class="btn btn-primary btn-sm {{ $details->room_status ==3? "active":"inActive"}}" data-toggle="{{ $details->id }}" data-status="3"  data-categoryid="{{$details->category_id}}">Pending</a>
+                    <a class="btn btn-primary btn-sm {{ $details->room_status ==1? "active":"inActive"}}" data-toggle="{{ $details->id }}" data-status="1"  data-categoryid="{{$details->category_id}}" >CheckIn</a>
+                    <a class="btn btn-primary btn-sm {{ $details->room_status ==4? "active":"inActive"}}" data-toggle="{{ $details->id }}" data-status="4" data-categoryid="{{$details->category_id}}"  >CheckOut</a>
                 </div>
 
             </td>
@@ -73,59 +73,61 @@
 @endsection
 
 @push('scripts')
-{{--    <script>--}}
+<script>
 
-{{--        $(".table").on('click','.status-box a' , function(e){--}}
+    $(".table").on('click','.status-box a' , function(e){
 
-{{--            var selected = $(this).data('status');--}}
-{{--            var toggle = $(this).data('toggle');--}}
-{{--            console.log(toggle);--}}
-{{--            $('#'+toggle).prop('value', selected);--}}
-{{--            $('a[data-toggle="'+toggle+'"]').not('[data-status="'+selected+'"]').removeClass('active').addClass('inActive');--}}
-{{--            $('a[data-toggle="'+toggle+'"][data-title="'+selected+'"]').removeClass('inActive').addClass('active');--}}
-{{--            let status_data={'booked_id':toggle,'value':selected};--}}
-{{--            $.ajaxSetup({--}}
-{{--                headers: {--}}
-{{--                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
-{{--                }--}}
-{{--            });--}}
-{{--            $.ajax({--}}
-{{--                url: '{{route("checkinout-status-update")}}',--}}
-{{--                method: 'POST',--}}
-{{--                data: status_data,--}}
-{{--                // beforeSend: ()=>{--}}
-{{--                //   loaderselector.fadeIn();--}}
+        var selected = $(this).data('status');
+        var toggle = $(this).data('toggle');
+        var categoryId = $(this).data('categoryid');
+             
+        console.log(categoryId);
+        $('#'+toggle).prop('value', selected);
+        $('a[data-toggle="'+toggle+'"]').not('[data-status="'+selected+'"]').removeClass('active').addClass('inActive');
+        $('a[data-toggle="'+toggle+'"][data-title="'+selected+'"]').removeClass('inActive').addClass('active');
+        let status_data={'booked_id':toggle,'value':selected,'categoryId':categoryId};
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: '{{route("checkinout-status-update")}}',
+            method: 'POST',
+            data: status_data,
+            // beforeSend: ()=>{
+            //   loaderselector.fadeIn();
 
-{{--                // },--}}
-{{--                success: (output)=>{--}}
-{{--                    // loaderselector.fadeOut();--}}
-{{--                    console.log(output);--}}
+            // },
+            success: (output)=>{
+                // loaderselector.fadeOut();
+                console.log(output);
 
-{{--                    // let result=JSON.parse(output);--}}
-{{--                    console.log("result is",output);--}}
-{{--                    if(output['status']=="1"){--}}
-{{--                        swal("Status Changed!",output['message'], "success",{--}}
-{{--                            buttons: false,--}}
-{{--                            timer: 1500,--}}
-{{--                        });--}}
-{{--                        window.location.reload();--}}
+                // let result=JSON.parse(output);
+                console.log("result is",output);
+                if(output['status']=="1"){
+                    swal("Status Changed!",output['message'], "success",{
+                        buttons: false,
+                        timer: 1500,
+                    });
+                    window.location.reload();
 
-{{--                    }else if(output[0]=="error"){--}}
-{{--                        swal("Failed!",output[1], "error").then(()=>{callback();});--}}
+                }else if(output['status']=="0"){
+                    swal("Failed!",output['message'], "error").then(()=>{ window.location.reload();});
 
-{{--                    }else{--}}
-{{--                        // loaderselector.fadeOut();--}}
+                }else{
+                    // loaderselector.fadeOut();
 
-{{--                    }--}}
+                }
 
-{{--                },--}}
-{{--                error:(err)=>{--}}
-{{--                    swal("Failed!","Oops Something Went Wrong", "error");--}}
+            },
+            error:(err)=>{
+                swal("Failed!","Oops Something Went Wrong", "error");
 
-{{--                }--}}
+            }
 
-{{--            });--}}
-{{--        });--}}
-{{--    </script>--}}
+        });
+    });
+</script>
 
 @endpush

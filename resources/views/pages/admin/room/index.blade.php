@@ -207,7 +207,7 @@
             $('#'+toggle).prop('value', selected);
             $('a[data-toggle="'+toggle+'"]').not('[data-status="'+selected+'"]').removeClass('active').addClass('inActive');
             $('a[data-toggle="'+toggle+'"][data-title="'+selected+'"]').removeClass('inActive').addClass('active');
-            let status_data={'blog_id':toggle,'value':selected};
+            let status_data={'room_id':toggle,'value':selected};
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

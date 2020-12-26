@@ -90,18 +90,19 @@ class HomeController extends BaseController
 
     public function statusUpdate(Request $request)
     {
-
-        $blog=Blog::where('id',$request->blog_id)->get();
+        // dd($request);
+        $blog=Blog::where('id',$request->blog_id);
         // dd($blog);
         $blog->update([
-            'title' => "aa",
+            'status' => $request->value,
 
         ]);
 
 
 
         return response()->json([
-            'status'=>'1'
+            'status'=>'1',
+            'message'=>'Status was changed succesfully'
         ]);
     }
 
@@ -156,21 +157,48 @@ class HomeController extends BaseController
 
     public function checkInOutStatusUpdate(Request $request)
     {
-
-//        $booked=Booked::all();
+ 
         $booked=Booked::where('id',$request->booked_id)->first();
-        dd($booked);
-        $booked->update([
-            'room_status' => $request->value,
-
-        ]);
-
-
-
+ 
+      
+     
+        if($booked->room_status===4){
+           
         return response()->json([
-            'status'=>'1',
-            'message'=>'Status was changed succesfully'
+            'status'=>'0',
+            'message'=>'Room Already Cheked Out'
         ]);
+
+        
+
+        }
+        else{
+
+             if($request->value==='4'){
+                $roomCount = Room_Details::where('id', $request->categoryId)->first();
+                // dd($roomCount);
+                $bookedRoomCount = Booked::where('id',$request->booked_id)->select('booked_room_count')->first();
+                   $roomCount->update([
+                       'available_room_count' => $roomCount->available_room_count + $bookedRoomCount->booked_room_count
+                   ]);
+    
+    
+            }
+
+            $booked->update([
+                'room_status' => $request->value,
+    
+            ]);
+
+            return response()->json([
+                'status'=>'1',
+                'message'=>'Status was changed succesfully'
+            ]);
+    
+
+        }
+
+       
     }
 
 }

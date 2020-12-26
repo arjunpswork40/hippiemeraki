@@ -26,11 +26,9 @@ class RoomController extends BaseController
 
     public function statusUpdate(Request $request)
     {
-
-        // dd($request);
-        $blog=Room_Details::where('id',$request->room_id);
-        // dd($blog);
-        $blog->update([
+ 
+        $room_details=Room_Details::where('id',$request->room_id);
+         $room_details->update([
             'status' => $request->value,
 
         ]);
