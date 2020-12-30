@@ -37,9 +37,11 @@ class HomeController extends BaseController
      */
     public function index()
     {
-        $paymentStatus="waiting";
+        // $paymentStatus="success";
+        $blogs = Blog::orderBy('id', 'desc')->take(3)->get();
+        
 //        $pageData = $this->_pageService->getPage(PageConstant::HOME_PAGE);
-        return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
+        return $this->renderView($this->getView('home.welcome'), compact('blogs'), 'Home');
     }
 
     /**
@@ -82,8 +84,10 @@ class HomeController extends BaseController
 
     public function details($blog)
     {
+
+        $blogs = Blog::orderBy('id', 'desc')->take(3)->get();
         $details = Blog::where('id',$blog)->first();
-        return $this->renderView($this->getView('news.blog-details'),compact('details'),'Blog Details');
+        return $this->renderView($this->getView('news.blog-details'),compact('details','blogs'),'Blog Details');
 
     }
 }

@@ -71,23 +71,60 @@
         .menu-item .logo{
             height:85px;
         }
+        .tn-left a{
+            color:#000;
+        }
         .footer-section {
             background: #0b0c11;
         }
-        .footer-section a{
+        .fa-social a{
             color:#ff9200;
         }
+        .ft-contact a{
+            color: #fff;
+        }
+        .blog-item{
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
         .blog-item.set-bg:hover {
-            transform: translateY(-2px) translateX(-5px) scale(1.01);
-            box-shadow: 0 5px 16px 1px rgb(203 137 72 / 23%), 0 1px 4px 0 rgb(113 66 42 / 20%);
+            transform:  translateY(-5px) scale(1.01);
+            /* box-shadow: 0 5px 16px 1px rgb(203 137 72 / 23%), 0 1px 4px 0 rgb(113 66 42 / 20%); */
+            box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.2) !important;
             transition-timing-function: ease-out;
             transition: 0.39s;
         }
+
+        .blog-item .bi-text {
+
+            background: #f9f9f9;
+        bottom: 6px;
+            /* -webkit-backdrop-filter: blur(10px); */
+        /* backdrop-filter: blur(10px); */
+        /* background-color: rgb(201 196 196 / 17%); */
+
+        font-weight: 600;
+        }
+        .blog-item .bi-text h4 a{
+                color: #cf8031;
+                font-size: 22px;
+                font-weight: 600;
+            }
+            .blog-item .bi-text .b-time {
+                color: #747070;
+                letter-spacing: 1px;
+                padding-bottom: 6px;
+            }
+            .blog-item .bi-text h4 {
+   
+            margin-bottom: 10px;
+            }
         .fa-social{
             display: flex;
             justify-content: space-between;
         }
-        
+ 
+
         .footer-section .footer-text .ft-contact h6 {
             color: #cf8031;
         }
@@ -134,12 +171,23 @@
          .hero-text p{
                 font-size: 24px;
             }
+
+            .fa-social{
+                display: block;
+            }
+            .fa-social a{
+                margin-right: 40px;
+            }
+
+
         
         }
         .booking-form form button{
             border-radius: 7px;
         }
-        
+        .top-widget a{
+            color:#000;
+        }
         
         </style>
         
@@ -180,24 +228,23 @@
                     </ul>
                 </div>
             </div> -->
-            <a href="#" class="bk-btn">Book Now</a>
+            {{-- <a href="#" class="bk-btn">Book Now</a> --}}
         </div>
         <nav class="mainmenu mobile-menu">
             <ul>
-                <li class="active"><a href="./index.html">Home</a></li>
+                {{-- <li class="active"><a href="./index.html">Home</a></li>
                 <li><a href="./about-us.html">About Us</a></li>
                 <li><a href="./rooms.html">Rooms</a></li>
                 <li><a href="./blog.html">News</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="./contact.html">Contact</a></li> --}}
 
-                <li><a href="./pages.html">Pages</a>
-                    <ul class="dropdown">
-                        <li><a href="./room-details.html">Room Details</a></li>
-                        <li><a href="#">Deluxe Room</a></li>
-                        <li><a href="#">Family Room</a></li>
-                        <li><a href="#">Premium Room</a></li>
-                    </ul>
-                </li>
+                <li class="{{ request()->is('/') || request()->is('/*')? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
+                <li class="{{ request()->is('about-us') || request()->is('about-us/*')? 'active' : '' }}"><a href="{{ route('about-us') }}">About Us</a></li>
+                <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
+                <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">News</a></li>
+                <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
+
+                
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -208,8 +255,8 @@
             <a href="#"><i class="fa fa-instagram"></i></a>
         </div>
         <ul class="top-widget">
-            <li><i class="fa fa-phone"></i> (91) 345 67890</li>
-            <li><i class="fa fa-envelope"></i> info.zubisinn@gmail.com</li>
+            <li><i class="fa fa-phone"></i> <a href="tel:+0495 2431313">0495 2431313</a></li>
+            <li><i class="fa fa-envelope"></i> <a href="mailto:reservations@zubisinn.com">reservations@zubisinn.com</a></li>
         </ul>
     </div>
     <!-- Offcanvas Menu Section End -->

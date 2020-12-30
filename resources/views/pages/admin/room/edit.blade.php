@@ -4,29 +4,22 @@
 
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Quick Example</h3>
+            <h3 class="card-title">✍</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
         <form action="{{ route('room-update',$room->id) }}" method="POST" role="form" enctype="multipart/form-data" id="editBlogForm">
             @csrf
             <div class="card-body">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Category Name</label><br>
-                    <select id="guest" name="category_name" class="btn btn-outline-primary dropdown-item btn-lg">
-                        @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
-                            <option value="{{$type}}" {{old('category_name') == $type?'selected':''}}>{{$type}}</option>
-                        @endforeach
-                    </select>
-                </div>
+                
 
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Rate</label>
-                    <input type="text" class="form-control-file" name="rate">
+                    <input type="number" class="form-control-file" value="{{$room->rate}}" name="rate">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Total Rooms</label>
-                    <input type="text" class="form-control-file" name="total_rooms">
+                    <input type="number" class="form-control-file" value="{{$room->total_room_count}}" name="total_rooms">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Thumbnail Image</label>

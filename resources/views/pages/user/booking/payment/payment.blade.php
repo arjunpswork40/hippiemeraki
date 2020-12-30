@@ -1,4 +1,4 @@
-<button id="rzp-button1" hidden>Pay</button>
+<button id="rzp-button1"  >Pay</button>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 var options = {
@@ -55,7 +55,7 @@ document.getElementById('rzp-button1').onclick = function(e){
 </script>
 
 
-<form action="{{ route('payment-confirmation') }}" method="POST"  enctype="multipart/form-data"  >
+<form action="{{ route('payment-confirmation') }}" method="POST"  enctype="multipart/form-data" hidden  >
                        @csrf
     <input type="text" name="receipt_id"  value={{$response['receipt_id']}}>
     <input type="text" name="category_id"  value={{$response['category_id']}}>
@@ -64,8 +64,34 @@ document.getElementById('rzp-button1').onclick = function(e){
                        <input type="text" name="rzpOrderId" id="rzpOrderId">
                        <input type="text" name="rzpSignature" id="rzpSignature">
 
-
-
-
                      <button type="submit" class="btn btn-primary " id="rzpResponseSubmit" >Update</button>
             </form>
+
+            <style type="text/css">
+                .rzp-button1{
+                  background: #168afa;
+                  color: #fff;
+                  border: 0;
+                  text-transform: uppercase;
+                  cursor: pointer;
+                  height: 40px;
+                  box-shadow: 2px 3px 8px -3px #151d31;
+                  font-size: 16px;
+                  border-radius: 2px;
+                  padding: 12px 18px;
+              
+                }
+                .rzp-button1:focus{
+                  box-shadow: unset;
+                  outline: none;
+              
+              }
+              
+                form{
+                  /* display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  height: 100vh; */
+                }
+              
+              </style>

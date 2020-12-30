@@ -2,14 +2,21 @@
 
 @section('content')
 <style>
+
+.room-item{
+    box-shadow: 5px 7px 8px #888888;
+}
+
 .bookingForm{
     display:flex;
     justify-content: space-around;
+    
 }
  .bookingForm form {
     border: 1px solid #ff9200;
     padding: 16px;
-    border-radius: 14px;    
+    border-radius: 14px;  
+    /* box-shadow: 2px 3px 9px -3px #151d31;   */
  }
  
     .bookingAmountDetails{
@@ -121,7 +128,7 @@
                     <div class="room-item">
                         <img src="{{ asset('/zubis/img/room/room-2.jpg') }}" alt="">
                         <div class="ri-text">
-                            <h4>Dou Room</h4>
+                            <h4>{{ $checkTwo->category }}</h4>
                             <h3>159$<span>/Pernight</span></h3>
                             <table>
                                 <tbody>
@@ -154,8 +161,8 @@
                     <div class="room-item">
                         <img src="{{ asset('/zubis/img/room/room-3.jpg') }}" alt="">
                         <div class="ri-text">
-                            <h4{{ $available_room->category }}</h4>
-                            <h3>159$<span>/Pernight</span></h3>
+                            <h4>{{ $available_room->category }}</h4>
+                            <h3>{{ $available_room->rate}} Rs<span>/Pernight</span></h3>
                             <table>
                                 <tbody>
                                 <tr>

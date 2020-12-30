@@ -11,7 +11,7 @@ use App\Models\Guest;
 use App\Models\Room_Details;
 use App\Services\PageService;
 use App\Models\Room;
-
+use App\Models\Blog;
 use Carbon\Carbon;
 use Illuminate\Support\MessageBag;
 
@@ -185,6 +185,7 @@ class BookingController extends BaseController
 
    public function paymentConfirmation(Request $request)
    {
+    $blogs = Blog::orderBy('id', 'desc')->take(3)->get();
        $status = Booked::where('receipt_id',$request->receipt_id)->select('status','booked_room_count','category_id')->first();
        if($status->status === 3) {
            $signatureStatus = $this->SignatureVerify(
@@ -207,20 +208,23 @@ class BookingController extends BaseController
                ]);
                $paymentStatus = "success";
                // alert()->success('😀 ', 'Payed Successfully');
-               return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
+            //    return $this->renderView($this->getView('home.welcome'), compact('paymentStatus','blogs'), 'Home');
+               return redirect()->route('home', compact('paymentStatus','blogs'));
 
            } else {
                $paymentStatus = "failed";
 
-               return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
-           }
+            //    return $this->renderView($this->getView('home.welcome'), compact('paymentStatus','blogs'), 'Home');
+            return redirect()->route('home', compact('paymentStatus','blogs'));
+        
+        }
        }
        else
        {
            $paymentStatus="waiting";
 //           return view('pages.user.home.welcome');
-           return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
-
+        //    return $this->renderView($this->getView('home.welcome'), compact('paymentStatus','blogs'), 'Home');
+        return redirect()->route('home', compact('paymentStatus','blogs'));
        }
 
 

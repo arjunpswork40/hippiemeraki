@@ -24,9 +24,9 @@
                     <div class="ft-contact">
                         <h6>Contact Us</h6>
                         <ul>
-                            <li>(12) 345 67890</li>
-                            <li>info.zubisinn@gmail.com</li>
-                            <li>856 Cordia Extension Apt. 356, Lake, United State</li>
+                            <li><a href="tel:+0495 2431313">0495 2431313</a> </li>
+                            <li><a href="mailto:reservations@zubisinn.com">reservations@zubisinn.com</a></li>
+                            <li>Red Cross Road, Near New Bus Stand, Kalpetta, 673122</li>
                         </ul>
                     </div>
                 </div>

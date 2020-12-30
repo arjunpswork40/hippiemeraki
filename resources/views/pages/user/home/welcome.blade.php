@@ -16,7 +16,7 @@
                 <div class="hero-text">
                     <h1>Zubis Inn </h1>
                     <p>Make yourself at home , Luxury 3 star hotel</p>
-                    <a href="#" class="primary-btn">Discover Now</a>
+                    {{-- <a href="#" class="primary-btn">Discover Now</a> --}}
                 </div>
             </div>
             <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
@@ -354,9 +354,9 @@ else{
                                 <i class="icon_star"></i>
                                 <i class="icon_star-half_alt"></i>
                             </div>
-                            <h5> - Alexander Vasquez</h5>
+                            <h5> - Ajay</h5>
                         </div>
-                        <img src="{{ asset('/zubis/img/testimonial-logo.png') }}" alt="">
+                        {{-- <img src="{{ asset('/zubis/img/testimonial-logo.png') }}" alt=""> --}}
                     </div>
                     <div class="ts-item">
                         <p>After a construction project took longer than expected, my husband, my daughter and I
@@ -371,9 +371,9 @@ else{
                                 <i class="icon_star"></i>
                                 <i class="icon_star-half_alt"></i>
                             </div>
-                            <h5> - Alexander Vasquez</h5>
+                            <h5> - Arjun</h5>
                         </div>
-                        <img src="{{ asset('/zubis/img/testimonial-logo.png') }}" alt="">
+                        {{-- <img src="{{ asset('/zubis/img/testimonial-logo.png') }}" alt=""> --}}
                     </div>
                 </div>
             </div>
@@ -394,51 +394,23 @@ else{
             </div>
         </div>
         <div class="row">
+
+            @foreach ($blogs as $blog)
+                
+
             <div class="col-lg-4">
-                <div class="blog-item set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-1.jpg') }}">
+                <div class="blog-item set-bg" data-setbg="{{ \App\Http\Helpers\PageHelper::getImagePath($blog->thumbnail_image) }}">
                     <div class="bi-text">
-                        {{-- <span class="b-tag">Travel Trip</span> --}}
-                        <h4><a href="#">Tremblant In Canada</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
+                         
+                        <h4><a href="{{ route('news.blog-details',$blog->id) }}">{{ $blog->title}}</a></h4>
+                        <div class="b-time"><i class="icon_clock_alt"></i> {{ date('F jS, Y', strtotime($blog->created_at))}}</div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="blog-item set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-2.jpg') }}">
-                    <div class="bi-text">
-                        {{-- <span class="b-tag">Camping</span> --}}
-                        <h4><a href="#">Choosing A Static Caravan</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="blog-item set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-3.jpg') }}">
-                    <div class="bi-text">
-                        {{-- <span class="b-tag">Event</span> --}}
-                        <h4><a href="#">Copper Canyon</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 21th April, 2019</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="blog-item small-size set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-wide.jpg') }}">
-                    <div class="bi-text">
-                        {{-- <span class="b-tag">Event</span> --}}
-                        <h4><a href="#">Trip To Iqaluit In Nunavut A Canadian Arctic City</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 08th April, 2019</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="blog-item small-size set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-10.jpg') }}">
-                    <div class="bi-text">
-                        {{-- <span class="b-tag">Travel</span> --}}
-                        <h4><a href="#">Traveling To Barcelona</a></h4>
-                        <div class="b-time"><i class="icon_clock_alt"></i> 12th April, 2019</div>
-                    </div>
-                </div>
-            </div>
+
+            @endforeach
+     
+           
         </div>
     </div>
 </section>
@@ -462,7 +434,7 @@ else{
 
 @endpush
 
-@push('payment')
+{{-- @push('payment')
 
 
 
@@ -488,4 +460,4 @@ else{
 
 }
 @endif
-@endpush
+@endpush --}}

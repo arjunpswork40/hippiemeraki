@@ -12,29 +12,12 @@
                         <div class="bi-text">
                             {{-- <span class="b-tag">{{$news->title}}</span> --}}
                             <h4><a href="{{ route('news.blog-details',$news->id) }}"  >{{$news->title}}</a></h4>
-                            {{-- <div class="b-time"><i class="icon_clock_alt"></i>{{$date}}</div> --}}
+                            <div class="b-time"><i class="icon_clock_alt"></i> {{ date('F jS, Y', strtotime($news->created_at))}}</div>
+
                         </div>
                     </div>
                 </div>
-                <style>
-                    .blog-item .bi-text {
-                    
-                    /* background: #ffffffa1;
-                     */
-                     -webkit-backdrop-filter: blur(10px);
-                    backdrop-filter: blur(10px);
-                    background-color: rgb(201 196 196 / 17%);
-
-                    font-weight: 600;
-                    }
-                    .blog-item .bi-text h4 a{
-                        color: #000;
-                        font-size: 22px;
-                        font-weight: 600;
-                    }
-
-                </style>
-
+             
 
                 @endforeach
 

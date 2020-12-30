@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <ul class="tn-left">
-                        <li><i class="fa fa-phone"></i> (12) 345 67890</li>
-                        <li><i class="fa fa-envelope"></i> info.zubisinn@gmail.com</li>
+                        <li><i class="fa fa-phone"></i><a href="tel:+91 8113887700">+91 8113887700</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="mailto:reservations@zubisinn.com">reservations@zubisinn.com</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
@@ -17,7 +17,7 @@
                            
                             <a href="https://www.instagram.com/zubisinn/" target="_blank"><i class="fa fa-instagram"></i></a>
                         </div>
-                        <a href="#" class="bk-btn">Book Now</a>
+                        {{-- <a href="#" class="bk-btn">Book Now</a> --}}
                         <!-- <div class="language-option">
                             <img src="img/flag.jpg" alt="">
                             <span>EN <i class="fa fa-angle-down"></i></span>
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="logo">
-                        <a href="">
+                        <a href="{{ route('home') }}">
                             <img src="{{ asset('/zubis/img/logo/z-logo-full-horizontal.png') }}" alt="">
                         </a>
                     </div>
@@ -52,14 +52,7 @@
                                 <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
                                 <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">News</a></li>
                                 <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="">Room Details</a></li>
-                                        <li><a href="">Blog Details</a></li>
-                                        <li><a href="#">Family Room</a></li>
-                                        <li><a href="#">Premium Room</a></li>
-                                    </ul>
-                                </li>
+                                
                             </ul>
                         </nav>
                         {{-- <div class="nav-right search-switch">

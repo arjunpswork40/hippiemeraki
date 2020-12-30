@@ -13,6 +13,41 @@
     padding: 16px;
 
 }
+
+.bookedRoomDetails{
+    justify-content: center;
+}
+.bookedRoomDetails__header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: #cf8031;
+}
+u{
+    color: #8d5c2e;
+}
+
+
+.bookingForm button{
+       
+       background: #ff9200;
+   width: 200px;
+   margin-top: 10px;
+   font-weight: 600;
+   box-shadow:0 7px 15px -5px #05050594;
+   -webkit-transition: box-shadow .2s ease,background-color .2s ease,color .2s ease;
+   transition: box-shadow .2s ease,background-color .2s ease,color .2s ease;
+   padding: 7px
+   }
+   .bookingForm button:focus{
+       box-shadow: none;
+       border:1px dashed #000;
+     
+}
+.bookingForm button:hover{
+   box-shadow: none;
+}
+
     </style>
 
 
@@ -20,19 +55,35 @@
     <!-- Rooms Section Begin -->
     <section class="rooms-section spad">
         <div class="container">
-            <div class="row">
-
-                <div class="col-lg-4 col-md-6">
+           <u> <h1 class="bookedRoomDetails__header">Confirm your details</h1></u>
+            <div class="row bookedRoomDetails">
+                <div class="col-lg-6 col-md-6">
                     <div class="room-item">
                         <img src="{{ asset('/zubis/img/room/room-1.jpg') }}" alt="">
                         <div class="ri-text">
                             <h4>{{$categoryName->category}}</h4>
-                            <h3><span>/Pernight</span></h3>
+                            {{-- <h3>{{ $data->totalPrice}} Rs<span>/Pernight</span></h3> --}}
                             <table>
                                 <tbody>
                                 <tr>
+                                    <td class="r-o">Name:</td>
+                                    <td>{{$data->guest_name}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="r-o">Email:</td>
+                                    <td>{{$data->email}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="r-o">Mobile No.</td>
+                                    <td>{{$data->guest_phone_number}}</td>
+                                </tr>
+                                <tr>
                                     <td class="r-o">No of rooms selected:</td>
                                     <td>{{$data->booked_room_count}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="r-o">Guest Count:</td>
+                                    <td>{{$data->guest_count}}</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Check In:</td>
@@ -44,46 +95,30 @@
                                 </tr>
                                 <tr>
                                     <td class="r-o">Total Price:</td>
-                                    <td>{{$data->totalPrice}}</td>
+                                    <td> <h3>Rs. {{ $data->totalPrice}} <span></span></h3></td>
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            <div class="bookingForm">
+                                <form method="POST" action="{{ route('payment-initiation')}}">
+                                    @csrf
+        
+                                    <input type="hidden" class="totalAmount" name="totalAmount" value="{{ $data->totalPrice}}">
+                                    <input type="hidden" class="username" name="username" value="{{$data->guest_name}}">
+                                    <input type="hidden" class="email" name="email" value="{{$data->email}}">
+                                    <input type="hidden" class="receipt_id" name="receipt_id" value="{{$data->receipt_id}}">
+                                    <input type="hidden" class="contactNumber" name="contactNumber" value="{{$data->guest_phone_number}}">
+                                    {{-- <input type="number" class="totalAmount" name="totalAmount"> --}}
+        
+        
+                                    <button type="submit" class="btn btn-default">Submit</button>
+                                  </form>
+         
+                            </div>
                         </div>
                     </div>
                 </div>
-
-
-
-
-                <div class="col-lg-12">
-                    <div class="bookingForm">
-                        <form method="POST" action="{{ route('payment-initiation')}}">
-                            @csrf
-
-                            <input type="number" class="totalAmount" name="totalAmount" value="{{ $data->totalPrice}}">
-                            <input type="text" class="username" name="username" value="{{$data->guest_name}}">
-                            <input type="text" class="email" name="email" value="{{$data->email}}">
-                            <input type="text" class="receipt_id" name="receipt_id" value="{{$data->receipt_id}}">
-                            <input type="number" class="contactNumber" name="contactNumber" value="{{$data->guest_phone_number}}">
-                            {{-- <input type="number" class="totalAmount" name="totalAmount"> --}}
-
-
-                            <button type="submit" class="btn btn-default">Submit</button>
-                          </form>
-
-
-<div class="bookingAmuountDetails">
-    <h3>Total Amount</h3>
-    <h4 id="totalAmount"> 458</h4>
-</div>
-
-
-
-
-
-                    </div>
-                </div>
+ 
             </div>
         </div>
     </section>
@@ -92,7 +127,7 @@
 
 
 @endsection
-@push('scripts')
+{{-- @push('scripts')
 
 <script>
 $(document).ready(function(){
@@ -156,4 +191,4 @@ console.log("working function");
 
 </script>
 
-@endpush
+@endpush --}}

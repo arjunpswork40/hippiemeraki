@@ -106,33 +106,24 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="blog-item set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-1.jpg') }}">
+              
+
+                @foreach ($blogs as $blog)
+                
+
+                <div class="col-lg-4">
+                    <div class="blog-item set-bg" data-setbg="{{ \App\Http\Helpers\PageHelper::getImagePath($blog->thumbnail_image) }}">
                         <div class="bi-text">
-                            <span class="b-tag">Travel Trip</span>
-                            <h4><a href="#">Tremblant In Canada</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
+                             
+                            <h4><a href="{{ route('news.blog-details',$blog->id) }}">{{ $blog->title}}</a></h4>
+                            <div class="b-time"><i class="icon_clock_alt"></i> {{ date('F jS, Y', strtotime($blog->created_at))}}</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="blog-item set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-2.jpg') }}">
-                        <div class="bi-text">
-                            <span class="b-tag">Camping</span>
-                            <h4><a href="#">Choosing A Static Caravan</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 15th April, 2019</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog-item set-bg" data-setbg="{{ asset('/zubis/img/blog/blog-3.jpg') }}">
-                        <div class="bi-text">
-                            <span class="b-tag">Event</span>
-                            <h4><a href="#">Copper Canyon</a></h4>
-                            <div class="b-time"><i class="icon_clock_alt"></i> 21th April, 2019</div>
-                        </div>
-                    </div>
-                </div>
+    
+                @endforeach
+  
+
             </div>
         </div>
     </section>
