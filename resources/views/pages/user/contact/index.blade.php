@@ -48,7 +48,7 @@
                         font-weight: 600;
                     }
                     .contact-text a:hover{
-                        color:#2196f3;
+                        color:#a77026;
                     }
                     .contact-text table tbody tr td{
                         font-weight: 600;

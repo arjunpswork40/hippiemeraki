@@ -9,7 +9,8 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('app.name') }}</title>
-        <link rel="shortcut icon" href="{{ asset('assets/images/fav.png') }}" type="image/x-icon" />
+        {{-- <link rel="shortcut icon" href="{{ asset('assets/images/fav.png') }}" type="image/x-icon" /> --}}
+        <link rel="icon" type="image/png" href="{{ asset('/zubis/img/logo/z-logo-only.png') }}"/>
         <!-- Font Awesome Icons -->
         <link rel="stylesheet" href="{{ asset('/ad-lte/plugins/fontawesome-free/css/all.min.css') }}">
         <!-- Theme style -->

@@ -230,7 +230,7 @@ else{
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
                         </div>
                     </div>
                 </div>
@@ -259,7 +259,7 @@ else{
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
                         </div>
                     </div>
                 </div>
@@ -288,7 +288,7 @@ else{
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
                         </div>
                     </div>
                 </div>
@@ -317,7 +317,7 @@ else{
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
                         </div>
                     </div>
                 </div>

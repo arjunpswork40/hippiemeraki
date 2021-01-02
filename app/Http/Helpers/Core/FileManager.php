@@ -47,7 +47,7 @@ class FileManager
             'message' => 'Failed - Invalid File',
             'data' => [],
         ];
-        self::setSymbolicLink();
+        // self::setSymbolicLink();
         if (self::validateFile($fileName, $validate)) {
             $orginalFileName = Request::file($fileName)->getClientOriginalName();
             $uploadedFileName = self::getCleanFilename($orginalFileName, $prefix);
@@ -234,12 +234,12 @@ class FileManager
     /**
      * Generate SymbolicLink
      */
-    protected static function setSymbolicLink()
-    {
-        if (! is_dir(public_path() . '/' . 'storage')) {
-            Artisan::call('storage:link');
-        }
-    }
+    // protected static function setSymbolicLink()
+    // {
+    //     if (! is_dir(public_path() . '/' . 'storage')) {
+    //         Artisan::call('storage:link');
+    //     }
+    // }
 
     /**
      * Create new directory if not exists

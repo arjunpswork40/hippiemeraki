@@ -1,7 +1,20 @@
+<link rel="icon" type="image/png" href="{{ asset('/zubis/img/logo/z-logo-only.png') }}"/>
+
 <x-guest-layout>
     <x-jet-authentication-card>
+
+        <style>
+                .customLogo{
+                    height: 102px;
+                    width: 89px;
+                    object-fit: cover;
+                }
+     </style>
+
+
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <img class="customLogo" src="{{ asset('/zubis/img/logo/z-logo-only.png') }}" alt="">
+            {{-- <x-jet-authentication-card-logo /> --}}
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />

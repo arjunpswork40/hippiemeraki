@@ -68,8 +68,8 @@ document.getElementById('rzp-button1').onclick = function(e){
             </form>
 
             <style type="text/css">
-                .rzp-button1{
-                  background: #168afa;
+                #rzp-button1{
+                  background: #ff9200;
                   color: #fff;
                   border: 0;
                   text-transform: uppercase;
@@ -79,19 +79,17 @@ document.getElementById('rzp-button1').onclick = function(e){
                   font-size: 16px;
                   border-radius: 2px;
                   padding: 12px 18px;
+                  position: absolute;
+                    top: 40%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
               
                 }
-                .rzp-button1:focus{
+                #rzp-button1:focus{
                   box-shadow: unset;
                   outline: none;
               
               }
-              
-                form{
-                  /* display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  height: 100vh; */
-                }
+               
               
               </style>

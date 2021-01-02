@@ -38,7 +38,8 @@ class HomeController extends BaseController
 
     public function bookingManagementTable()
     {
-        $bookings = Booked::all();
+        $bookings = Booked::where('status','1')->orderBy('id','desc')->get();
+        
         return $this->renderView($this->getView('booking.index'), compact('bookings'), 'Booking');
 
     }

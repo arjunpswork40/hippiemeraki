@@ -31,7 +31,7 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
                         </div>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
                         </div>
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
                         </div>
                     </div>
                 </div>
@@ -181,17 +181,11 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <a href="#" class="primary-btn">More Details</a>
+                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
-                    <div class="room-pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">Next <i class="fa fa-long-arrow-right"></i></a>
-                    </div>
-                </div>
+            
             </div>
         </div>
     </section>

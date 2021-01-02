@@ -10,6 +10,7 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                    <th>id</th>
                     <th>Guest Name</th>
                     <th>Phone Number</th>
                     <th>Checkin</th>
@@ -20,8 +21,11 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($bookings as $booking)
+                @foreach($bookings as $key=>$booking)
                 <tr>
+                    <td>
+                        {{$key+1}}
+                  </td>
                     <td>{{$booking->guest_name}}</td>
                     <td>{{$booking->guest_phone_number}}
                     </td>
@@ -37,6 +41,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
+                    <th>id</th>
                     <th>Guest Name</th>
                     <th>Phone Number</th>
                     <th>Checkin</th>

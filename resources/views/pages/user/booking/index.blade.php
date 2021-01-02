@@ -20,17 +20,16 @@
  }
  
     .bookingAmountDetails{
-        height: 134px;
-    width: 299px;
+    height: 116px;
+    width: 100%;
     display: flex;
-    margin-top: 196px;
-    flex-direction: column;
     color: #fff;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
     background: #d08437;
     box-shadow: 0 0 7px -4px #000;
+    margin-bottom: 37px;
     }
     .bookingAmountDetails h3{
         font-weight: 600;
@@ -81,7 +80,30 @@
 
 .bookingForm__fileUpload{
     padding: 3px 3px 3px 4px;
+    overflow: hidden;
 }
+.room__message{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.room__message h2{
+    margin-bottom: 30px;
+    background: #ff1e1e;
+    padding: 6px 21px;
+    color: #fff;
+    border-radius: 6px;
+    font-size: 29px;
+    font-weight: 600;
+}
+@media only screen and (max-width: 600px) {
+    .room__message h2{
+        font-size: 26px;
+    }
+
+}
+
 
         </style>
     
@@ -97,7 +119,8 @@
                         <img src="{{ asset('/zubis/img/room/room-1.jpg') }}" alt="">
                         <div class="ri-text">
                             <h4>{{ $checkOne->category }}</h4>
-                            <h3>159$<span>/Pernight</span></h3>
+                            <h3>{{ $checkOne->rate}} Rs<span>/Pernight</span></h3>
+
                             <table>
                                 <tbody>
                                 <tr>
@@ -129,7 +152,7 @@
                         <img src="{{ asset('/zubis/img/room/room-2.jpg') }}" alt="">
                         <div class="ri-text">
                             <h4>{{ $checkTwo->category }}</h4>
-                            <h3>159$<span>/Pernight</span></h3>
+                            <h3>{{ $checkTwo->rate}} Rs<span>/Pernight</span></h3>
                             <table>
                                 <tbody>
                                 <tr>
@@ -156,6 +179,9 @@
                 </div>
 
                 @else
+                {{-- <div class="col-lg-12 col-md-12 room__message">
+                <h2>It seems the selected category is completely booked👨‍👩‍👧‍👦!<br>Please select any of the below categories🙂</h2>
+                </div> --}}
                 @foreach($available as $available_room)
                 <div class="col-lg-4 col-md-6">
                     <div class="room-item">
@@ -194,7 +220,12 @@
                     <div class="bookingForm">
                         <form method="POST" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}">
                             @csrf
-{{--                            {{ method_field('POST') }}--}}
+
+                            <div class="bookingAmountDetails">
+                                <h4>Total Amount &nbsp;</h4>
+                                <h4 id="totalAmount"> Rs. 0</h4>
+                            </div>
+
                             <input type="hidden" class="totalAmount" name="totalAmount">
                          
                             <div class="row">
@@ -316,14 +347,7 @@
                             <button type="submit" class="btn btn-default btn-block bookingForm__button ">Submit</button>
                               </div>
                           </form>
-
-
-                          <div class="bookingAmountDetails">
-                            <h3>Total Amount</h3>
-                            <h4 id="totalAmount"> Rs. 0</h4>
-                        </div>
-
-
+ 
                     </div>
                     
                 </div>
@@ -404,6 +428,20 @@ console.log("working function");
 
 });
 
+
 </script>
+
+
+@endpush
+
+@push('payment')
+
+@if($available){
+    <script>
+        
+        swal("Room not available","It seems the selected category is completely booked👨‍👩‍👧‍👦! Please select any of the below categories🙂","warning");
+    </script>
+    }
+    @endif
 
 @endpush

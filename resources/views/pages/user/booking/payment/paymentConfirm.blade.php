@@ -14,7 +14,7 @@
 
 }
 
-.bookedRoomDetails{
+.bookedRoomDetails__customerInfo{
     justify-content: center;
 }
 .bookedRoomDetails__header{
@@ -22,6 +22,7 @@
     justify-content: center;
     margin-bottom: 20px;
     color: #cf8031;
+    border-bottom: 2px dashed #cf8031;
 }
 u{
     color: #8d5c2e;
@@ -47,7 +48,27 @@ u{
 .bookingForm button:hover{
    box-shadow: none;
 }
+.bookedRoomDetails__customerInfoContainer{
+    border: 1px solid #e4a06c;
+    padding-top: 12px;
+}
+.bookedRoomDetails__customerInfo{
+    flex-direction: column;
+    align-items: center;
+}
 
+@media only screen and (max-width: 600px) {
+.bookedRoomDetails__header{
+    font-size: 39px;
+}
+.bookedRoomDetails__customerInfo{
+    padding: 4px;
+    margin: 10px;
+    width: fit-content;
+}
+
+
+}
     </style>
 
 
@@ -55,9 +76,11 @@ u{
     <!-- Rooms Section Begin -->
     <section class="rooms-section spad">
         <div class="container">
-           <u> <h1 class="bookedRoomDetails__header">Confirm your details</h1></u>
-            <div class="row bookedRoomDetails">
-                <div class="col-lg-6 col-md-6">
+            <div class="bookedRoomDetails">
+          
+            <div class="row bookedRoomDetails__customerInfo">
+                <h1 class="bookedRoomDetails__header">Confirm your details</h1> 
+                <div class="col-lg-6 col-md-6 bookedRoomDetails__customerInfoContainer">
                     <div class="room-item">
                         <img src="{{ asset('/zubis/img/room/room-1.jpg') }}" alt="">
                         <div class="ri-text">
@@ -94,7 +117,7 @@ u{
                                     <td>{{$data->check_out}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Total Price:</td>
+                                    <td class="r-o">Total Amount:</td>
                                     <td> <h3>Rs. {{ $data->totalPrice}} <span></span></h3></td>
                                 </tr>
                                 </tbody>
@@ -111,7 +134,7 @@ u{
                                     {{-- <input type="number" class="totalAmount" name="totalAmount"> --}}
         
         
-                                    <button type="submit" class="btn btn-default">Submit</button>
+                                    <button type="submit" class="btn btn-default">Pay Now</button>
                                   </form>
          
                             </div>
@@ -120,6 +143,8 @@ u{
                 </div>
  
             </div>
+        </div>
+
         </div>
     </section>
     <!-- Rooms Section End -->

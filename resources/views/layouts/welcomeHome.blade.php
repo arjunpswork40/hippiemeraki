@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Zubis INN </title>
-
+    <link rel="icon" type="image/png" href="{{ asset('/zubis/img/logo/z-logo-only.png') }}"/>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700&display=swap" rel="stylesheet">
@@ -188,7 +188,12 @@
         .top-widget a{
             color:#000;
         }
-        
+        .top-social i:hover{
+            color: #ff9200;
+        }
+        .top-social a{
+            margin-left: 28px !important;
+        }
         </style>
         
         
@@ -251,7 +256,6 @@
         <div class="top-social">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-tripadvisor"></i></a>
             <a href="#"><i class="fa fa-instagram"></i></a>
         </div>
         <ul class="top-widget">
