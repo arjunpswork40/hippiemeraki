@@ -8,9 +8,11 @@ use App\Http\Models\Service;
 use App\Http\Models\UserTimeEntry;
 
 use App\Models\Blog;
+use App\Models\Room_Details;
 use App\Services\PageService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends BaseController
 {
@@ -39,9 +41,10 @@ class HomeController extends BaseController
     {
         // $paymentStatus="success";
         $blogs = Blog::orderBy('id', 'desc')->take(3)->get();
-        
+        $roomDetails = Room_Details::where('status',1)->select('category','id')->get();
+        $categoryNo = Room_Details::where('status',1)->select('category','id')->first();
 //        $pageData = $this->_pageService->getPage(PageConstant::HOME_PAGE);
-        return $this->renderView($this->getView('home.welcome'), compact('blogs'), 'Home');
+        return $this->renderView($this->getView('home.welcome'), compact('blogs','roomDetails','categoryNo'), 'Home');
     }
 
     /**
@@ -71,7 +74,8 @@ class HomeController extends BaseController
      */
     public function room()
     {
-        return $this->renderView($this->getView('room.index'),[],'Room');
+        $roomDetails = Room_Details::get();
+        return $this->renderView($this->getView('room.index'),compact('roomDetails'),'Room');
 
     }
 
@@ -88,6 +92,22 @@ class HomeController extends BaseController
         $blogs = Blog::orderBy('id', 'desc')->take(3)->get();
         $details = Blog::where('id',$blog)->first();
         return $this->renderView($this->getView('news.blog-details'),compact('details','blogs'),'Blog Details');
+
+    }
+
+    public function roomDetails(Room_Details $roomDetails)
+    {
+        $rooms = Room_Details::where('id',$roomDetails->id)->first();
+        Session::put('room_details',$rooms);
+        return $this->renderView($this->getView('room.room-details'), compact('rooms'), 'Room Details');
+    }
+
+    public function BookingFromRoom(Request $request)
+    {
+        $userSelectedDates=['checkIn'=>$request->checkIn,
+            'checkOut'=>$request->checkOut];
+        $userSelectedCategory = Session::get('room_details')->id;
+        return $this->renderView($this->getView('room.online-booking'), compact('userSelectedDates','userSelectedCategory'), 'Room Details');
 
     }
 }

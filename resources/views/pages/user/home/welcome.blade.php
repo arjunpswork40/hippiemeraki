@@ -38,8 +38,8 @@
                         <div class="select-option">
                             <label for="guest">Room Category:</label>
                             <select id="guest" name="category">
-                                @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
-                                <option value="{{$key}}" >{{$type}}</option>
+                                @foreach($roomDetails as $roomDetail)
+                                <option value="{{$roomDetail->id}}" >{{$roomDetail->category}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -143,7 +143,7 @@ else{
                 </div>
             </div>
         </div>
-        
+
         <div class="row">
 
             <div class="col-lg-4 col-sm-6">
@@ -396,12 +396,12 @@ else{
         <div class="row">
 
             @foreach ($blogs as $blog)
-                
+
 
             <div class="col-lg-4">
                 <div class="blog-item set-bg" data-setbg="{{ \App\Http\Helpers\PageHelper::getImagePath($blog->thumbnail_image) }}">
                     <div class="bi-text">
-                         
+
                         <h4><a href="{{ route('news.blog-details',$blog->id) }}">{{ $blog->title}}</a></h4>
                         <div class="b-time"><i class="icon_clock_alt"></i> {{ date('F jS, Y', strtotime($blog->created_at))}}</div>
                     </div>
@@ -409,8 +409,8 @@ else{
             </div>
 
             @endforeach
-     
-           
+
+
         </div>
     </div>
 </section>
@@ -425,8 +425,8 @@ else{
 <script>
 
     window.onload = function() {
-        
-    document.querySelector('#guest').value="1";
+
+    document.querySelector('#guest').value={{$categoryNo->id}};
     };
 
 </script>
@@ -443,7 +443,7 @@ else{
 
 @if($paymentStatus=="success"){
     <script>
-         
+
         swal("Good Job","Payment Successfull","success").then(()=>{
             window.location.replace('/');
         }

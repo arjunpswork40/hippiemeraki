@@ -22,6 +22,9 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
     Route::get('/about-us','HomeController@aboutUs')->name('about-us');
     Route::get('/contact','HomeController@contact')->name('contact');
     Route::get('/room','HomeController@room')->name('room');
+    Route::get('/room/details/{roomDetails:id}','HomeController@roomDetails')->name('room.details');
+    Route::post('/room/details/payment-form','HomeController@BookingFromRoom')->name('room.bookingFromRoom');
+
 
     Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
         Route::get('/news','HomeController@blog')->name('blog');

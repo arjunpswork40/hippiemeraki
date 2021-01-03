@@ -13,6 +13,7 @@ use App\Services\PageService;
 use App\Models\Room;
 use App\Models\Blog;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\MessageBag;
 
 use Illuminate\Http\Request;
@@ -47,7 +48,6 @@ class BookingController extends BaseController
    public function availability(Request $request)
    {
 
-// dd($request);
        $checkOne = Room_Details::where('id',$request->category)->first();
         $checkTwo = Booked::where('category_id',$request->category)
         ->wheredate('check_out',$request->checkIn)
@@ -62,7 +62,6 @@ class BookingController extends BaseController
 
         // 'SELECT room_id FROM Bookings WHERE check_in_date<="'.$ci_date.'" AND check_out_date >= "'.$co_date.'") ';
 
-// dd($checkOne);
 
        if ($checkOne->available_room_count != 0){
            $available=false;
@@ -216,7 +215,7 @@ class BookingController extends BaseController
 
             //    return $this->renderView($this->getView('home.welcome'), compact('paymentStatus','blogs'), 'Home');
             return redirect()->route('home', compact('paymentStatus','blogs'));
-        
+
         }
        }
        else
@@ -256,14 +255,14 @@ public function paymentfailed(){
 
 public function bookingConfirmingView(Request $request)
 {
- 
+
 //    $rr= $request->validate([
 //         'contactNumber'=>'required',
 //     ]);
     $amount = Room_Details::where('id',$request->category)->select('rate')->first();
 
     $totalAmount = (int)$request->roomCount *(float)$amount->rate;
-     
+
     // Generate random receipt id
     $receiptId = Str::random(20);
     //   save data to db
@@ -294,6 +293,7 @@ public function bookingConfirmingView(Request $request)
 
     $categoryName = Room_Details::where('id',$request->category)->select('category')->first();
 
+    Session::forget('room_details');
 
     return view('pages.user.booking.payment.paymentConfirm',compact('data','categoryName'));
 
