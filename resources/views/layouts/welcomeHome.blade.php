@@ -52,8 +52,8 @@
             margin-top: -8px;
             width: 100%;
             max-width: 173px;
-            box-shadow: 2px 3px 8px 3px #131313;
-            background: #fff;
+            /* box-shadow: 2px 3px 8px 3px #131313; */
+            /* background: #fff; */
             border-radius: 3px;
             padding: 3px;
         
@@ -62,7 +62,7 @@
         text-align:center;
         }
         .footer-section .copyright-option {
-            padding: 9px 0;
+            padding: 6px 0;
         }
         .co-text p{
             margin:0 0 2px 0;
@@ -75,7 +75,8 @@
             color:#000;
         }
         .footer-section {
-            background: #0b0c11;
+            background: #012d1f;
+            /* #00281b */
         }
         .fa-social a{
             color:#ff9200;

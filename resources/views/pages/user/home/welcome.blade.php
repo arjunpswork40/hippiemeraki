@@ -342,10 +342,7 @@ else{
             <div class="col-lg-8 offset-lg-2">
                 <div class="testimonial-slider owl-carousel">
                     <div class="ts-item">
-                        <p>After a construction project took longer than expected, my husband, my daughter and I
-                            needed a place to stay for a few nights. As a Chicago resident, we know a lot about our
-                            city, neighborhood and the types of housing options available and absolutely love our
-                            vacation at Zubis Inn Hotel.</p>
+                        <p>"We had a wonderful stay at Zubis. The environment and the atmosphere helped us to relax. We had a very good stay."</p>
                         <div class="ti-author">
                             <div class="rating">
                                 <i class="icon_star"></i>
@@ -359,10 +356,7 @@ else{
                         {{-- <img src="{{ asset('/zubis/img/testimonial-logo.png') }}" alt=""> --}}
                     </div>
                     <div class="ts-item">
-                        <p>After a construction project took longer than expected, my husband, my daughter and I
-                            needed a place to stay for a few nights. As a Chicago resident, we know a lot about our
-                            city, neighborhood and the types of housing options available and absolutely love our
-                            vacation at Zubis Inn Hotel.</p>
+                        <p>"Had a very relaxed stay. Great service amazing Spa. Lovely building, calming greenery, serene lake. What more could one ask for? We will be back again hopefully."</p>
                         <div class="ti-author">
                             <div class="rating">
                                 <i class="icon_star"></i>
