@@ -48,10 +48,15 @@ class BookingController extends BaseController
    public function availability(Request $request)
    {
 
-       $checkOne = Room_Details::where('id',$request->category)->first();
+       $checkOne = Room_Details::where('id',$request->category)
+           ->where('status',1)
+           ->first();
+
+
         $checkTwo = Booked::where('category_id',$request->category)
-        ->wheredate('check_out',$request->checkIn)
-        ->sum('booked_room_count');
+            ->wheredate('check_out',$request->checkIn)
+            ->where('status',1)
+            ->sum('booked_room_count');
 
 
         $userSelectedDates=['checkIn'=>$request->checkIn,
@@ -76,7 +81,9 @@ class BookingController extends BaseController
        else{
         $checkOne=false;
         $checkTwo-false;
-           $available = Room_Details::where('available_room_count','>',0)->get();
+           $available = Room_Details::where('available_room_count','>',0)
+               ->where('status',1)
+               ->get();
         // @dd($available);
         //  $userSelectedcategory;
           return $this->renderView($this->getView('booking.index'),compact('available','checkOne','checkTwo','userSelectedDates','userSelectedcategory'),'Available Rooms');
@@ -145,14 +152,7 @@ class BookingController extends BaseController
         'currency' => 'INR'
         )
       );
-
-
-
-
-
-
     //   response
-
     $response=[
         'orderId'=>$order['id'],
         'receipt_id' => $request->receipt_id,
@@ -177,9 +177,6 @@ class BookingController extends BaseController
             return $this->renderView($this->getView('home.welcome'), compact('paymentStatus'), 'Home');
 
         }
-
-
-
    }
 
    public function paymentConfirmation(Request $request)
@@ -192,8 +189,6 @@ class BookingController extends BaseController
                $request->all()['rzpPaymentId'],
                $request->all()['rzpOrderId']
            );
-
-
            if ($signatureStatus == true) {
                // return view('payment-success-page');
                $booked = Booked::where('receipt_id', $request->receipt_id);
@@ -205,6 +200,7 @@ class BookingController extends BaseController
                $roomCount->update([
                    'available_room_count' => $roomCount->available_room_count - $request->booked_room_count,
                ]);
+               Session::put('success');
                $paymentStatus = "success";
                // alert()->success('😀 ', 'Payed Successfully');
             //    return $this->renderView($this->getView('home.welcome'), compact('paymentStatus','blogs'), 'Home');
