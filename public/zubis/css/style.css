@@ -32,6 +32,38 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 html,
 body {
     height: 100%;
@@ -2413,6 +2445,7 @@ ol {
     }
 }
 /* new styles */
+/* 
 .room-custom img {
     height: 240px;
     width: 370px;
@@ -2420,7 +2453,7 @@ ol {
 
 .custom-text h1 {
     color: #cf8031;
-    /*margin: 100px auto;*/
+   
     text-align: center;
     font-size: 8em;
     transition: 0.5s;
@@ -2532,4 +2565,16 @@ ol {
     to {
         left: -100%;
     }
+} */
+
+.header__headingPrimary {
+    animation-delay: 2s;
+    animation: moveInLeft 2s ease-out;
+
+    /* animation-iteration-count: 3; */
+}
+
+.header__headingSub {
+    animation-delay: 2s;
+    animation: moveInRight 2s ease-out;
 }
