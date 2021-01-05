@@ -104,6 +104,13 @@
 
 }
 
+input{
+    caret-color: #ff9200;
+}
+
+/* .rooms-section{
+    background-image: url("{{ asset('/zubis/img/vector/payIndex__bg.jpg') }}");
+} */
 
         </style>
     
@@ -218,7 +225,7 @@
 
                 <div class="col-lg-12">
                     <div class="bookingForm">
-                        <form method="POST" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}">
+                        <form method="POST" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}" onsubmit="return validateForm()">
                             @csrf
 
                             <div class="bookingAmountDetails">
@@ -282,7 +289,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label >Room Count</label>
-                                        <input type="number" name="roomCount" class="form-control roomCount"  >
+                                        <input type="number" name="roomCount" class="form-control roomCount" min="1" max="100"  >
                                         @error('roomCount')
                                         <span id="roomCount-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
                                         @enderror
@@ -291,7 +298,7 @@
                                 <div class="col">
                                     <div class="form-group">
                                         <label >Guest Count</label>
-                                        <input type="number" name="guestCount" class="form-control" >
+                                        <input type="number" name="guestCount" class="form-control" min="1" max="500" >
                                           @error('guestCount')
                                           <span id="guestCount-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
                                           @enderror
@@ -313,8 +320,8 @@
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label >Your Phone Number</label>
-                                        <input type="number" name="contactNumber" class="form-control" >
+                                        <label > Phone Number</label>
+                                        <input type="number" name="contactNumber" class="form-control" inputmode="tel"  >
                                           @error('contactNumber')
                                           <span id="contactNumber-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
                                           @enderror
@@ -328,7 +335,7 @@
                                     
                               <div class="form-group">
                                 <label >E-mail</label>
-                                <input type="email" name="email" class="form-control" >
+                                <input type="email" name="email" class="form-control" inputmode="email">
 
                               </div>
                                 </div>
@@ -427,6 +434,33 @@ console.log("working function");
 
 
 });
+
+function validateForm(){
+ 
+    var roomCount = document.querySelector('input[name="roomCount"]').value;
+    var contactNumber = document.querySelector('input[name="contactNumber"]').value;
+    var customerName = document.querySelector('input[name="username"]').value;
+    var idProof=document.querySelector('input[name="idProof"]').value;
+  if (roomCount == "" || contactNumber=="" || customerName=="" || idProof=="") {
+    swal("Some fields seems to be empty","fill all the fields","warning");
+    return false;
+  }
+
+  let phoneNoPattern = /^\d{10}$/;
+  if(contactNumber.match(phoneNoPattern))
+        {
+            
+             return true;
+        }
+      else
+        {
+            swal("Enter a valid phone number","only digits are allowed","warning");
+        return false;
+        }
+
+
+
+}
 
 
 </script>
