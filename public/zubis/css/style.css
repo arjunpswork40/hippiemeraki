@@ -2569,12 +2569,12 @@ ol {
 
 .header__headingPrimary {
     animation-delay: 2s;
-    animation: moveInLeft 2s ease-out;
+    animation: moveInLeft 1s ease-out;
 
     /* animation-iteration-count: 3; */
 }
 
 .header__headingSub {
     animation-delay: 2s;
-    animation: moveInRight 2s ease-out;
+    animation: moveInRight 1s ease-out;
 }
