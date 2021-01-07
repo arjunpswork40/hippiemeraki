@@ -59,7 +59,8 @@ u{
 
 @media only screen and (max-width: 600px) {
 .bookedRoomDetails__header{
-    font-size: 39px;
+    font-size: xx-large;
+    font-weight: 600;
 }
 .bookedRoomDetails__customerInfo{
     padding: 4px;

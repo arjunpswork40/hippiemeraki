@@ -1,3 +1,4 @@
+<h3 class="refresh">Do not refresh this page</h3>
 <button id="rzp-button1"  >Pay</button>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
@@ -90,6 +91,9 @@ document.getElementById('rzp-button1').onclick = function(e){
                   outline: none;
               
               }
-               
+               .refresh{
+                display: flex;
+                justify-content: center;
+               }
               
               </style>

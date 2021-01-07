@@ -204,7 +204,7 @@ ol {
     top: 0;
     left: 0;
     z-index: 999999;
-    background: #ffffff;
+    background: linear-gradient(to right bottom, #cf8031, #012d1ff5);
 }
 .loader {
     width: 40px;
@@ -222,36 +222,36 @@ ol {
     0% {
         -webkit-transform: rotate(0deg);
         transform: rotate(0deg);
-        border: 4px solid #f44336;
+        border: 4px solid #cf8031;
         border-left-color: transparent;
     }
     50% {
         -webkit-transform: rotate(180deg);
         transform: rotate(180deg);
-        border: 4px solid #673ab7;
+        border: 4px solid #cf8031;
         border-left-color: transparent;
     }
     100% {
         -webkit-transform: rotate(360deg);
         transform: rotate(360deg);
-        border: 4px solid #f44336;
+        border: 4px solid #cf8031;
         border-left-color: transparent;
     }
 }
 @-webkit-keyframes loader {
     0% {
         -webkit-transform: rotate(0deg);
-        border: 4px solid #f44336;
+        border: 4px solid #cf8031;
         border-left-color: transparent;
     }
     50% {
         -webkit-transform: rotate(180deg);
-        border: 4px solid #673ab7;
+        border: 4px solid #cf8031;
         border-left-color: transparent;
     }
     100% {
         -webkit-transform: rotate(360deg);
-        border: 4px solid #f44336;
+        border: 4px solid #cf8031;
         border-left-color: transparent;
     }
 }
@@ -351,7 +351,7 @@ ol {
     display: none;
 }
 .top-nav .tn-left li i {
-    color: #dfa974;
+    color: #cf8031;
     margin-right: 4px;
 }
 .top-nav .tn-right {
@@ -603,7 +603,7 @@ ol {
     padding-left: 20px;
 }
 .booking-form form .check-date i {
-    color: #dfa974;
+    color: #cf8031;
     position: absolute;
     right: 18px;
     bottom: 17px;
@@ -628,8 +628,8 @@ ol {
     float: none;
 }
 .booking-form form .select-option .nice-select:after {
-    border-bottom: 2px solid #dfa974;
-    border-right: 2px solid #dfa974;
+    border-bottom: 2px solid #cf8031;
+    border-right: 2px solid #cf8031;
     height: 10px;
     margin-top: 0;
     right: 20px;
@@ -650,9 +650,9 @@ ol {
     display: block;
     font-size: 14px;
     text-transform: uppercase;
-    border: 1px solid #dfa974;
+    border: 1px solid #cf8031;
     border-radius: 2px;
-    color: #dfa974;
+    color: #cf8031;
     font-weight: 500;
     background: transparent;
     width: 100%;
@@ -2577,4 +2577,12 @@ ol {
 .header__headingSub {
     animation-delay: 2s;
     animation: moveInRight 1s ease-out;
+}
+.hero-section {
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+@media only screen and (max-width: 800px) {
+    .hero-section {
+        clip-path: polygon(0 0, 100% 0, 100% 137vh, 0 100%);
+    }
 }

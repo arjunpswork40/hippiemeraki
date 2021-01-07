@@ -82,27 +82,7 @@
     padding: 3px 3px 3px 4px;
     overflow: hidden;
 }
-.room__message{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-}
-
-.room__message h2{
-    margin-bottom: 30px;
-    background: #ff1e1e;
-    padding: 6px 21px;
-    color: #fff;
-    border-radius: 6px;
-    font-size: 29px;
-    font-weight: 600;
-}
-@media only screen and (max-width: 600px) {
-    .room__message h2{
-        font-size: 26px;
-    }
-
-}
+ 
 
 input{
     caret-color: #ff9200;
@@ -186,9 +166,7 @@ input{
                 </div>
 
                 @else
-                {{-- <div class="col-lg-12 col-md-12 room__message">
-                <h2>It seems the selected category is completely booked👨‍👩‍👧‍👦!<br>Please select any of the below categories🙂</h2>
-                </div> --}}
+               
                 @foreach($available as $available_room)
                 <div class="col-lg-4 col-md-6">
                     <div class="room-item">
@@ -447,15 +425,20 @@ function validateForm(){
   }
 
   let phoneNoPattern = /^\d{10}$/;
-  if(contactNumber.match(phoneNoPattern))
+  if(!contactNumber.match(phoneNoPattern))
         {
             
-             return true;
-        }
-      else
-        {
+   
             swal("Enter a valid phone number","only digits are allowed","warning");
-        return false;
+            return false;
+        }
+
+    let namePattern = /^[a-zA-Z ]*$/;
+  if(!customerName.match(namePattern))
+        {
+      
+            swal("Enter a valid name","only letters are allowed","warning");
+            return false;
         }
 
 
