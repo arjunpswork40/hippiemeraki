@@ -30,7 +30,7 @@
     <link rel="stylesheet" href="{{ asset('/zubis/css/jquery-ui.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/zubis/css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/zubis/css/style.css?v=1.2') }}" type="text/css">
     @stack('styles')
 
     <style>
