@@ -39,6 +39,8 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
     Route::post('/payment-response', 'BookingController@paymentConfirmation')->name('payment-confirmation');
     Route::get('/payment-failed', 'BookingController@paymentfailed')->name('payment-failed');
     Route::post('/payment-confirm', 'BookingController@bookingConfirmingView')->name('payment-confirming-view');
+    Route::get('/clickToContinue', 'BookingController@clickToContinue')->name('clickToContinue');
+    Route::get('/paymentUnsuccessful', 'BookingController@paymentUnsuccessful')->name('paymentUnsuccessful');
 
     });
 

@@ -68,7 +68,7 @@ class BookingController extends BaseController
         // 'SELECT room_id FROM Bookings WHERE check_in_date<="'.$ci_date.'" AND check_out_date >= "'.$co_date.'") ';
 
 
-       if ($checkOne->available_room_count != 0){
+       if ($checkOne->available_room_count > 0){
            $available=false;
            return $this->renderView($this->getView('booking.index'),compact('checkOne','userSelectedDates','userSelectedcategory','available'),'Available Rooms');
        }
@@ -120,9 +120,13 @@ class BookingController extends BaseController
    public function calculateRoomAmount(Request $request)
    {
 
-        $rate = Room_Details::where('id',$request->categoryId)->select('rate')->first();
+        $rate = Room_Details::where('id',$request->categoryId)->select('rate','available_room_count')->first();
+        if($rate->available_room_count >= $request->roomCount){
         $amount= (float)$rate['rate'] * ((int)$request->roomCount) ;
          return Response::json(['amount' => $amount]);
+        }else{
+            return Response::json(['amount' => 'exceeded','roomCount' => $rate->available_room_count]);
+        }
    }
 
    private $razorpayId="rzp_test_2zF3MMgHiqDRuS";
@@ -200,15 +204,16 @@ class BookingController extends BaseController
                $roomCount->update([
                    'available_room_count' => $roomCount->available_room_count - $request->booked_room_count,
                ]);
-               Session::put('success');
                $paymentStatus = "success";
+               Session::put('success');
                // alert()->success('😀 ', 'Payed Successfully');
             //    return $this->renderView($this->getView('home.welcome'), compact('paymentStatus','blogs'), 'Home');
-               return redirect()->route('home', compact('paymentStatus','blogs'));
+            //    return redirect()->route('home', compact('paymentStatus','blogs'));
+            return redirect()->route('clickToContinue');
 
            } else {
                $paymentStatus = "failed";
-
+               Session::put('failed');
             //    return $this->renderView($this->getView('home.welcome'), compact('paymentStatus','blogs'), 'Home');
             return redirect()->route('home', compact('paymentStatus','blogs'));
 
@@ -219,12 +224,25 @@ class BookingController extends BaseController
            $paymentStatus="waiting";
 //           return view('pages.user.home.welcome');
         //    return $this->renderView($this->getView('home.welcome'), compact('paymentStatus','blogs'), 'Home');
-        return redirect()->route('home', compact('paymentStatus','blogs'));
+        return redirect()->route('paymentUnsuccessful');
        }
 
 
    }
 
+   public function clickToContinue()
+   {
+       alert()->success('payment success');
+
+       return view('pages.user.booking.payment.continueToHome');
+   }
+
+   public function paymentUnsuccessful()
+   {
+       alert()->success('payment failed');
+
+       return view('pages.user.booking.payment.paymentFailed');
+   }
 
 
 // In this function we return boolean if signature is correct
@@ -255,7 +273,8 @@ public function bookingConfirmingView(Request $request)
 //    $rr= $request->validate([
 //         'contactNumber'=>'required',
 //     ]);
-    $amount = Room_Details::where('id',$request->category)->select('rate')->first();
+
+    $amount = Room_Details::where('id',$request->category)->select('rate','available_room_count')->first();
 
     $totalAmount = (int)$request->roomCount *(float)$amount->rate;
 
@@ -263,6 +282,7 @@ public function bookingConfirmingView(Request $request)
     $receiptId = Str::random(20);
     //   save data to db
 //    dd($request->idProof);
+
     $data = Booked::create([
        'check_in' => $request->checkIn,
        'check_out' => $request->checkOut,
@@ -292,9 +312,6 @@ public function bookingConfirmingView(Request $request)
     Session::forget('room_details');
 
     return view('pages.user.booking.payment.paymentConfirm',compact('data','categoryName'));
-
-
-
 
 }
 

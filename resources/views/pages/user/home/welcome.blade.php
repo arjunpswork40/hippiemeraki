@@ -424,7 +424,14 @@ else{
     };
 
 </script>
-
+@if(Session::has('success'))
+<script>
+    swal("Good Job","Payment Successfull","success").then(()=>{
+            Session::forget('success');
+        }
+        );
+</script>
+@endif
 
 @endpush
 

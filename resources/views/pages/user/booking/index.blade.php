@@ -10,15 +10,15 @@
 .bookingForm{
     display:flex;
     justify-content: space-around;
-    
+
 }
  .bookingForm form {
     border: 1px solid #ff9200;
     padding: 16px;
-    border-radius: 14px;  
+    border-radius: 14px;
     /* box-shadow: 2px 3px 9px -3px #151d31;   */
  }
- 
+
     .bookingAmountDetails{
     height: 116px;
     width: 100%;
@@ -46,7 +46,7 @@
 }
 
     .bookingForm__button{
-       
+
         background: #ff9200;
     width: 200px;
     margin-top: 10px;
@@ -59,7 +59,7 @@
     .bookingForm__button:focus{
         box-shadow: none;
         border:1px dashed #000;
-      
+
 }
 .bookingForm__button:hover{
     box-shadow: none;
@@ -82,7 +82,7 @@
     padding: 3px 3px 3px 4px;
     overflow: hidden;
 }
- 
+
 
 input{
     caret-color: #ff9200;
@@ -93,8 +93,8 @@ input{
 } */
 
         </style>
-    
-    
+
+
 
     <!-- Rooms Section Begin -->
     <section class="rooms-section spad">
@@ -128,7 +128,7 @@ input{
                                 </tr>
                                 </tbody>
                             </table>
-                             
+
                         </div>
                     </div>
                 </div>
@@ -136,37 +136,15 @@ input{
                 @elseif($checkTwo)
                 <div class="col-lg-4 col-md-6">
                     <div class="room-item">
-                        <img src="{{ asset('/zubis/img/room/room-2.jpg') }}" alt="">
-                        <div class="ri-text">
-                            <h4>{{ $checkTwo->category }}</h4>
-                            <h3>{{ $checkTwo->rate}} Rs<span>/Pernight</span></h3>
-                            <table>
-                                <tbody>
-                                <tr>
-                                    <td class="r-o">Room avilable (These rooms are to beconformed):</td>
-                                    <td>{{$checkTwo}}</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Capacity:</td>
-                                    <td>Max persion 5</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Bed:</td>
-                                    <td>King Beds</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Services:</td>
-                                    <td>Wifi, Television, Bathroom,...</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                           
+                        <div class="contact-enquiries">
+
+                            <h1>Contact Hotel</h1>
                         </div>
                     </div>
                 </div>
 
                 @else
-               
+
                 @foreach($available as $available_room)
                 <div class="col-lg-4 col-md-6">
                     <div class="room-item">
@@ -194,7 +172,7 @@ input{
                                 </tr>
                                 </tbody>
                             </table>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -203,6 +181,7 @@ input{
 
                 <div class="col-lg-12">
                     <div class="bookingForm">
+                    @if($checkOne || $available)
                         <form method="POST" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}" onsubmit="return validateForm()">
                             @csrf
 
@@ -211,24 +190,24 @@ input{
                                 <h4 id="totalAmount"> Rs. 0</h4>
                             </div>
 
-                            <input type="hidden" class="totalAmount" name="totalAmount">
-                         
+                            <input type="hidden" class="totalAmount" name="totalAmount" value="0">
+
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                       
+
                                         @if ($available)
                                         <label >Category</label>
                                         <select  name="category" class="form-control btn btn-lg categoryId" style="display: block">
-                                          @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
+                                          @foreach($available as $availableCategory)
                                           {{-- @dd($userSelectedcategory) --}}
-                                          @if($key != $userSelectedcategory)
-                                          <option  value="{{$key}}" >{{$type}}</option>
+                                          @if($availableCategory->id != $userSelectedcategory)
+                                          <option  value="{{$availableCategory->id}}" >{{$availableCategory->category}}</option>
                                           @endif
                                           @endforeach
                                       </select>
                                       @else
-                                       
+
                                       <select  name="category" class="form-control btn btn-lg categoryId"  style="display: none">
                                           @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
                                           {{-- @dd($userSelectedcategory) --}}
@@ -236,12 +215,12 @@ input{
                                           @endforeach
                                       </select>
                                         @endif
-          
+
                                       </div>
                                 </div>
                                 <div class="col">
-                                  
-                                    
+
+
                                 </div>
                               </div>
 
@@ -250,19 +229,19 @@ input{
                                     <div class="form-group">
                                         <label >Check In</label>
                                     <input type="text" name="checkIn" class="form-control" readonly value="{{$userSelectedDates['checkIn']}}" >
-                                      
+
                                 </div>
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                     
+
                                     <label >Check Out</label>
-                                    <input type="text" name="checkOut" class="form-control" readonly value="{{$userSelectedDates['checkOut']}}">    
+                                    <input type="text" name="checkOut" class="form-control" readonly value="{{$userSelectedDates['checkOut']}}">
                                 </div>
                                 </div>
                               </div>
 
-                              
+
                               <div class="row">
                                 <div class="col">
                                     <div class="form-group">
@@ -284,8 +263,8 @@ input{
                                 </div>
                               </div>
 
-                             
-                            
+
+
                               <div class="row">
                                 <div class="col">
                                     <div class="form-group">
@@ -310,7 +289,7 @@ input{
 
                               <div class="row">
                                 <div class="col">
-                                    
+
                               <div class="form-group">
                                 <label >E-mail</label>
                                 <input type="email" name="email" class="form-control" inputmode="email">
@@ -320,21 +299,21 @@ input{
                                 <div class="col">
                                     <div class="form-group">
                                         <label >Id Proof</label>
-                                        <input type="file" name="idProof" class="form-control bookingForm__fileUpload" accept="image/*,.pdf" required>
+                                        <input type="file" name="idProof" class="form-control bookingForm__fileUpload" accept="image/*,application/pdf" required>
                                       </div>
                                       @error('idProof')
                                       <span id="email-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
                                      @enderror
                                 </div>
                               </div>
-                          
+
                               <div class="row bookingForm__actions">
                             <button type="submit" class="btn btn-default btn-block bookingForm__button ">Submit</button>
                               </div>
                           </form>
- 
+                        @endif
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -383,13 +362,16 @@ console.log("working function");
 
                     // let result=JSON.parse(output);
                     console.log(output);
-                    amountInfo.html("Rs. "+output['amount']);
-                    $('.totalAmount').val(output['amount']);
-                    // if(output['status']=="1"){
-                    //     swal("Status Changed!",output['message'], "success",{
-                    //         buttons: false,
-                    //         timer: 1500,
-                    //     });
+
+                    if(output['amount']=="exceeded"){
+                        swal("Room count exceeded!","only "+output['roomCount']+" rooms are available", "warning");
+                            document.querySelector('.bookingForm__button').setAttribute("disabled", "disabled");
+
+                    }else{
+                        amountInfo.html("Rs. "+output['amount']);
+                         $('.totalAmount').val(output['amount']);
+                        document.querySelector('.bookingForm__button').disabled = false;
+                    }
                     //     window.location.reload();
 
                     // }else if(output[0]=="error"){
@@ -414,7 +396,7 @@ console.log("working function");
 });
 
 function validateForm(){
- 
+
     var roomCount = document.querySelector('input[name="roomCount"]').value;
     var contactNumber = document.querySelector('input[name="contactNumber"]').value;
     var customerName = document.querySelector('input[name="username"]').value;
@@ -427,8 +409,8 @@ function validateForm(){
   let phoneNoPattern = /^\d{10}$/;
   if(!contactNumber.match(phoneNoPattern))
         {
-            
-   
+
+
             swal("Enter a valid phone number","only digits are allowed","warning");
             return false;
         }
@@ -436,7 +418,7 @@ function validateForm(){
     let namePattern = /^[a-zA-Z ]*$/;
   if(!customerName.match(namePattern))
         {
-      
+
             swal("Enter a valid name","only letters are allowed","warning");
             return false;
         }
@@ -455,7 +437,7 @@ function validateForm(){
 
 @if($available){
     <script>
-        
+
         swal("Room not available","It seems the selected category is completely booked👨‍👩‍👧‍👦! Please select any of the below categories🙂","warning");
     </script>
     }
