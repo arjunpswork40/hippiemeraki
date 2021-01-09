@@ -47,7 +47,7 @@
 
     .bookingForm__button{
 
-        background: #ff9200;
+    background: #ff9200;
     width: 200px;
     margin-top: 10px;
     font-weight: 600;
@@ -86,6 +86,11 @@
 
 input{
     caret-color: #ff9200;
+}
+
+.checkTwoInfo{
+    box-shadow: 2px 3px 8px -3px #151d31;
+    margin-top: 102px;
 }
 
 /* .rooms-section{
@@ -134,12 +139,11 @@ input{
                 </div>
 
                 @elseif($checkTwo)
-                <div class="col-lg-4 col-md-6">
-                    <div class="room-item">
-                        <div class="contact-enquiries">
-
-                            <h1>Contact Hotel</h1>
-                        </div>
+                <div class="col-lg-8 col-md-8">
+                    <div class="checkTwoInfo">
+                        <div class="alert alert-warning" role="alert">
+                           The room category you requested is completely occupied and some rooms will be checked out in your check-in date, so contact the hotel at <a href="tel:+0495 2431313">0495 2431313</a> and do the booking.
+                          </div>
                     </div>
                 </div>
 
@@ -218,10 +222,7 @@ input{
 
                                       </div>
                                 </div>
-                                <div class="col">
-
-
-                                </div>
+                             
                               </div>
 
                               <div class="row">
@@ -366,6 +367,7 @@ console.log("working function");
                     if(output['amount']=="exceeded"){
                         swal("Room count exceeded!","only "+output['roomCount']+" rooms are available", "warning");
                             document.querySelector('.bookingForm__button').setAttribute("disabled", "disabled");
+                            amountInfo.html("Rs. "+"0");
 
                     }else{
                         amountInfo.html("Rs. "+output['amount']);
@@ -433,14 +435,16 @@ function validateForm(){
 
 @endpush
 
+@if($available)
 @push('payment')
 
-@if($available){
+
     <script>
 
         swal("Room not available","It seems the selected category is completely booked👨‍👩‍👧‍👦! Please select any of the below categories🙂","warning");
     </script>
-    }
-    @endif
+   
+   
 
 @endpush
+@endif

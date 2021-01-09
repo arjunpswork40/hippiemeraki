@@ -4,9 +4,9 @@
     <div class="card">
         <div class="card-header text-right">
 {{--            <h3 class="card-title">List of Rooms</h3>--}}
-{{--            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">--}}
-{{--                Add Room Details--}}
-{{--            </button>--}}
+           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+               Add Room Details
+           </button>
 
             <!--New  Modal -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -23,11 +23,7 @@
                                 @csrf
                                 <div class="form-group primary">
                                     <label for="exampleInputEmail1">Category Name</label>
-                                    <select id="guest" name="category_name" class="btn btn-outline-primary dropdown-item btn-lg">
-                                        @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
-                                            <option value="{{$type}}" {{old('category_name') == $type?'selected':''}}>{{$type}}</option>
-                                        @endforeach
-                                    </select>
+                                    <input type="text" class="form-control-file" name="category_name">
                                 </div>
 
                                 <div class="form-group">
@@ -39,11 +35,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Rate</label>
-                                    <input type="text" class="form-control-file" name="rate">
+                                    <input type="number" class="form-control-file" name="rate">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleFormControlFile1">Total Rooms</label>
-                                    <input type="text" class="form-control-file" name="total_rooms">
+                                    <input type="number" class="form-control-file" name="total_rooms">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Online bookable rooms</label>
+                                    <input type="number" class="form-control-file" name="bookable_rooms">
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -133,7 +133,14 @@
                         <td>
                             {{$key+1}}
                         </td>
-                        <td><img src="{{ \App\Http\Helpers\Core\FileManager::getRoomsImagePath($room->thumbnail_image) }}" style="width: 25%;display: block">
+                        <td>
+
+                            <a href="{{ \App\Http\Helpers\Core\FileManager::getRoomsImagePath($room->thumbnail_image) }}" data-toggle="lightbox"  data-gallery="gallery">
+
+                                <img src="{{ \App\Http\Helpers\Core\FileManager::getRoomsImagePath($room->thumbnail_image) }}" style="width: 25%;display: block" class="img-fluid mb-2">
+                                 
+                              </a>
+                           
                         </td>
                         <td>{{ $room->category}}</td>
                         <td>{{ $room->rate}}</td>
@@ -155,7 +162,7 @@
                                     <i class="fas fa-edit"></i>
                                 </a> &nbsp;
 
-                                <a href="{{ route('room-delete',$room->id) }}" title="delete" class="btn btn-outline-danger"><i class="fas fa-trash"></i> </a>
+                                <a href="{{ route('room-delete',$room->id) }}" onclick="return confirm('Are you sure?')" title="delete" class="btn btn-outline-danger"><i class="fas fa-trash"></i> </a>
                             </div>
                         </td>
 

@@ -17,6 +17,7 @@ class Room_Details extends Model
         'available_room_count',
         'thumbnail_image',
         'status',
+        'rate',
     ];
 
     public $timestamps = false;

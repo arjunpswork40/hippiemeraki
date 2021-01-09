@@ -19,9 +19,9 @@
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
+        {{-- <li class="nav-item d-none d-sm-inline-block">
             <a href="" class="nav-link">Home</a>
-        </li>
+        </li> --}}
     </ul>
 
     <!-- Right navbar links -->
@@ -36,14 +36,11 @@
                 <li class="user-header bg-primary">
                     <img src="{{ asset('/zubis/img/newlogo.jpg') }}" class="img-circle elevation-2" alt="">
 
-                    <p>
-{{--                        {{ ProfileHelper::getFullName(AuthConstants::GUARD_ADMIN) }}--}}
-                        <small>Member since 2020</small>
-                    </p>
+                   
                 </li>
                 <!-- Menu Footer-->
                 <li class="user-footer">
-                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    
                     <a class="btn btn-default btn-flat float-right" href="{{ route('logout') }}"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <p>{{ __('Sign out') }}</p>

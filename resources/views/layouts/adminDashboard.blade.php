@@ -29,10 +29,13 @@
 
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+         <!-- Ekko Lightbox -->
+        <link rel="stylesheet" href="{{ asset('/ad-lte/plugins/ekko-lightbox/ekko-lightbox.css') }}">
+
         <style>
             td img{
                 width: 73px !important;
-                height: 50px;
+                height: 50px !important;
                 object-fit: contain;
                 border: 2px ridge #cf8031;
                 min-width: 48px;
@@ -113,6 +116,9 @@
         <script src="{{ asset('/ad-lte/plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
         <script src="{{ asset('/ad-lte/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
 
+        <!-- Ekko Lightbox -->
+        <script src="{{ asset('/ad-lte/plugins/ekko-lightbox/ekko-lightbox.min.js') }}"></script>
+
         <script>
             $(document).ready(function() {
                 var App = {
@@ -122,6 +128,25 @@
                 };
                 App.initialize();
             })
+
+            // light box 
+
+            $(function () {
+            $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox({
+                alwaysShowClose: true
+            });
+            });
+
+            // $('.filter-container').filterizr({gutterPixels: 3});
+            // $('.btn[data-filter]').on('click', function() {
+            // $('.btn[data-filter]').removeClass('active');
+            // $(this).addClass('active');
+            // });
+        })
+        // end light box 
+
         </script>
         @stack('scripts')
     </body>

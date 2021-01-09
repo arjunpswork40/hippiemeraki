@@ -37,8 +37,11 @@
         <tr>
             <th class="thwidth ">ID Proof</th>
             <td class=" ">
-                <img src="{{ \App\Http\Helpers\Core\FileManager::getIDImagePath($details->guest_ID_proof) }}" style="width: 25%;display: block">
-                </td>
+                <a href="{{ \App\Http\Helpers\Core\FileManager::getIDImagePath($details->guest_ID_proof) }}" data-toggle="lightbox"  data-gallery="gallery">
+                <img src="{{ \App\Http\Helpers\Core\FileManager::getIDImagePath($details->guest_ID_proof) }}" style="width: 25%;display: block" class="img-fluid mb-2">
+            </a>
+             
+            </td>
         </tr>
         <tr>
             <th class="thwidth ">Total Amount</th>
@@ -59,12 +62,7 @@
             </td>
         </tr>
 
-        <tr >
-            <th class="thwidth">Customer Query  </th>
-
-
-           <td> Query made by customer on the request  will be shown here, if any !.</td>
-        </tr>
+ 
 
     </table>
 
@@ -128,6 +126,9 @@
 
         });
     });
+
+ 
+
 </script>
 
 @endpush

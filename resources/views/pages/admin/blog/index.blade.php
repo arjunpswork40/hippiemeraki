@@ -146,9 +146,25 @@
                     <td>
                           {{$key+1}}
                     </td>
-                    <td><img src="{{ \App\Http\Helpers\Core\FileManager::getImagePath($blog->thumbnail_image) }}" style="width: 25%;display: block">
+                    <td>
+
+                        
+                        <a href="{{ \App\Http\Helpers\Core\FileManager::getImagePath($blog->thumbnail_image) }}" data-toggle="lightbox"  data-gallery="gallery">
+
+                            <img src="{{ \App\Http\Helpers\Core\FileManager::getImagePath($blog->thumbnail_image) }}" style="width: 25%;display: block" class="img-fluid mb-2">
+                             
+                          </a>
+                        
                     </td>
-                    <td><img src="{{ \App\Http\Helpers\Core\FileManager::getImagePath($blog->banner_image) }}" style="width: 25%;display: block"></td>
+                    <td>
+                        
+                        
+                        <a href="{{ \App\Http\Helpers\Core\FileManager::getImagePath($blog->banner_image) }}" data-toggle="lightbox"  data-gallery="gallery">
+
+                            <img src="{{ \App\Http\Helpers\Core\FileManager::getImagePath($blog->banner_image) }}" style="width: 25%;display: block" class="img-fluid mb-2">
+                             
+                          </a>
+                        
                     <td>{{ $blog->title }}</td>
                     <td>{{ $blog->description }}</td>
                     <td>{{ $blog->priority }}</td>
@@ -168,7 +184,7 @@
                             <i class="fas fa-edit"></i>
                         </a> &nbsp;
 
-                        <a href="{{ route('blog-delete',$blog->id) }}" title="delete" class="btn btn-outline-danger"><i class="fas fa-trash"></i> </a>
+                        <a href="{{ route('blog-delete',$blog->id) }}" title="delete" onclick="return confirm('Are you sure?')"  class="btn btn-outline-danger"><i class="fas fa-trash"></i> </a>
                         </div>
                     </td>
 
