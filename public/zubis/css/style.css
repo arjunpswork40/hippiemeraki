@@ -2910,11 +2910,11 @@ ol {
 }
 
 .hero-section {
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
 }
 
 @media only screen and (max-width: 800px) {
     .hero-section {
-        clip-path: polygon(0 0, 100% 0, 100% 137vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
     }
 }
