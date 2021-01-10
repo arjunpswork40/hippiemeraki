@@ -48,6 +48,7 @@ class RoomController extends BaseController
             'rate' => $request->rate,
             'total_room_count' => $request->total_rooms,
             'available_room_count' => $request->bookable_rooms,
+            'priority' => $request->priority
         ]);
 
         if ($request->has('thumbnail_image') && is_file($request->thumbnail_image)){
@@ -88,6 +89,7 @@ class RoomController extends BaseController
             'category_name' => $request['category_name'],
             'rate' => $request['rate'],
             'total_room_count' => $request['total_rooms'],
+            'priority' => $request['priority'],
         ]);
 
         if ($request->has('thumbnail_image') && is_file($request->thumbnail_image)){

@@ -12,7 +12,10 @@
             @csrf
             <div class="card-body">
                 
-
+                <div class="form-group">
+                    <label for="exampleFormControlFile1">Priority</label>
+                    <input type="number" class="form-control-file" value="{{$room->priority}}" name="priority">
+                </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Rate</label>
                     <input type="number" class="form-control-file" value="{{$room->rate}}" name="rate">

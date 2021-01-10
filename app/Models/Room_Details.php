@@ -18,6 +18,7 @@ class Room_Details extends Model
         'thumbnail_image',
         'status',
         'rate',
+        'priority',
     ];
 
     public $timestamps = false;

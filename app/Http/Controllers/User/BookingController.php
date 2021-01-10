@@ -23,6 +23,10 @@ use Illuminate\Support\Facades\Response;
 use UxWeb\SweetAlert\SweetAlert;
 use Razorpay\Api\Api;
 
+use Illuminate\Mail\Mailable;
+use App\Http\Controllers\User\Mail;
+use App\Mail\ConfirmEmail;
+
 
 class BookingController extends BaseController
 
@@ -186,7 +190,7 @@ class BookingController extends BaseController
    public function paymentConfirmation(Request $request)
    {
     $blogs = Blog::orderBy('id', 'desc')->take(3)->get();
-       $status = Booked::where('receipt_id',$request->receipt_id)->select('status','booked_room_count','category_id')->first();
+       $status = Booked::where('receipt_id',$request->receipt_id)->select('status','booked_room_count','category_id','email','guest_name')->first();
        if($status->status === 3) {
            $signatureStatus = $this->SignatureVerify(
                $request->all()['rzpSignature'],
@@ -207,8 +211,19 @@ class BookingController extends BaseController
                $paymentStatus = "success";
                Session::put('success');
                // alert()->success('😀 ', 'Payed Successfully');
-            //    return $this->renderView($this->getView('home.welcome'), compact('paymentStatus','blogs'), 'Home');
-            //    return redirect()->route('home', compact('paymentStatus','blogs'));
+          
+
+            // mail 
+        
+            // Mail::send('emails.contact',$data, function ($message) {
+            //     $message->from('contact@domainname.com','Zubis Inn');
+            //     $message->to('abc123@gmail.com ');
+            //     $message->subject('Contact form submitted on domainname.com ');
+            //  });
+
+            \Mail::to($status->email)->send(new \App\Mail\ConfirmEmail($status));
+
+
             return redirect()->route('clickToContinue');
 
            } else {

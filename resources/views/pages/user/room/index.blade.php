@@ -8,9 +8,9 @@
                 @foreach($roomDetails as $roomDetail)
                 <div class="col-lg-4 col-md-6">
                     <div class="room-item room-custom">
-                        <a href="{{route('room.details',$roomDetail->id)}}">
+                        {{-- <a href="{{route('room.details',$roomDetail->id)}}"> --}}
                              <img src="{{ \App\Http\Helpers\PageHelper::getRoomsImagePath($roomDetail->thumbnail_image) }}" alt="">
-                        </a>
+                        {{-- </a> --}}
                             <div class="ri-text">
                             <h4>{{$roomDetail->category}}</h4>
                             <h3>{{ $roomDetail->rate }} Rs<span>/Pernight</span></h3>

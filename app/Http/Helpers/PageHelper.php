@@ -27,7 +27,7 @@ class PageHelper
     }
     public static function getRoomsImagePath($imageName)
     {
-        $file = asset('zubis/img/blog/blog-4.jpg');
+        $file = asset('zubis/img/room/room-3.jpg');
         if (null != $imageName) {
             if (FileManager::checkFileExist($imageName, FileDestinations::ROOM_IMAGES)) {
                 $file = FileManager::getFileUrl($imageName, FileDestinations::ROOM_IMAGES);

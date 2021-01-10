@@ -34,6 +34,10 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
+                                    <label for="exampleFormControlFile1">Priority</label>
+                                    <input type="number" class="form-control-file" name="priority">
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleFormControlFile1">Rate</label>
                                     <input type="number" class="form-control-file" name="rate">
                                 </div>
@@ -123,6 +127,7 @@
                     <th>Rate</th>
                     <th>Total Rooms</th>
                     <th>Online Bookable Rooms</th>
+                    <th>Priority</th>
                     <th>Status</th>
                     <th>Manage</th>
                 </tr>
@@ -146,6 +151,7 @@
                         <td>{{ $room->rate}}</td>
                         <td>{{ $room->total_room_count}}</td>
                         <td>{{ $room->available_room_count}}</td>
+                        <td>{{ $room->priority}}</td>
                         <td>
 
                             <div class="status-box">

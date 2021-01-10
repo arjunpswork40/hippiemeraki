@@ -74,14 +74,14 @@ class HomeController extends BaseController
      */
     public function room()
     {
-        $roomDetails = Room_Details::get();
+        $roomDetails = Room_Details::where('status',1)->orderBy('priority','asc')->get();
         return $this->renderView($this->getView('room.index'),compact('roomDetails'),'Room');
 
     }
 
     public function blog()
     {
-        $newses = Blog::all();
+        $newses = Blog::where('status',1)->orderBy('priority','asc')->get();
         $date = Carbon::now();
         return $this->renderView($this->getView('news.blog'),compact('newses','date'),'News');
     }

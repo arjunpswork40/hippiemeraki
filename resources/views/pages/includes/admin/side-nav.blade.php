@@ -11,7 +11,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <li class="nav-item">
                 <a href="{{ route('dashboard') }}" class="nav-link {{ request()->is('admin') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="nav-icon fa fa-address-book"></i>
                     <p>{{ __('Booking') }}</p>
                 </a>
             </li>
@@ -20,13 +20,13 @@
             <li class="nav-header">PAGE MANAGEMENT</li>
             <li class="nav-item">
                 <a class="nav-link {{ request()->is('admin/room') || request()->is('admin/room/*') ? 'active' : '' }}" href="{{ route('admin.room') }}">
-                    <i class="fas fa-copy nav-icon"></i>
+                    <i class="fas fa-bed nav-icon"></i>
                     <p>{{ __('Rooms') }}</p>
                 </a>
             </li>
             <li class="nav-item  user-panel mb-3">
                 <a href="{{ route('blog') }}" class="nav-link {{ request()->is('admin/blog') || request()->is('admin/blog/*')? 'active' : '' }}">
-                  <i class="nav-icon fas fa-mail-bulk"></i>
+                  <i class="nav-icon fas fa-edit"></i>
                     <p>{{ __('Blogs') }}</p>
                 </a>
             </li>
