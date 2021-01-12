@@ -213,10 +213,10 @@ input{
                                       @else
 
                                       <select  name="category" class="form-control btn btn-lg categoryId"  style="display: none">
-                                          @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type)
+                                          {{-- @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type) --}}
                                           {{-- @dd($userSelectedcategory) --}}
-                                          <option  value="{{$key}}" {{$userSelectedcategory == $key?'selected':''}} >{{$type}}</option>
-                                          @endforeach
+                                          <option  value="{{$checkOne->id}}" {{$userSelectedcategory == $checkOne->id?'selected':''}} >{{$checkOne->category}}</option>
+                                          {{-- @endforeach --}}
                                       </select>
                                         @endif
 

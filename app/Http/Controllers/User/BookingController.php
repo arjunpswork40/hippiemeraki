@@ -26,7 +26,7 @@ use Razorpay\Api\Api;
 use Illuminate\Mail\Mailable;
 use App\Http\Controllers\User\Mail;
 use App\Mail\ConfirmEmail;
-
+use Illuminate\Support\Facades\DB;
 
 class BookingController extends BaseController
 
@@ -190,7 +190,47 @@ class BookingController extends BaseController
    public function paymentConfirmation(Request $request)
    {
     $blogs = Blog::orderBy('id', 'desc')->take(3)->get();
-       $status = Booked::where('receipt_id',$request->receipt_id)->select('status','booked_room_count','category_id','email','guest_name')->first();
+
+    $status = DB::table('bookeds as b')
+            ->select(
+                'b.id',
+               'b.status',
+               'b.booked_room_count',
+               'b.category_id',
+               'b.email',
+               'b.guest_name',
+               'b.check_in',
+               'b.check_out',
+               'b.guest_count',
+               'b.guest_phone_number',
+               'b.guest_ID_proof',
+               'b.totalPrice',
+               'b.created_at',
+               'b.guest_ID_proof',
+               'rd.category'
+               )
+            ->join('room_details as rd','b.category_id','=', 'rd.id')
+            ->where('receipt_id',$request->receipt_id)
+            ->first();
+
+    //    $status = Booked::where('receipt_id',$request->receipt_id)
+    //     ->select(
+    //         'id',
+    //        'status',
+    //        'booked_room_count',
+    //        'category_id',
+    //        'email',
+    //        'guest_name',
+    //        'check_in',
+    //        'check_out',
+    //        'guest_count',
+    //        'booked_room_count',
+    //        'guest_phone_number',
+    //        'guest_ID_proof',
+    //        'totalPrice',
+    //        'created_at'
+    //        )
+    //     ->first();
        if($status->status === 3) {
            $signatureStatus = $this->SignatureVerify(
                $request->all()['rzpSignature'],
@@ -203,6 +243,7 @@ class BookingController extends BaseController
                $booked->update([
                    'status' => 1,
                    'rzp_payment_id' => $request->rzpPaymentId,
+                   'order_id' => $request->rzpOrderId,
                ]);
                $roomCount = Room_Details::where('id', $request->category_id)->first();
                $roomCount->update([
@@ -211,10 +252,10 @@ class BookingController extends BaseController
                $paymentStatus = "success";
                Session::put('success');
                // alert()->success('😀 ', 'Payed Successfully');
-          
 
-            // mail 
-        
+
+            // mail
+
             // Mail::send('emails.contact',$data, function ($message) {
             //     $message->from('contact@domainname.com','Zubis Inn');
             //     $message->to('abc123@gmail.com ');
@@ -226,13 +267,7 @@ class BookingController extends BaseController
 
             return redirect()->route('clickToContinue');
 
-           } else {
-               $paymentStatus = "failed";
-               Session::put('failed');
-            //    return $this->renderView($this->getView('home.welcome'), compact('paymentStatus','blogs'), 'Home');
-            return redirect()->route('home', compact('paymentStatus','blogs'));
-
-        }
+           }
        }
        else
        {

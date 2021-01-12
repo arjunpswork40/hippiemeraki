@@ -29,8 +29,7 @@ class ConfirmEmail extends Mailable
      */
     public function build()
     {
-         $status = $this->status;
-        return $this->view('email.confirmMail',compact($status));
+        return $this->view('email.confirmMail')->with('status',$this->status);
 
         // return $this->view('view.name');
     }

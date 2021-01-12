@@ -19,7 +19,7 @@
         </tr>
         <tr>
             <th class="thwidth ">Category</th>
-            <td class="">{{ \App\Http\Constants\RoomCategory::TYPES[$details->category_id] }}</td>
+            <td class="">{{ $details->category }}</td>
         </tr>
         <tr>
             <th class="thwidth ">Booked Rooms</th>

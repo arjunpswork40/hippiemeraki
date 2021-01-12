@@ -38,7 +38,13 @@ class HomeController extends BaseController
 
     public function bookingManagementTable()
     {
-        $bookings = Booked::where('status','1')->orderBy('id','desc')->get();
+        $bookings = DB::table('bookeds as b')
+            ->select('b.id','b.check_in','b.check_out','b.guest_count','b.booked_room_count','b.guest_name','b.guest_phone_number',
+            'b.guest_permanent_address','b.guest_ID_proof','b.totalPrice','b.email','b.status','b.room_status',
+            'rd.category')
+            ->join('room_details as rd','b.category_id','=', 'rd.id')
+            ->orderBy('b.id','desc')->get();
+        
         
         return $this->renderView($this->getView('booking.index'), compact('bookings'), 'Booking');
 
@@ -46,7 +52,13 @@ class HomeController extends BaseController
 
     public function guestDetailsManagement(Booked $booked)
     {
-        $details = Booked::where('id',$booked->id)->first();
+        // $details = Booked::where('id',$booked->id)->first();
+       $details = DB::table('bookeds as b')
+            ->select('b.id','b.check_in','b.check_out','b.guest_count','b.booked_room_count','b.guest_name','b.guest_phone_number',
+            'b.guest_permanent_address','b.guest_ID_proof','b.totalPrice','b.email','b.status','b.room_status','b.category_id',
+            'rd.category')
+            ->join('room_details as rd','b.category_id','=', 'rd.id')
+            ->where('b.id',$booked->id)->first();
         return $this->renderView($this->getView('booking.management'), compact('details'), 'Details');
     }
 

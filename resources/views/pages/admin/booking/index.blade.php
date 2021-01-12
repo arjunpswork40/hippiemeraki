@@ -31,7 +31,7 @@
                     </td>
                     <td>{{$booking->check_in}}</td>
                     <td> {{ $booking->check_out }}</td>
-                    <td>{{ \App\Http\Constants\RoomCategory::TYPES[$booking->category_id] }}</td>
+                    <td>{{ $booking->category }}</td>
                     <td>{{ $booking->booked_room_count }}</td>
                     <td>
                         <a class="btn btn-outline-success btn-sm" href="{{ route('guestDetailsManagement',$booking->id) }}">View</a>
