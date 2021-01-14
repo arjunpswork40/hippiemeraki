@@ -176,7 +176,7 @@ else{
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
-                    <i class="flaticon-044-clock-1"></i>
+                    <i class="flaticon2-hiking"></i>
                     <h4>Outbound Experimental Training Program</h4>
                     <p>Shift to the modest side rather expecting the most. Experience the cause of adventure tourism, Adventure team building and games.</p>
                 </div>
