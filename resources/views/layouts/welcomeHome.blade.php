@@ -83,6 +83,10 @@
         }
         .ft-contact a{
             color: #fff;
+            /* background: -webkit-linear-gradient(319.11deg,#f98f15 0%,#a7905b 100%);
+            font-weight: 600;
+            -webkit-background-clip: text;
+             -webkit-text-fill-color: transparent; */
         }
         .blog-item{
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
