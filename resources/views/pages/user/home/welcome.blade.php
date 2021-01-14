@@ -150,48 +150,44 @@ else{
                 <div class="service-item">
                     <i class="flaticon-042-menu"></i>
                     <h4>Advance Booking</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>Using advance booking facility, you can Reserve your vacation in advance, so you can choose your best room by saving your accommodation expenses, you can enjoy discounts, better availability and you will be better equipped and prepared for anything! </p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon-026-bed"></i>
                     <h4>Honeymoon Bliss</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>We dedicate you a right place to make unforgettable memories, beautiful place to begin your new journey towards life, make your togetherness incredible by world class experience, we specially crafted here to create a blissful romance, and a journey of joyful chapters in life!</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon2-family-1"></i>
                     <h4>Family Vacations</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>Time you spend with your family are precious because   “a healthy family is a precious  gift of god”, we promise you an valuable experience to make your togetherness to a memorable epoch in your life. </p>
                 </div>
             </div>
                             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon-001-luggage"></i>
                     <h4>Weekend Holidays</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>Refresh yourself by taking your weekend with us, we diligence an extra ordinary holiday package specially resolve those who like to take a break and relax   from city sounds , find best weekend deals and offers!</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon-044-clock-1"></i>
                     <h4>Outbound Experimental Training Program</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>Shift to the modest side rather expecting the most. Experience the cause of adventure tourism, Adventure teambuilding and games.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-sm-6">
                 <div class="service-item">
                     <i class="flaticon2-handshake"></i>
                     <h4>Bussiness Travel</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna.</p>
+                    <p>The days that you travel to and from your location are counted as work days. We concern your working time that’s how conquer premium hotel experience for our relevant business guests.
+                        At most we prefer you the best area availability to build up the business works as scheduled by terms.
+                        </p>
                 </div>
             </div>
         </div>
