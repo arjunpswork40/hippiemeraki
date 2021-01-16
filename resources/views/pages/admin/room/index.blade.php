@@ -126,7 +126,7 @@
                     <th>Category Name</th>
                     <th>Rate</th>
                     <th>Total Rooms</th>
-                    <th>Online Bookable Rooms</th>
+                    <th>Online Bookable Rooms Available</th>
                     <th>Priority</th>
                     <th>Status</th>
                     <th>Manage</th>

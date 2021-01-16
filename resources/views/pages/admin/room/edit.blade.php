@@ -25,6 +25,10 @@
                     <input type="number" class="form-control-file" value="{{$room->total_room_count}}" name="total_rooms">
                 </div>
                 <div class="form-group">
+                    <label for="exampleFormControlFile1">Online Bookable Rooms Available (Live value)</label>
+                    <input type="number" class="form-control-file" value="{{$room->available_room_count}}" name="total_rooms">
+                </div>
+                <div class="form-group">
                     <label for="exampleFormControlFile1">Thumbnail Image</label>
                     <input type="file" class="form-control-file" name="thumbnail_image" accept="image/*" >
                     @error('thumbnail_image')

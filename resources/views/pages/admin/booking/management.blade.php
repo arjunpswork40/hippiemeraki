@@ -26,6 +26,10 @@
             <td class="">{{$details->booked_room_count}}</td>
         </tr>
         <tr>
+            <th class="thwidth ">Guest Count</th>
+            <td class="">{{$details->guest_count}}</td>
+        </tr>
+        <tr>
             <th class="thwidth ">CheckIn</th>
             <td class="">{{$details->check_in}}</td>
         </tr>
