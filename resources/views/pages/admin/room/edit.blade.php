@@ -11,7 +11,7 @@
         <form action="{{ route('room-update',$room->id) }}" method="POST" role="form" enctype="multipart/form-data" id="editBlogForm">
             @csrf
             <div class="card-body">
-                
+
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Priority</label>
                     <input type="number" class="form-control-file" value="{{$room->priority}}" name="priority">
@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Online Bookable Rooms Available (Live value)</label>
-                    <input type="number" class="form-control-file" value="{{$room->available_room_count}}" name="total_rooms">
+                    <input type="number" class="form-control-file" value="{{$room->available_room_count}}" name="available_room_count">
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Thumbnail Image</label>

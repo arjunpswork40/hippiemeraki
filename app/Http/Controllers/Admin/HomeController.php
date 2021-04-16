@@ -44,8 +44,8 @@ class HomeController extends BaseController
             'rd.category')
             ->join('room_details as rd','b.category_id','=', 'rd.id')
             ->orderBy('b.id','desc')->get();
-        
-        
+
+
         return $this->renderView($this->getView('booking.index'), compact('bookings'), 'Booking');
 
     }
@@ -120,18 +120,18 @@ class HomeController extends BaseController
     }
 
 
-    
+
 
     public function blogEdit($id)
     {
         $blog = Blog::where('id',$id)->first();
         return $this->renderView($this->getView('blog.edit'), compact('blog'), 'Blog Edit');
     }
-    
+
 
     public function blogUpdate(Request $request,$id)
     {
-        
+
 //        if($request->blog_id){
         $blog = Blog::where('id',$id)->firstOrFail();
         $blog->update([
@@ -164,7 +164,7 @@ class HomeController extends BaseController
 
     }
 
- 
+
 
 
     //     return back();
@@ -187,44 +187,44 @@ class HomeController extends BaseController
 
     public function checkInOutStatusUpdate(Request $request)
     {
- 
+
         $booked=Booked::where('id',$request->booked_id)->first();
- 
-      
-     
+
+
+
         if($booked->room_status===4){
-           
+
         return response()->json([
             'status'=>'0',
             'message'=>'Room Already Cheked Out'
         ]);
 
-        
+
 
         }
         else{
 
              if($request->value==='4'){
                 $roomCount = Room_Details::where('id', $request->categoryId)->first();
-                 
+
                 $bookedRoomCount = Booked::where('id',$request->booked_id)->select('booked_room_count')->first();
                    $roomCount->update([
                        'available_room_count' => $roomCount->available_room_count + $bookedRoomCount->booked_room_count
                    ]);
-    
-    
+
+
             }
 
             $booked->update([
                 'room_status' => $request->value,
-    
+
             ]);
 
             return response()->json([
                 'status'=>'1',
                 'message'=>'Status was changed succesfully'
             ]);
-    
+
 
         }
 

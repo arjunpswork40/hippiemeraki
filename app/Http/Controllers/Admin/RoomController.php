@@ -90,6 +90,7 @@ class RoomController extends BaseController
             'rate' => $request['rate'],
             'total_room_count' => $request['total_rooms'],
             'priority' => $request['priority'],
+            'available_room_count' => $request['available_room_count'],
         ]);
 
         if ($request->has('thumbnail_image') && is_file($request->thumbnail_image)){
@@ -102,6 +103,6 @@ class RoomController extends BaseController
         }
         alert()->success('😀 ', 'Updated Successfully');
 
-        return redirect('admin/room');
+        return redirect()->route('admin.room');
     }
 }
