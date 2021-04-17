@@ -1,16 +1,18 @@
     <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Zubis INN ">
+    <title>Zubis INN </title>
+    <meta name="description" content="Make your trips unforgettable with Zubis INN, 3 Star Hotel">  
+    <meta property="og:type" content="website" key="ogtype" />
+    <link rel="canonical" href="https://zubisinn.com/" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="theme-color" content="#dfa974">
-    <meta name="keywords" content="Zubis INN, unica, Hotel">
+    <meta name="keywords" content="Zubis INN, Hotel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Zubis INN </title>
     <link rel="icon" type="image/png" href="{{ asset('/zubis/img/logo/z-logo-only.png') }}"/>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700&display=swap" rel="stylesheet">
