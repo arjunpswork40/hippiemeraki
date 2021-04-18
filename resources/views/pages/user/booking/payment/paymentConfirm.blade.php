@@ -30,7 +30,7 @@ u{
 
 
 .bookingForm button{
-       
+
        background: #ff9200;
    width: 200px;
    margin-top: 10px;
@@ -43,7 +43,7 @@ u{
    .bookingForm button:focus{
        box-shadow: none;
        border:1px dashed #000;
-     
+
 }
 .bookingForm button:hover{
    box-shadow: none;
@@ -78,12 +78,12 @@ u{
     <section class="rooms-section spad">
         <div class="container">
             <div class="bookedRoomDetails">
-          
+
             <div class="row bookedRoomDetails__customerInfo">
-                <h1 class="bookedRoomDetails__header">Confirm your details</h1> 
+                <h1 class="bookedRoomDetails__header">Confirm your details</h1>
                 <div class="col-lg-6 col-md-6 bookedRoomDetails__customerInfoContainer">
                     <div class="room-item">
-                        <img src="{{ asset('/zubis/img/room/room-1.jpg') }}" alt="">
+                        <img src="{{ \App\Http\Helpers\PageHelper::getRoomsImagePath($categoryName->thumbnail_image) }}" alt="">
                         <div class="ri-text">
                             <h4>{{$categoryName->category}}</h4>
                             {{-- <h3>{{ $data->totalPrice}} Rs<span>/Pernight</span></h3> --}}
@@ -126,23 +126,23 @@ u{
                             <div class="bookingForm">
                                 <form method="POST" action="{{ route('payment-initiation')}}">
                                     @csrf
-        
+
                                     <input type="hidden" class="totalAmount" name="totalAmount" value="{{ $data->totalPrice}}">
                                     <input type="hidden" class="username" name="username" value="{{$data->guest_name}}">
                                     <input type="hidden" class="email" name="email" value="{{$data->email}}">
                                     <input type="hidden" class="receipt_id" name="receipt_id" value="{{$data->receipt_id}}">
                                     <input type="hidden" class="contactNumber" name="contactNumber" value="{{$data->guest_phone_number}}">
                                     {{-- <input type="number" class="totalAmount" name="totalAmount"> --}}
-        
-        
+
+
                                     <button type="submit" class="btn btn-default">Pay Now</button>
                                   </form>
-         
+
                             </div>
                         </div>
                     </div>
                 </div>
- 
+
             </div>
         </div>
 

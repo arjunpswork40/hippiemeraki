@@ -108,7 +108,7 @@ input{
                 @if($checkOne)
                 <div class="col-lg-4 col-md-6">
                     <div class="room-item">
-                        <img src="{{ asset('/zubis/img/room/room-1.jpg') }}" alt="">
+                        <img src="{{ \App\Http\Helpers\PageHelper::getRoomsImagePath($checkOne->thumbnail_image) }}" alt="">
                         <div class="ri-text">
                             <h4>{{ $checkOne->category }}</h4>
                             <h3>{{ $checkOne->rate}} Rs<span>/Pernight</span></h3>
@@ -121,15 +121,15 @@ input{
                                 </tr>
                                 <tr>
                                     <td class="r-o">Capacity:</td>
-                                    <td>Max persion 3</td>
+                                    <td>Maximum {{ $checkOne->capacity }}</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Bed:</td>
-                                    <td>King Beds</td>
+                                    <td>{{ $checkOne->bedType}}</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Services:</td>
-                                    <td>Wifi, Television, Bathroom,...</td>
+                                    <td>{{ $checkOne->service}}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -152,7 +152,7 @@ input{
                 @foreach($available as $available_room)
                 <div class="col-lg-4 col-md-6">
                     <div class="room-item">
-                        <img src="{{ asset('/zubis/img/room/room-3.jpg') }}" alt="">
+                        <img src="{{ \App\Http\Helpers\PageHelper::getRoomsImagePath($available_room->thumbnail_image) }}" alt="">
                         <div class="ri-text">
                             <h4>{{ $available_room->category }}</h4>
                             <h3>{{ $available_room->rate}} Rs<span>/Pernight</span></h3>
@@ -164,15 +164,15 @@ input{
                                 </tr>
                                 <tr>
                                     <td class="r-o">Capacity:</td>
-                                    <td>Max persion 2</td>
+                                    <td>Maximum {{ $available_room->capacity }} Persons</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Bed:</td>
-                                    <td>King Beds</td>
+                                    <td>{{ $available_room->bedType}}</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Services:</td>
-                                    <td>Wifi, Television, Bathroom,...</td>
+                                    <td>{{ $available_room->service}}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -222,7 +222,7 @@ input{
 
                                       </div>
                                 </div>
-                             
+
                               </div>
 
                               <div class="row">
@@ -443,8 +443,8 @@ function validateForm(){
 
         swal("Room not available","It seems the selected category is completely booked👨‍👩‍👧‍👦! Please select any of the below categories🙂","warning");
     </script>
-   
-   
+
+
 
 @endpush
 @endif

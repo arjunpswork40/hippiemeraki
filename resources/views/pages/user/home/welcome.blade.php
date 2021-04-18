@@ -211,10 +211,10 @@ else{
                             <h2>{{ $room->rate }}-INR<span>/Pernight</span></h2>
                             <table>
                                 <tbody>
-                                <tr>
+                                {{-- <tr>
                                     <td class="r-o">Size:</td>
                                     <td>30 ft</td>
-                                </tr>
+                                </tr> --}}
                                 <tr>
                                     <td class="r-o">Capacity:</td>
                                     <td>Maximum {{ $roomDetail->capacity }} Persons</td>

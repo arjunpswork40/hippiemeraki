@@ -357,7 +357,7 @@ public function bookingConfirmingView(Request $request)
     }
 
 
-    $categoryName = Room_Details::where('id',$request->category)->select('category')->first();
+    $categoryName = Room_Details::where('id',$request->category)->select('category','thumbnail_image')->first();
 
     Session::forget('room_details');
 
