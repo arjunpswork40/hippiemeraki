@@ -28,23 +28,23 @@
         <div class="about-page-services">
             <div class="row">
                 <div class="col-md-4">
-                    <div class="ap-service-item set-bg" data-setbg="{{ asset('/zubis/img/about/about-p1.jpg') }}">
+                    <div class="ap-service-item set-bg" data-setbg="{{ asset('/zubis/img/about/fam-exe-room2.jpg') }}">
                         <div class="api-text">
-                            <h3>Restaurants Services</h3>
+                            <h3>Family Executive Room</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="ap-service-item set-bg" data-setbg="{{ asset('/zubis/img/about/about-p2.jpg') }}">
+                    <div class="ap-service-item set-bg" data-setbg="{{ asset('/zubis/img/about/tent-cropped.jpg')}}">
                         <div class="api-text">
                             <h3>Travel & Camping</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="ap-service-item set-bg" data-setbg="{{ asset('/zubis/img/about/about-p3.jpg') }}">
+                    <div class="ap-service-item set-bg" data-setbg="{{asset('/zubis/img/about/interior.jpg') }}">
                         <div class="api-text">
-                            <h3>Event & Party</h3>
+                            <h3>Restaurants Services</h3>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
 <!-- About Us Page Section End -->
 
 <!-- Video Section Begin -->
-<section class="video-section set-bg" data-setbg="{{ asset('/zubis/img/video-bg.jpg') }}">
+<section class="video-section set-bg" data-setbg="{{ asset('/zubis/img/hero/banner4.jpg') }}">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -78,27 +78,27 @@
             <div class="col-lg-12">
                 <div class="section-title">
                     <span>Our Gallery</span>
-                    <h2>Discover Our Work</h2>
+                    {{-- <h2>Discover Our Work</h2> --}}
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-6">
-                <div class="gallery-item set-bg" data-setbg="{{ asset('/zubis/img/gallery/gallery-1.jpg') }}">
+                <div class="gallery-item set-bg" data-setbg="{{ asset('/zubis/img/about/fam-exe-room2.jpg') }}">
                     <div class="gi-text">
                         <h3>Room Luxury</h3>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="gallery-item set-bg" data-setbg="{{ asset('/zubis/img/gallery/gallery-3.jpg') }}">
+                        <div class="gallery-item set-bg" data-setbg="{{ asset('/zubis/img/about/interior.jpg') }}">
                             <div class="gi-text">
-                                <h3>Room Luxury</h3>
+                                <h3>Restaurant</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <div class="gallery-item set-bg" data-setbg="{{ asset('/zubis/img/gallery/gallery-4.jpg') }}">
+                        <div class="gallery-item set-bg" data-setbg="{{ asset('/zubis/img/about/fam-exe-room2.jpg') }}">
                             <div class="gi-text">
                                 <h3>Room Luxury</h3>
                             </div>
@@ -107,7 +107,7 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="gallery-item large-item set-bg" data-setbg="{{ asset('/zubis/img/gallery/gallery-2.jpg') }}">
+                <div class="gallery-item large-item set-bg" data-setbg="{{ asset('/zubis/img/about/fam-exe-room1.jpg') }}">
                     <div class="gi-text">
                         <h3>Room Luxury</h3>
                     </div>

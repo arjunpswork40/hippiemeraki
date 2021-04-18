@@ -48,6 +48,7 @@
             max-width: 164px;
             background: #fff;
             padding: 6px;
+            height: 79px;
         }
         .footer-section  .logo img{
             object-fit: contain;

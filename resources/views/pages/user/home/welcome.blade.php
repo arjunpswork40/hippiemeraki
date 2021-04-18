@@ -57,9 +57,10 @@
         </div>
     </div>
     <div class="hero-slider owl-carousel">
-        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/hero-1.jpg') }}"></div>
-        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/hero-2.jpg') }}"></div>
-        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/hero-3.jpg') }}"></div>
+        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner1.jpg') }}"></div>
+        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner2.jpg') }}"></div>
+        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner3.jpg') }}"></div>
+        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner4.jpg') }}"></div>
     </div>
 </section>
 <!-- Hero Section End -->
@@ -119,10 +120,10 @@ else{
                 <div class="about-pic">
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="{{ asset('/zubis/img/about/about-1.jpg') }}" alt="">
+                            <img src="{{ asset('/zubis/img/about/tent.jpg') }}" alt="">
                         </div>
                         <div class="col-sm-6">
-                            <img src="{{ asset('/zubis/img/about/about-2.jpg') }}" alt="">
+                            <img src="{{ asset('/zubis/img/about/interior.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>

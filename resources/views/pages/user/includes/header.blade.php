@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <ul class="tn-left">
-                        <li><i class="fa fa-phone"></i><a href="tel:+91 8113887700">+91 8113887700</a></li>
+                        <li><i class="fa fa-phone"></i><a href="tel:+91 7796888444">+91 7796888444</a></li>
                         <li><i class="fa fa-envelope"></i><a href="mailto:reservations@zubisinn.com">reservations@zubisinn.com</a></li>
                     </ul>
                 </div>
@@ -39,7 +39,7 @@
                 <div class="col-lg-2">
                     <div class="logo">
                         <a href="{{ route('home') }}">
-                            <img src="{{ asset('/zubis/img/logo/z-logo-full-horizontal.png') }}" alt="">
+                            <img src="{{ asset('/zubis/img/logo/logoNew-horizontal.png') }}" alt="">
                         </a>
                     </div>
                 </div>
