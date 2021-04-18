@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Description</label>
-                                    <input type="text" class="form-control" name="description"  aria-describedby="emailHelp" placeholder="Desription">
+                                    <textarea type="text" class="form-control" name="description"  aria-describedby="emailHelp" placeholder="Desription"></textarea>
                                     @error('description')
                                      <div class="text-danger">{{ $message }}</div>
                                      @enderror

@@ -19,11 +19,11 @@
                 </div>
                 <div class="col-lg-5 offset-lg-1">
                     <ul class="ap-services">
-                        <li><i class="icon_check"></i> 20% Off On Accommodation.</li>
-                        <li><i class="icon_check"></i> Complimentary Daily Breakfast</li>
-                        <li><i class="icon_check"></i> 3 Pcs Laundry Per Day</li>
+                        <li><i class="icon_check"></i> Spa Service.</li>
+                        <li><i class="icon_check"></i> In-room Service</li>
+                        <li><i class="icon_check"></i>  Rooftop with Stunning</li>
                         <li><i class="icon_check"></i> Free Wifi.</li>
-                        <li><i class="icon_check"></i> Discount 20% On F&B</li>
+                        <li><i class="icon_check"></i>Revival Experience</li>
                     </ul>
                 </div>
                 <div class="about-text">
