@@ -217,15 +217,15 @@ else{
                                 </tr> --}}
                                 <tr>
                                     <td class="r-o">Capacity:</td>
-                                    <td>Maximum {{ $roomDetail->capacity }} Persons</td>
+                                    <td>Maximum {{ $room->capacity }} Persons</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Bed:</td>
-                                    <td>{{ $roomDetail->bedType}}</td>
+                                    <td>{{ $room->bedType}}</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Services:</td>
-                                    <td>{{ $roomDetail->service}}</td>
+                                    <td>{{ $room->service}}</td>
                                 </tr>
                                 </tbody>
                             </table>

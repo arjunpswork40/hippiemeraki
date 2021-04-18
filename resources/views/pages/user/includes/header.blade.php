@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <ul class="tn-left">
-                        <li><i class="fa fa-phone"></i><a href="tel:+91 7034020909">+91 7034020909</a></li>
+                        <li><i class="fa fa-phone"></i><a href="tel:+91 7796888444">+91 7796888444</a></li>
                         <li><i class="fa fa-envelope"></i><a href="mailto:info@zubisinn.com">info@zubisinn.com</a></li>
                     </ul>
                 </div>

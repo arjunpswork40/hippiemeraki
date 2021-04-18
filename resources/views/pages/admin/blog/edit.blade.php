@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Description</label>
-          <input type="text" class="form-control" value="{{$blog->description}}" name="description"  aria-describedby="emailHelp" placeholder="Desription">
+          <textarea type="text" class="form-control"   name="description"  aria-describedby="emailHelp" placeholder="Desription">{{$blog->description}}</textarea>
             @error('description')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
