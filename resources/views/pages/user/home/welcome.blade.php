@@ -124,7 +124,7 @@ else{
                             <img src="{{ asset('/zubis/img/about/tent.jpg') }}" alt="">
                         </div>
                         <div class="col-sm-6">
-                            <img src="{{ asset('/zubis/img/about/interior.jpg') }}" alt="">
+                            <img src="{{ asset('/zubis/img/about/doorway.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
