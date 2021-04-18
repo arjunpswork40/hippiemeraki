@@ -42,9 +42,10 @@ class HomeController extends BaseController
         // $paymentStatus="success";
         $blogs = Blog::orderBy('id', 'desc')->take(3)->get();
         $roomDetails = Room_Details::where('status',1)->select('category','id')->get();
+        $roomDeteailsRecent = Room_Details::where('status', 1)->orderBy('priority')->take(4)->get();
         $categoryNo = Room_Details::where('status',1)->select('category','id')->first();
 //        $pageData = $this->_pageService->getPage(PageConstant::HOME_PAGE);
-        return $this->renderView($this->getView('home.welcome'), compact('blogs','roomDetails','categoryNo'), 'Home');
+        return $this->renderView($this->getView('home.welcome'), compact('blogs','roomDeteailsRecent','roomDetails','categoryNo'), 'Home');
     }
 
     /**

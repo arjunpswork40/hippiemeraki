@@ -8,7 +8,7 @@
                 <div class="contact-text">
                     <h2>Contact Info</h2>
                     <p>Feel free to contact us, we are always happy to help you.</p>
-               
+
                     <table>
                         <tbody>
                         <tr>
@@ -16,28 +16,32 @@
                             <td>Hotel Zubisinn
                                 Red cross road, Near New Bus stand
                                 Kalpetta
-                                Wayanad - 673122</td>
+                                Wayanad - 673121</td>
                         </tr>
                         <tr>
                             <td class="c-o"> <i class="fa fa-phone"></i></td>
-                            <td><a href="tel:+0495 2431313">0495 2431313</a> 
-                            </td> 
+                            <td><a href="tel:+0495 2431313">0495 2431313</a>
+                            </td>
                         </tr>
+                        <td class="c-o"><i class="fa fa-mobile-phone"></i></td>
+                        <td><a href="tel:+91 7034020909">+91 7034020909</a></td>
+                    </tr>
+                    <tr>
                         <td class="c-o"><i class="fa fa-mobile-phone"></i></td>
                         <td><a href="tel:+91 7796888444">+91 7796888444</a></td>
                     </tr>
                         <tr>
                             <td class="c-o"><i class="fa fa-inbox"></i></td>
-                            <td><a href="mailto:reservations@zubisinn.com">reservations@zubisinn.com</a></td>
+                            <td><a href="mailto:info@zubisinn.com">info@zubisinn.com</a></td>
                         </tr>
                         <tr>
-                       
+
                         </tbody>
                     </table>
                 </div>
             </div>
-                
-                <style> 
+
+                <style>
                     .contact-text .fa{
                         font-size:19px;
                         color: #19191a;
@@ -83,7 +87,8 @@
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.265555262804!2d76.08240661480832!3d11.604407191762927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDM2JzE1LjkiTiA3NsKwMDUnMDQuNSJF!5e0!3m2!1sen!2sin!4v1618727195805!5m2!1sen!2sin"
                         height="280" style="border:0;" allowfullscreen=""></iframe>
                 </div>
-                
+
+
 
             </div>
         </div>

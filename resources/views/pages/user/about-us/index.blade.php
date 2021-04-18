@@ -9,9 +9,12 @@
                 <div class="col-lg-6">
                     <div class="ap-title">
                         <h2>Welcome To Zubis INN.</h2>
-                        <p>Built in 1910 during the Belle Epoque period, this hotel is located in the center of
-                            Paris, with easy access to the city’s tourist attractions. It offers tastefully
-                            decorated rooms.</p>
+                        <p>With captivating visual treats and alluring backdrop, the <b>Zubisinn Hote</b>l gives you a holistic
+                            experience of a lifetime. Perfectly positioned at the peak of Wayanad, a UNESCO recognized
+                            heritage area with several heritage Sites, some prehistoric, <b>Zubisinn Hotel</b> offers stunning views of
+                            the Western Ghats, one of the oldest mountain ranges in the world. Its ever lush green surroundings
+                            gleaming with nature’s abundance offers 365 days of beautiful weather and ideal climatic
+                            conditions.</p>
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
@@ -22,6 +25,23 @@
                         <li><i class="icon_check"></i> Free Wifi.</li>
                         <li><i class="icon_check"></i> Discount 20% On F&B</li>
                     </ul>
+                </div>
+                <div class="about-text">
+                   <p> If you are a leisure traveller seeking solace from the hectic schedule or treating your
+                    family to pure luxury and comfort away from the hustle and bustle of city life,<b>Zubisinn Hotel</b>
+                    Offers the perfect destination that fulfills every need of your family. Or, if you are a corporate
+                    business traveller seeking achievement on your corporate endeavours, Zubisinn Hotel offers
+                    maximum comfort and care that exceeds your highest expectations.
+                    <b>Zubisinn Hotel</b>, a Three Star Deluxe offering ideally located tastefully furnished rooms with
+                    stunning views. The hotel is ideally located at very close proximity to several internationally
+                    recognized tourist and adventure sites and destinations and is accessible by air from the Calicut
+                    International Airport – just 54 Kms. away, by train from the Kozhikode Railway Station, just 45
+                    Kms. away.</p>
+                   <p><b> Zubisinn Hotel</b> offers everything you ever sought from a leisure resort and a city hotel. From
+                    rejuvenating, fitness centre and exotic rooms to a lavish multi-cuisine restaurant and function room
+                    that can cater to every program, may it be private or corporate. All our accommodation facilities,
+                    including the executive rooms, deluxe rooms, junior suits and grand suites have been elegantly
+                    designed inspired by traditional Indian culture</p>
                 </div>
             </div>
         </div>

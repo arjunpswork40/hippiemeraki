@@ -25,8 +25,8 @@
                         <h6>Contact Us</h6>
                         <ul>
                             <li><a href="tel:+0495 2431313">0495 2431313</a> </li>
-                            <li><a href="mailto:reservations@zubisinn.com">reservations@zubisinn.com</a></li>
-                            <li>Red Cross Road, Near New Bus Stand, Kalpetta, 673122</li>
+                            <li><a href="mailto:info@zubisinn.com">info@zubisinn.com</a></li>
+                            <li>Red Cross Road, Near New Bus Stand, Kalpetta, 673121</li>
                         </ul>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                             <a href="https://www.facebook.com/zubisinn" target="_blank"><i class="fa fa-facebook"></i></a>
                             <a href="#" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a>
                             <a href="https://www.instagram.com/zubisinn/" target="_blank"><i class="fa fa-instagram"></i></a>
-                             
+
                         </div>
                     </div>
                 </div>

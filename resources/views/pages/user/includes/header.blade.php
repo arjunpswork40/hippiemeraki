@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <ul class="tn-left">
-                        <li><i class="fa fa-phone"></i><a href="tel:+91 7796888444">+91 7796888444</a></li>
-                        <li><i class="fa fa-envelope"></i><a href="mailto:reservations@zubisinn.com">reservations@zubisinn.com</a></li>
+                        <li><i class="fa fa-phone"></i><a href="tel:+91 7034020909">+91 7034020909</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="mailto:info@zubisinn.com">info@zubisinn.com</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
@@ -14,7 +14,7 @@
                         <div class="top-social">
                             <a href="https://www.facebook.com/zubisinn" target="_blank"><i class="fa fa-facebook"></i></a>
                             <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                           
+
                             <a href="https://www.instagram.com/zubisinn/" target="_blank"><i class="fa fa-instagram"></i></a>
                         </div>
                         {{-- <a href="#" class="bk-btn">Book Now</a> --}}
@@ -52,7 +52,7 @@
                                 <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
                                 <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">Blog</a></li>
                                 <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
-                                
+
                             </ul>
                         </nav>
                         {{-- <div class="nav-right search-switch">

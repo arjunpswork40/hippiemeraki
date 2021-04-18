@@ -104,16 +104,17 @@ else{
             <div class="col-lg-6">
                 <div class="about-text">
                     <div class="section-title">
-                        <span>About Us</span>
+                        <span>Why to choose Zubisinn Hotel</span>
                         {{-- <h2> Zubis INN</h2> --}}
                     </div>
-                    <p class="f-para">Zubis Inn is a luxury 3 Star Hotel, located in wayanad, that is widely recognized for providing
-                        luxurious accommodations and premium amenities. Designed with luxury rooms , Zubis Inn
-                        has been acclaimed as one of the most romantic places in the region.</p>
-                        <p class="s-para">Our heartfelt hospitality,
-                            impeccable service, fine cuisine, amazing river rafting, and eco-experiences make Zubis Inn
-                            the premier destination in Kerala.</p>
-                    <a href="#" class="primary-btn about-btn">Read More</a>
+                    <p class="f-para">May it be private or corporate. All our accommodation facilities, including the executive rooms,
+                        deluxe rooms, junior suits and grand suites have been elegantly designed inspired by traditional
+                        Indian culture.</p>
+                        <p class="s-para">Unleash the self-healing power of your body. Treat yourself to a touch of luxury and enjoy the
+                            great facilities of our wellness centre. We have something for everyone, whether need a specific
+                            healing or if you are looking for relaxation and destressing, at our facility you can confidently lower
+                            your shoulders and pamper yourself.</p>
+                    {{-- <a href="#" class="primary-btn about-btn">Read More</a> --}}
                 </div>
             </div>
             <div class="col-lg-6">
@@ -202,11 +203,12 @@ else{
     <div class="container-fluid">
         <div class="hp-room-items">
             <div class="row">
+                @foreach($roomDeteailsRecent as $room)
                 <div class="col-lg-3 col-md-6">
-                    <div class="hp-room-item set-bg" data-setbg="{{ asset('/zubis/img/room/room-b1.jpg') }}">
+                    <div class="hp-room-item set-bg" data-setbg="{{ \App\Http\Helpers\PageHelper::getRoomsImagePath($room->thumbnail_image) }}">
                         <div class="hr-text">
-                            <h3>Double Room</h3>
-                            <h2>199$<span>/Pernight</span></h2>
+                            <h3>{{ $room->category }}</h3>
+                            <h2>{{ $room->rate }}-INR<span>/Pernight</span></h2>
                             <table>
                                 <tbody>
                                 <tr>
@@ -231,93 +233,9 @@ else{
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="hp-room-item set-bg" data-setbg="{{ asset('/zubis/img/room/room-b2.jpg') }}">
-                        <div class="hr-text">
-                            <h3>Premium King Room</h3>
-                            <h2>159$<span>/Pernight</span></h2>
-                            <table>
-                                <tbody>
-                                <tr>
-                                    <td class="r-o">Size:</td>
-                                    <td>30 ft</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Capacity:</td>
-                                    <td>Max persion 5</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Bed:</td>
-                                    <td>King Beds</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Services:</td>
-                                    <td>Wifi, Television, Bathroom,...</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="hp-room-item set-bg" data-setbg="{{ asset('/zubis/img/room/room-b3.jpg') }}">
-                        <div class="hr-text">
-                            <h3>Deluxe Room</h3>
-                            <h2>198$<span>/Pernight</span></h2>
-                            <table>
-                                <tbody>
-                                <tr>
-                                    <td class="r-o">Size:</td>
-                                    <td>30 ft</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Capacity:</td>
-                                    <td>Max persion 5</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Bed:</td>
-                                    <td>King Beds</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Services:</td>
-                                    <td>Wifi, Television, Bathroom,...</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="hp-room-item set-bg" data-setbg="{{ asset('/zubis/img/room/room-b4.jpg') }}">
-                        <div class="hr-text">
-                            <h3>Family Room</h3>
-                            <h2>299$<span>/Pernight</span></h2>
-                            <table>
-                                <tbody>
-                                <tr>
-                                    <td class="r-o">Size:</td>
-                                    <td>30 ft</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Capacity:</td>
-                                    <td>Max persion 5</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Bed:</td>
-                                    <td>King Beds</td>
-                                </tr>
-                                <tr>
-                                    <td class="r-o">Services:</td>
-                                    <td>Wifi, Television, Bathroom,...</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            {{-- <a href="#" class="primary-btn">More Details</a> --}}
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
+
             </div>
         </div>
     </div>

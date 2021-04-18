@@ -11,7 +11,10 @@
         <form action="{{ route('room-update',$room->id) }}" method="POST" role="form" enctype="multipart/form-data" id="editBlogForm">
             @csrf
             <div class="card-body">
-                
+                <div class="form-group primary">
+                    <label for="exampleInputEmail1">Category Name</label>
+                    <input type="text" class="form-control-file" value="{{$room->category}}" name="category_name">
+                </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Priority</label>
                     <input type="number" class="form-control-file" value="{{$room->priority}}" name="priority">
