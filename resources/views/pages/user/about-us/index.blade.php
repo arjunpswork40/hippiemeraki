@@ -9,7 +9,7 @@
                 <div class="col-lg-6">
                     <div class="ap-title">
                         <h2>Welcome To Zubis INN.</h2>
-                        <p>With captivating visual treats and alluring backdrop, the <b>Zubisinn Hote</b>l gives you a holistic
+                        <p>With captivating visual treats and alluring backdrop, the <b>Zubis Inn Hotel</b> gives you a holistic
                             experience of a lifetime. Perfectly positioned at the peak of Wayanad, a UNESCO recognized
                             heritage area with several heritage Sites, some prehistoric, <b>Zubisinn Hotel</b> offers stunning views of
                             the Western Ghats, one of the oldest mountain ranges in the world. Its ever lush green surroundings
@@ -26,7 +26,9 @@
                         <li><i class="icon_check"></i>Revival Experience</li>
                     </ul>
                 </div>
-                <div class="about-text">
+           
+
+                <div class="col-lg-12 about-text">
                    <p> If you are a leisure traveller seeking solace from the hectic schedule or treating your
                     family to pure luxury and comfort away from the hustle and bustle of city life,<b>Zubisinn Hotel</b>
                     Offers the perfect destination that fulfills every need of your family. Or, if you are a corporate
@@ -81,7 +83,7 @@
             <div class="col-lg-12">
                 <div class="video-text">
                     <h2>Discover Our Hotel & Services.</h2>
-                    <p>It S Hurricane Season But We Are Visiting Hilton Head Island</p>
+                    <p> With captivating visual treats and alluring backdrop</p>
                     <a href="https://www.youtube.com/watch?v=EzKkl64rRbM" class="play-btn video-popup"><img
                             src="{{ asset('/zubis/img/play.png') }}" alt=""></a>
                 </div>

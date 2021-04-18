@@ -1268,7 +1268,8 @@ ol {
     font-size: 18px;
     color: #707079;
     line-height: 28px;
-    text-align: justify;
+    font-weight: 400;
+    text-align: left;
 }
 
 .about-page-text .ap-services li {

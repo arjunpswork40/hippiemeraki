@@ -7,7 +7,7 @@
                     <div class="ft-about">
                         <div class="logo">
                             <a href="#">
-                                <img src="{{ asset('/zubis/img/logo/logoNew-horizontal.png') }}" alt="">
+                                <img src="{{ asset('/zubis/img/logo/logo.png') }}" alt="">
                             </a>
                         </div>
                         <p>We inspire and reach millions of travelers<br /> across 90 local websites</p>

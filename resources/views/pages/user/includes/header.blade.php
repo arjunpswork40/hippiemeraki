@@ -39,7 +39,7 @@
                 <div class="col-lg-2">
                     <div class="logo">
                         <a href="{{ route('home') }}">
-                            <img src="{{ asset('/zubis/img/logo/logoNew-horizontal.png') }}" alt="">
+                            <img src="{{ asset('/zubis/img/logo/logo.png') }}" alt="">
                         </a>
                     </div>
                 </div>
