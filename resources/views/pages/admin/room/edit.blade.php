@@ -11,6 +11,8 @@
         <form action="{{ route('room-update',$room->id) }}" method="POST" role="form" enctype="multipart/form-data" id="editBlogForm">
             @csrf
             <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
                 <div class="form-group primary">
                     <label for="exampleInputEmail1">Category Name</label>
                     <input type="text" class="form-control-file" value="{{$room->category}}" name="category_name">
@@ -31,6 +33,20 @@
                     <label for="exampleFormControlFile1">Online Bookable Rooms Available (Live value)</label>
                     <input type="number" class="form-control-file" value="{{$room->available_room_count}}" name="total_rooms">
                 </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Capacity</label>
+                            <input type="number" class="form-control-file" value="{{$room->capacity}}" name="capacity">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Service</label>
+                            <textarea type="text" class="form-control-file" name="service">{{ $room->service }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Bed Type</label>
+                            <input type="text" class="form-control-file" value="{{$room->bedType}}" name="bedType">
+                        </div>
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Thumbnail Image</label>
                     <input type="file" class="form-control-file" name="thumbnail_image" accept="image/*" >
@@ -42,6 +58,7 @@
                         <img src="{{ \App\Http\Helpers\PageHelper::getRoomsImagePath($room->thumbnail_image) }}" style="width: 10%" alt="">
                     </div>
                 </div>
+                    </div>
 
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -19,6 +19,9 @@ class CreateRoomDetailsTable extends Migration
             $table->string('category')->nullable();
             $table->float('rate')->nullable();
             $table->integer('total_room_count')->nullable();
+            $table->integer('capacity')->nullable();
+            $table->string('bedType')->nullable();
+            $table->string('service')->nullable();
             $table->integer('available_room_count')->nullable();
             $table->string('thumbnail_image')->nullable();
             $table->tinyInteger('status')->default(1)->comment('1:active; 3:deactive');

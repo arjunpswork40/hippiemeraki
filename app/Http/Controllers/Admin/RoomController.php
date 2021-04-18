@@ -26,7 +26,7 @@ class RoomController extends BaseController
 
     public function statusUpdate(Request $request)
     {
- 
+
         $room_details=Room_Details::where('id',$request->room_id);
          $room_details->update([
             'status' => $request->value,
@@ -44,6 +44,9 @@ class RoomController extends BaseController
     public function roomStore(Request $request)
     {
         $room = Room_Details::create([
+            'service' => $request->service,
+            'bedType' => $request->bedType,
+            'capacity' => $request->capacity,
             'category' => $request->category_name,
             'rate' => $request->rate,
             'total_room_count' => $request->total_rooms,
@@ -86,6 +89,9 @@ class RoomController extends BaseController
     {
         $room = Room_Details::where('id',$id)->firstOrFail();
         $room->update([
+            'service' => $request['service'],
+            'bedType' => $request['bedType'],
+            'capacity' => $request['capacity'],
             'category_name' => $request['category_name'],
             'rate' => $request['rate'],
             'total_room_count' => $request['total_rooms'],

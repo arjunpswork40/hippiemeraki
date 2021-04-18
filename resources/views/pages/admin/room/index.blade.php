@@ -10,7 +10,7 @@
 
             <!--New  Modal -->
             <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLongTitle">Enter Room Details</h5>
@@ -18,37 +18,67 @@
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body text-left">
+                        <div class="modal-body modal-lg text-left">
                             <form  method="POST" action={{ route('room-store') }} role="form" enctype="multipart/form-data" id="newBlogForm">
                                 @csrf
-                                <div class="form-group primary">
-                                    <label for="exampleInputEmail1">Category Name</label>
-                                    <input type="text" class="form-control-file" name="category_name">
+
+                            <div class="row">
+                                   <div class="col-md-6">
+
+
+
+                                    <div class="form-group primary">
+                                        <label for="exampleInputEmail1">Category Name</label>
+                                        <input type="text" class="form-control-file" name="category_name">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Thumbnail Image</label>
+                                        <input type="file" class="form-control-file" name="thumbnail_image" accept="image/*" >
+                                        @error('thumbnail_image')
+                                        <div class="text-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Capacity</label>
+                                        <input type="number" class="form-control-file" name="capacity">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Service</label>
+                                        <textarea type="text" class="form-control-file" name="service"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Bed Type</label>
+                                        <input type="text" class="form-control-file" name="bedType">
+                                    </div>
+
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="exampleFormControlFile1">Thumbnail Image</label>
-                                    <input type="file" class="form-control-file" name="thumbnail_image" accept="image/*" >
-                                    @error('thumbnail_image')
-                                    <div class="text-danger">{{ $message }}</div>
-                                    @enderror
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Priority</label>
+                                        <input type="number" class="form-control-file" name="priority">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Rate</label>
+                                        <input type="number" class="form-control-file" name="rate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Total Rooms</label>
+                                        <input type="number" class="form-control-file" name="total_rooms">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Online bookable rooms</label>
+                                        <input type="number" class="form-control-file" name="bookable_rooms">
+                                    </div>
+
+
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlFile1">Priority</label>
-                                    <input type="number" class="form-control-file" name="priority">
+
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlFile1">Rate</label>
-                                    <input type="number" class="form-control-file" name="rate">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlFile1">Total Rooms</label>
-                                    <input type="number" class="form-control-file" name="total_rooms">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleFormControlFile1">Online bookable rooms</label>
-                                    <input type="number" class="form-control-file" name="bookable_rooms">
-                                </div>
+
+
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                     <button type="submit" class="btn btn-primary submit">Enter</button>
@@ -143,9 +173,9 @@
                             <a href="{{ \App\Http\Helpers\Core\FileManager::getRoomsImagePath($room->thumbnail_image) }}" data-toggle="lightbox"  data-gallery="gallery">
 
                                 <img src="{{ \App\Http\Helpers\Core\FileManager::getRoomsImagePath($room->thumbnail_image) }}" style="width: 25%;display: block" class="img-fluid mb-2">
-                                 
+
                               </a>
-                           
+
                         </td>
                         <td>{{ $room->category}}</td>
                         <td>{{ $room->rate}}</td>

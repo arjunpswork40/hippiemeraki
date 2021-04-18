@@ -22,15 +22,15 @@
                                 </tr>
                                 <tr>
                                     <td class="r-o">Capacity:</td>
-                                    <td>Max persion 3</td>
+                                    <td>Maximum {{ $roomDetail->capacity }} Persons </td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Bed:</td>
-                                    <td>King Beds</td>
+                                    <td>{{ $roomDetail->bedType}}</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Services:</td>
-                                    <td>Wifi, Television, Bathroom,...</td>
+                                    <td>{{ $roomDetail->service}}</td>
                                 </tr>
                                 <tr>
                                     <td class="r-o">Room Status:</td>

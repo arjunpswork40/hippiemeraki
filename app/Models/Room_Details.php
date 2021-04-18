@@ -13,6 +13,9 @@ class Room_Details extends Model
 
     protected $fillable = [
         'category',
+        'service',
+        'bedType',
+        'capacity',
         'total_room_count',
         'available_room_count',
         'thumbnail_image',
