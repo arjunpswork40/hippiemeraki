@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Zubis INN </title>
-    <meta name="description" content="Make your trips unforgettable with Zubis INN, 3 Star Hotel">  
+    <meta name="description" content="Make your trips unforgettable with Zubis INN, 3 Star Hotel">
     <meta property="og:type" content="website" key="ogtype" />
     <link rel="canonical" href="https://zubisinn.com/" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -20,7 +20,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    
+
    <!-- Css Styles -->
     <link rel="stylesheet" href="{{ asset('/zubis/css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/font-awesome.min.css') }}" type="text/css">
@@ -32,15 +32,15 @@
     <link rel="stylesheet" href="{{ asset('/zubis/css/jquery-ui.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/magnific-popup.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/slicknav.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/zubis/css/style.css?v=1.5') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('/zubis/css/style.css?v=1.6') }}" type="text/css">
     @stack('styles')
 
     <style>
         body,p,h1,h2,h3,h4,h5,h6,span,div{
             font-family: 'Lato', sans-serif !important;
-        
+
         }
-        
+
         .menu-item .logo img{
             object-fit: contain;
             margin-top: -8px;
@@ -59,7 +59,7 @@
             /* background: #fff; */
             border-radius: 3px;
             padding: 3px;
-        
+
         }
         .footer-section .copyright-option .co-text{
         text-align:center;
@@ -124,14 +124,14 @@
                 padding-bottom: 6px;
             }
             .blog-item .bi-text h4 {
-   
+
             margin-bottom: 10px;
             }
         .fa-social{
             display: flex;
             justify-content: space-between;
         }
- 
+
 
         .footer-section .footer-text .ft-contact h6 {
             color: #cf8031;
@@ -142,9 +142,9 @@
         .section-title span,.service-item i {
             color: #cf8031;
         }
-         
+
         .menu-item .nav-menu .mainmenu li a:after {
-         
+
             background: #cf8031;}
             .hero-text h1{
                 font-size: 124px;
@@ -154,7 +154,7 @@
                 font-family: 'Dancing Script', cursive !important;
                 font-size: 31px;
             }
-        
+
         @media only screen and (max-width: 991px){
         .offcanvas-menu-wrapper .header-configure-area .bk-btn {
             background: #cf8031;
@@ -168,9 +168,9 @@
         .offcanvas-menu-wrapper .canvas-close {
             border: 1px solid #cf8031;
         }
-        
+
         .canvas-close .icon_close{
-            color:#cf8031; 
+            color:#cf8031;
         }
         .hero-text h1{
             line-height: 49px;
@@ -188,7 +188,7 @@
             }
 
 
-        
+
         }
         .booking-form form button{
             border-radius: 7px;
@@ -203,8 +203,8 @@
             margin-left: 28px !important;
         }
         </style>
-        
-        
+
+
 
 
 
@@ -257,7 +257,7 @@
                 <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">News</a></li>
                 <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
 
-                
+
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
