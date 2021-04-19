@@ -2,9 +2,13 @@
 
 @section('content')
 
+
+<div class="jumbotron text-center policies">
+    <h1>Refund policy </h1>
+    
+  </div>
 <div class="refund-policy">
-    <h1> <u>Refund policy </u></h1>
-    <div class="refund-text">
+     <div class="refund-text">
         <ul>
             <li>If cancellation is made within 72 hrs. than 25% of room rent is to payable.</li>
             <li>If cancellation is made within 48 hrs. than 50 % of room rent is to payable.</li>
