@@ -111,4 +111,18 @@ class HomeController extends BaseController
         return $this->renderView($this->getView('room.online-booking'), compact('userSelectedDates','userSelectedCategory'), 'Room Details');
 
     }
+
+
+    public function privacyPolicy()
+    {
+        return $this->renderView($this->getView('policies.privacy-policy'), [], 'Privacy Policy');
+    }
+    public function termsAndConditions()
+    {
+        return $this->renderView($this->getView('policies.terms-and-conditions'), [], 'Terms And Conditions');
+    }
+    public function refundPolicy()
+    {
+        return $this->renderView($this->getView('policies.refund-policy'), [], 'Refund Policy');
+    }
 }

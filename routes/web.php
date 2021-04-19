@@ -24,7 +24,7 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
     Route::get('/room','HomeController@room')->name('room');
     Route::get('/room/details/{roomDetails:id}','HomeController@roomDetails')->name('room.details');
     Route::post('/room/details/payment-form','HomeController@BookingFromRoom')->name('room.bookingFromRoom');
- 
+
 
     Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
         Route::get('/news','HomeController@blog')->name('blog');
@@ -41,7 +41,9 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
     Route::post('/payment-confirm', 'BookingController@bookingConfirmingView')->name('payment-confirming-view');
     Route::get('/clickToContinue', 'BookingController@clickToContinue')->name('clickToContinue');
     Route::get('/paymentUnsuccessful', 'BookingController@paymentUnsuccessful')->name('paymentUnsuccessful');
-
+    Route::get('/privacy-policy','HomeController@privacyPolicy')->name('privascy-policy');
+    Route::get('/terms-and-conditions','HomeController@termsAndConditions')->name('terms-and-conditions');
+    Route::get('/refund-policy','HomeController@refundPolicy')->name('refund-policy');
     });
 
 //Route::middleware(['auth:sanctum', 'verified'])->get('/admin', function () {

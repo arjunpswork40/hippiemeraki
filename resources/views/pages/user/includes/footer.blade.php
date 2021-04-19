@@ -40,6 +40,14 @@
                             <a href="https://www.instagram.com/zubisinn/" target="_blank"><i class="fa fa-instagram"></i></a>
 
                         </div>
+
+                        <div class="ft-contact ">
+                            <ul>
+                                <li><a href="{{ route('privascy-policy') }}">Privacy Policy</a> </li>
+                                <li><a href="{{ route('refund-policy') }}">Refund Policy</a></li>
+                                <li><a href="{{ route('terms-and-conditions') }}">Terms And Conditions</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
