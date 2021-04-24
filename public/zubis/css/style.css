@@ -7,6 +7,7 @@
   Created: Colorlib
 ******************************************************************/
 
+
 /*------------------------------------------------------------------
 [Table of contents]
 
@@ -27,7 +28,9 @@
 
 -------------------------------------------------------------------*/
 
+
 /*----------------------------------------*/
+
 
 /* Template default CSS
 /*----------------------------------------*/
@@ -63,7 +66,7 @@
 html,
 body {
     height: 100%;
-    font-family: "Cabin", sans-serif;
+    font-family: "Roboto", sans-serif !important;
     -webkit-font-smoothing: antialiased;
     font-smoothing: antialiased;
     scroll-behavior: smooth;
@@ -107,7 +110,7 @@ h6 {
 
 p {
     font-size: 16px;
-    font-family: "Cabin", sans-serif;
+    font-family: "Roboto", sans-serif !important;
     color: #6b6b6b;
     font-weight: 400;
     line-height: 26px;
@@ -137,6 +140,7 @@ ol {
     padding: 0;
     margin: 0;
 }
+
 
 /*---------------------
   Helper CSS
@@ -191,6 +195,7 @@ ol {
     color: #fff;
 }
 
+
 /* buttons */
 
 .primary-btn {
@@ -212,6 +217,7 @@ ol {
     background: #dfa974;
     content: "";
 }
+
 
 /* Preloder */
 
@@ -342,6 +348,7 @@ ol {
     justify-content: center;
 }
 
+
 /*---------------------
   Header
 -----------------------*/
@@ -349,6 +356,13 @@ ol {
 .header-section.header-normal .menu-item {
     -webkit-box-shadow: 0px 12px 15px rgba(36, 11, 12, 0.05);
     box-shadow: 0px 12px 15px rgba(36, 11, 12, 0.05);
+}
+
+.header-section {
+    position: fixed;
+    z-index: 99;
+    background: white;
+    width: 100%;
 }
 
 .top-nav {
@@ -514,7 +528,7 @@ ol {
     opacity: 1;
 }
 
-.menu-item .nav-menu .mainmenu li:hover > a:after {
+.menu-item .nav-menu .mainmenu li:hover>a:after {
     opacity: 1;
 }
 
@@ -611,13 +625,14 @@ ol {
     display: none;
 }
 
+
 /*---------------------
   Hero
 -----------------------*/
 
 .hero-section {
     position: relative;
-    padding-top: 60px;
+    padding-top: 200px;
     padding-bottom: 100px;
 }
 
@@ -646,7 +661,8 @@ ol {
 
 .booking-form {
     background: #ffffff;
-    padding: 44px 40px 50px 40px;
+    /* padding: 44px 40px 50px 40px; */
+    padding: 5px;
     border-radius: 4px;
 }
 
@@ -657,12 +673,12 @@ ol {
 
 .booking-form form .check-date {
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .booking-form form .check-date label {
     font-size: 14px;
-    color: #707079;
+    color: #19191a;
     display: block;
     margin-bottom: 10px;
 }
@@ -692,7 +708,7 @@ ol {
 
 .booking-form form .select-option label {
     font-size: 14px;
-    color: #707079;
+    color: #19191a;
     display: block;
     margin-bottom: 10px;
 }
@@ -789,6 +805,7 @@ ol {
     height: 100%;
 }
 
+
 /*---------------------
   About US
 -----------------------*/
@@ -818,6 +835,7 @@ ol {
 .about-pic img {
     min-width: 100%;
 }
+
 
 /*---------------------
   Service Section
@@ -881,6 +899,7 @@ ol {
     transition: all 0.3s;
 }
 
+
 /*------------------------
   Home Page Room Section
 -------------------------*/
@@ -931,7 +950,7 @@ ol {
 }
 
 .hp-room-items .hp-room-item .hr-text h2 span {
-    font-family: "Cabin", sans-serif;
+    font-family: "Roboto", sans-serif !important;
     font-size: 16px;
     font-weight: 400;
     color: #ffffff;
@@ -954,6 +973,7 @@ ol {
 .hp-room-items .hp-room-item .hr-text .primary-btn:after {
     background: #ffffff;
 }
+
 
 /*---------------------
   Testimonial Slider
@@ -1033,6 +1053,7 @@ ol {
     display: inline-block;
 }
 
+
 /*---------------------
   Blog and Event
 -----------------------*/
@@ -1044,6 +1065,7 @@ ol {
 .blog-section .section-title {
     margin-bottom: 36px;
 }
+
 
 /*---------------------
   Footer Section
@@ -1105,7 +1127,7 @@ ol {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 3px;
-    font-family: "Cabin", sans-serif;
+    font-family: "Roboto", sans-serif !important;
     margin-bottom: 20px;
 }
 
@@ -1119,6 +1141,7 @@ ol {
 .policies {
     text-decoration: none;
     color: #fff;
+    padding-top: 165px;
 }
 
 .footer-section .footer-text .ft-newslatter h6 {
@@ -1127,7 +1150,7 @@ ol {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 3px;
-    font-family: "Cabin", sans-serif;
+    font-family: "Roboto", sans-serif !important;
     margin-bottom: 20px;
 }
 
@@ -1190,7 +1213,9 @@ ol {
     text-align: right;
 }
 
+
 /* --------------------------------- Other Pages Styles ----------------------------------- */
+
 
 /*---------------------
   Breadcrumb Section
@@ -1226,7 +1251,7 @@ ol {
     top: 1px;
     content: "";
     font-size: 18px;
-    font-family: "FontAwesome";
+    font-family: "Roboto" !important;
     color: #aaaab3;
 }
 
@@ -1236,12 +1261,13 @@ ol {
     color: #aaaab3;
 }
 
+
 /*------------------------
   About Us Page Section
 -------------------------*/
 
 .aboutus-page-section {
-    padding-top: 0;
+    padding-top: 140px;
     padding-bottom: 70px;
 }
 
@@ -1312,6 +1338,7 @@ ol {
     color: #ffffff;
 }
 
+
 /*---------------------
   Video Section
 -----------------------*/
@@ -1340,6 +1367,7 @@ ol {
 .video-section .video-text .play-btn {
     display: inline-block;
 }
+
 
 /*---------------------
   Gallery Section
@@ -1412,12 +1440,13 @@ ol {
     color: #ffffff;
 }
 
+
 /*---------------------
   Room Section
 -----------------------*/
 
 .rooms-section {
-    padding-top: 0;
+    padding-top: 165px;
     padding-bottom: 80px;
 }
 
@@ -1448,7 +1477,7 @@ ol {
 }
 
 .room-item .ri-text h3 span {
-    font-family: "Cabin", sans-serif;
+    font-family: "Roboto", sans-serif !important;
     font-size: 14px;
     font-weight: 400;
     color: #19191a;
@@ -1498,6 +1527,7 @@ ol {
     background: #dfa974;
     color: #ffffff;
 }
+
 
 /*-----------------------
   Room Details Section
@@ -1558,7 +1588,7 @@ ol {
 }
 
 .room-details-item .rd-text h2 span {
-    font-family: "Cabin", sans-serif;
+    font-family: "Roboto", sans-serif !important;
     font-size: 16px;
     font-weight: 400;
     color: #19191a;
@@ -1854,12 +1884,13 @@ ol {
     margin-top: 30px;
 }
 
+
 /*---------------------
   Blog Section
 -----------------------*/
 
 .blog-section.blog-page {
-    padding-top: 0;
+    padding-top: 165px;
     padding-bottom: 88px;
 }
 
@@ -1919,6 +1950,7 @@ ol {
     color: #19191a;
 }
 
+
 /*----------------------------
   Blog Details Hero Section
 ----------------------------*/
@@ -1967,6 +1999,7 @@ ol {
 .bd-hero-text ul li.b-time {
     text-transform: uppercase;
 }
+
 
 /*---------------------
   Blog Details Section
@@ -2090,10 +2123,7 @@ ol {
     padding-left: 22px;
 }
 
-.blog-details-text
-    .comment-option
-    .single-comment-item.first-comment
-    .sc-text:before {
+.blog-details-text .comment-option .single-comment-item.first-comment .sc-text:before {
     position: absolute;
     left: 0;
     top: 0;
@@ -2108,17 +2138,11 @@ ol {
     margin-bottom: 52px;
 }
 
-.blog-details-text
-    .comment-option
-    .single-comment-item.second-comment
-    .sc-text {
+.blog-details-text .comment-option .single-comment-item.second-comment .sc-text {
     padding-left: 22px;
 }
 
-.blog-details-text
-    .comment-option
-    .single-comment-item.second-comment
-    .sc-text:before {
+.blog-details-text .comment-option .single-comment-item.second-comment .sc-text:before {
     position: absolute;
     left: 0;
     top: 0;
@@ -2241,6 +2265,7 @@ ol {
     border-radius: 2px;
 }
 
+
 /*---------------------
   Recommend Blog
 -----------------------*/
@@ -2258,12 +2283,13 @@ ol {
     margin-top: 0;
 }
 
+
 /*---------------------
   Contact Section
 -----------------------*/
 
 .contact-section {
-    padding-top: 80px;
+    padding-top: 165px;
     padding-bottom: 80px;
 }
 
@@ -2374,6 +2400,7 @@ ol {
     width: 100%;
 }
 
+
 /*-------------------------------- Respinsive Media Styles --------------------------------*/
 
 @media only screen and (min-width: 1554px) and (max-width: 1920px) {
@@ -2393,6 +2420,7 @@ ol {
         max-width: 1170px;
     }
 }
+
 
 /* Medium Device: 1200px */
 
@@ -2435,7 +2463,7 @@ ol {
         visibility: visible;
     }
     .canvas-open {
-        position: absolute;
+        position: fixed;
         right: 40px;
         top: 25px;
         font-size: 22px;
@@ -2497,10 +2525,7 @@ ol {
         position: relative;
         margin-bottom: 10px;
     }
-    .offcanvas-menu-wrapper
-        .header-configure-area
-        .language-option:hover
-        .flag-dropdown {
+    .offcanvas-menu-wrapper .header-configure-area .language-option:hover .flag-dropdown {
         top: 40px;
         opacity: 1;
         visibility: visible;
@@ -2517,10 +2542,7 @@ ol {
         text-transform: uppercase;
         font-weight: 500;
     }
-    .offcanvas-menu-wrapper
-        .header-configure-area
-        .language-option
-        .flag-dropdown {
+    .offcanvas-menu-wrapper .header-configure-area .language-option .flag-dropdown {
         position: absolute;
         left: 0;
         top: 60px;
@@ -2537,22 +2559,11 @@ ol {
         transition: all 0.3s;
         z-index: 99;
     }
-    .offcanvas-menu-wrapper
-        .header-configure-area
-        .language-option
-        .flag-dropdown
-        ul
-        li {
+    .offcanvas-menu-wrapper .header-configure-area .language-option .flag-dropdown ul li {
         list-style: none;
         text-align: left;
     }
-    .offcanvas-menu-wrapper
-        .header-configure-area
-        .language-option
-        .flag-dropdown
-        ul
-        li
-        a {
+    .offcanvas-menu-wrapper .header-configure-area .language-option .flag-dropdown ul li a {
         font-size: 14px;
         text-transform: uppercase;
         font-weight: 500;
@@ -2561,13 +2572,7 @@ ol {
         -o-transition: all 0.3s;
         transition: all 0.3s;
     }
-    .offcanvas-menu-wrapper
-        .header-configure-area
-        .language-option
-        .flag-dropdown
-        ul
-        li
-        a:hover {
+    .offcanvas-menu-wrapper .header-configure-area .language-option .flag-dropdown ul li a:hover {
         color: #dfa974;
     }
     .offcanvas-menu-wrapper .header-configure-area .bk-btn {
@@ -2634,11 +2639,7 @@ ol {
     .offcanvas-menu-wrapper .slicknav_menu .slicknav_nav .slicknav_row:hover a {
         color: #dfa974;
     }
-    .offcanvas-menu-wrapper
-        .slicknav_menu
-        .slicknav_nav
-        .slicknav_row:hover
-        span {
+    .offcanvas-menu-wrapper .slicknav_menu .slicknav_nav .slicknav_row:hover span {
         color: #dfa974;
     }
     .offcanvas-menu-wrapper .top-social {
@@ -2696,6 +2697,7 @@ ol {
     }
 }
 
+
 /* Tablet Device: 768px */
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2712,6 +2714,7 @@ ol {
         margin-bottom: 15px;
     }
 }
+
 
 /* Large Mobile: 480px */
 
@@ -2752,6 +2755,7 @@ ol {
     }
 }
 
+
 /* Small Mobile: 320px */
 
 @media only screen and (max-width: 479px) {
@@ -2770,28 +2774,16 @@ ol {
         position: relative;
     }
     .rd-reviews .review-item .ri-text,
-    .blog-details-text
-        .comment-option
-        .single-comment-item.second-comment
-        .sc-text,
-    .blog-details-text
-        .comment-option
-        .single-comment-item.first-comment
-        .sc-text {
+    .blog-details-text .comment-option .single-comment-item.second-comment .sc-text,
+    .blog-details-text .comment-option .single-comment-item.first-comment .sc-text {
         padding-left: 0;
     }
     .blog-details-text .comment-option .single-comment-item.reply-comment {
         padding-left: 30px;
     }
     .rd-reviews .review-item .ri-text:before,
-    .blog-details-text
-        .comment-option
-        .single-comment-item.first-comment
-        .sc-text:before,
-    .blog-details-text
-        .comment-option
-        .single-comment-item.second-comment
-        .sc-text:before {
+    .blog-details-text .comment-option .single-comment-item.first-comment .sc-text:before,
+    .blog-details-text .comment-option .single-comment-item.second-comment .sc-text:before {
         display: none;
     }
     .blog-details-hero {
@@ -2811,7 +2803,9 @@ ol {
     }
 }
 
+
 /* new styles */
+
 
 /*
 .room-custom img {
@@ -2958,6 +2952,8 @@ ol {
 
 .paymentSuccessInfo {
     height: 192px;
+    padding-top: 75px;
+    padding-bottom: 200px;
 }
 
 .paymentSuccessInfo__alert {
@@ -3007,4 +3003,107 @@ ol {
 
 .policies h1 {
     color: #d08336;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 9999999999;
+    /* Sit on top */
+    padding-top: 60px;
+    /* Location of the box */
+    left: 0;
+    top: 18%;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgb(12 12 12 / 41%);
+
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 30%;
+    height: 75%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 1s;
+    animation-name: animatetop;
+    animation-duration: 1s
+}
+
+
+/* Add Animation */
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+/* The Close Button */
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #cf8244;
+    color: white;
+}
+
+.modal-body {
+    padding: 2px 16px;
+}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #cf8244;
+    color: white;
 }

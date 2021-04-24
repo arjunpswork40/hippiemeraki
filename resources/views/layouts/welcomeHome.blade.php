@@ -22,6 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
 
    <!-- Css Styles -->
+   <link rel="stylesheet" href="{{ asset('/zubis/css/nice-select.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/font-awesome.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('/zubis/css/elegant-icons.css') }}" type="text/css">
@@ -37,7 +38,7 @@
 
     <style>
         body,p,h1,h2,h3,h4,h5,h6,span,div{
-            font-family: 'Lato', sans-serif !important;
+            font-family: 'Roboto', sans-serif !important;
 
         }
 
@@ -51,6 +52,9 @@
             height: 79px;
         }
         .footer-section  .logo img{
+            max-width: 100% !important;
+            margin-left: -30px !important;
+            height: auto;
             object-fit: contain;
             margin-top: -8px;
             width: 100%;
@@ -149,6 +153,7 @@
             .hero-text h1{
                 font-size: 124px;
                 margin-bottom: 30px;
+                font-family: 'Roboto-Bold' !important;
             }
             .hero-text p{
                 font-family: 'Dancing Script', cursive !important;
@@ -213,10 +218,7 @@
 
 <body>
 
-       <!-- Page Preloder -->
-       <div id="preloder">
-        <div class="loader"></div>
-    </div>
+
 
     <!-- Offcanvas Menu Section Begin -->
     <div class="offcanvas-menu-overlay"></div>
@@ -256,7 +258,7 @@
                 <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
                 <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">News</a></li>
                 <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
-
+<li><button id="myBtn" class="btn btn-success" style="background-color: #cf8244;">Book Now</button></li>
 
             </ul>
         </nav>
@@ -289,7 +291,33 @@
     </div>
 </div>
 <!-- Search model end -->
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
 
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
 <!-- Js Plugins -->
 {{-- <script src="{{ asset('/zubis/js/jquery-3.3.1.min.js') }}"></script> --}}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -303,6 +331,7 @@
 <script src="{{ asset('/zubis/js/owl.carousel.min.js') }}"></script>
 <script src="{{ asset('/zubis/js/main.js') }}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{ asset('/zubis/js/jquery.nice-select.min.js') }}"></script>
 
 @stack('payment')
 @include('pages.user.includes.toastr')

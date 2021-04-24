@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-3 ">
                     <div class="ft-about">
-                        <div class="logo">
+                        <div class="logo" style="max-width: 100%; height: auto;  ">
                             <a href="#">
                                 <img src="{{ asset('/zubis/img/logo/logo.png') }}" alt="">
                             </a>
@@ -35,9 +35,9 @@
                         <h6>Connect With Us</h6>
                         <p>Get the latest updates and offers.</p>
                         <div class="fa-social">
-                            <a href="https://www.facebook.com/zubisinn" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-twitter" target="_blank"></i></a>
-                            <a href="https://www.instagram.com/zubisinn/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/zubisinn" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter fa-2x" target="_blank"></i></a>
+                            <a href="https://www.instagram.com/zubisinn/" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
 
                         </div>
                     </div>

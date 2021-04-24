@@ -1,12 +1,63 @@
 @extends('layouts.welcomeHome')
-@push('styles')
+{{-- @push('styles')
 <link rel="stylesheet" href="{{ asset('/zubis/css/nice-select.css') }}" type="text/css">
-@endpush
+@endpush --}}
 @section('content')
 
 <!-- Hero Section Begin -->
 
+<div id="myModal" class="modal">
 
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Book Online</h3>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <div class="booking-form">
+         <form action="{{route('checkAvailability')}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            {{-- @method('put') --}}
+                <div class="check-date">
+                    <label for="date-in">Check In:</label>
+                    <input type="text" class="date-input" id="date-in" name="checkIn" onchange="checkEnteredDate()" autocomplete="off">
+                    <i class="icon_calendar"></i>
+                </div>
+                <div class="check-date">
+                    <label for="date-out">Check Out:</label>
+                    <input type="text" class="date-input" id="date-out" name="checkOut" onchange="checkEnteredDate()" autocomplete="off">
+                    <i class="icon_calendar"></i>
+                </div>
+                <div class="select-option">
+                    <label for="guest">Room Category:</label>
+                    <select id="guest" name="category">
+                        @foreach($roomDetails as $roomDetail)
+                        <option value="{{$roomDetail->id}}" >{{$roomDetail->category}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                {{-- <div class="select-option">
+                    <label for="room">Room:</label>
+                    <select id="room">
+                        <option value="">1 Room</option>
+                        <option value="">2 Room</option>
+                    </select>
+                </div> --}}
+                <button id="checkAvailabilityButton" type="submit" disabled >Select Dates</button>
+            </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        {{-- <h3>Zubis Inn</h3> --}}
+      </div>
+    </div>
+
+  </div>
+   <!-- Page Preloder -->
+   <div id="preloder">
+    <div class="loader"></div>
+</div>
 
 
 <section class="hero-section">
@@ -20,39 +71,7 @@
                 </div>
             </div>
             <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
-                <div class="booking-form">
-                    <h3>Book Online</h3>
-                <form action="{{route('checkAvailability')}}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    {{-- @method('put') --}}
-                        <div class="check-date">
-                            <label for="date-in">Check In:</label>
-                            <input type="text" class="date-input" id="date-in" name="checkIn" onchange="checkEnteredDate()" autocomplete="off">
-                            <i class="icon_calendar"></i>
-                        </div>
-                        <div class="check-date">
-                            <label for="date-out">Check Out:</label>
-                            <input type="text" class="date-input" id="date-out" name="checkOut" onchange="checkEnteredDate()" autocomplete="off">
-                            <i class="icon_calendar"></i>
-                        </div>
-                        <div class="select-option">
-                            <label for="guest">Room Category:</label>
-                            <select id="guest" name="category">
-                                @foreach($roomDetails as $roomDetail)
-                                <option value="{{$roomDetail->id}}" >{{$roomDetail->category}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        {{-- <div class="select-option">
-                            <label for="room">Room:</label>
-                            <select id="room">
-                                <option value="">1 Room</option>
-                                <option value="">2 Room</option>
-                            </select>
-                        </div> --}}
-                        <button id="checkAvailabilityButton" type="submit" disabled >Select Dates</button>
-                    </form>
-                </div>
+                
             </div>
         </div>
     </div>

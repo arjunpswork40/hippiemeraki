@@ -52,6 +52,7 @@
                                 <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
                                 <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">Blog</a></li>
                                 <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
+                                <li><button id="myBtn" class="btn btn-success" style="background-color: #cf8244;">Book Now</button></li>
 
                             </ul>
                         </nav>

@@ -55,7 +55,8 @@ class HomeController extends BaseController
      */
     public function aboutUs()
     {
-        return $this->renderView($this->getView('about-us.index'),[],'About US');
+        $roomDetails = Room_Details::where('status',1)->select('category','id')->get();
+        return $this->renderView($this->getView('about-us.index'),compact('roomDetails'),'About US');
     }
 
     /**
@@ -82,9 +83,10 @@ class HomeController extends BaseController
 
     public function blog()
     {
+        $roomDetails = Room_Details::where('status',1)->orderBy('priority','asc')->get();
         $newses = Blog::where('status',1)->orderBy('priority','asc')->get();
         $date = Carbon::now();
-        return $this->renderView($this->getView('news.blog'),compact('newses','date'),'News');
+        return $this->renderView($this->getView('news.blog'),compact('newses','date','roomDetails'),'News');
     }
 
     public function details($blog)
@@ -92,7 +94,8 @@ class HomeController extends BaseController
 
         $blogs = Blog::orderBy('id', 'desc')->take(3)->get();
         $details = Blog::where('id',$blog)->first();
-        return $this->renderView($this->getView('news.blog-details'),compact('details','blogs'),'Blog Details');
+        $roomDetails = Room_Details::where('status',1)->orderBy('priority','asc')->get();
+        return $this->renderView($this->getView('news.blog-details'),compact('details','blogs','roomDetails'),'Blog Details');
 
     }
 
@@ -115,14 +118,17 @@ class HomeController extends BaseController
 
     public function privacyPolicy()
     {
-        return $this->renderView($this->getView('policies.privacy-policy'), [], 'Privacy Policy');
+        $roomDetails = Room_Details::where('status',1)->orderBy('priority','asc')->get();
+        return $this->renderView($this->getView('policies.privacy-policy'), compact('roomDetails'), 'Privacy Policy');
     }
     public function termsAndConditions()
     {
-        return $this->renderView($this->getView('policies.terms-and-conditions'), [], 'Terms And Conditions');
+        $roomDetails = Room_Details::where('status',1)->orderBy('priority','asc')->get();
+        return $this->renderView($this->getView('policies.terms-and-conditions'), compact('roomDetails'), 'Terms And Conditions');
     }
     public function refundPolicy()
     {
-        return $this->renderView($this->getView('policies.refund-policy'), [], 'Refund Policy');
+        $roomDetails = Room_Details::where('status',1)->orderBy('priority','asc')->get();
+        return $this->renderView($this->getView('policies.refund-policy'), compact('roomDetails'), 'Refund Policy');
     }
 }

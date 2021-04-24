@@ -51,8 +51,7 @@ class BookingController extends BaseController
 
    public function availability(Request $request)
    {
-
-       $checkOne = Room_Details::where('id',$request->category)
+    $checkOne = Room_Details::where('id',$request->category)
            ->where('status',1)
            ->first();
 
@@ -74,13 +73,14 @@ class BookingController extends BaseController
 
        if ($checkOne->available_room_count > 0){
            $available=false;
-           return $this->renderView($this->getView('booking.index'),compact('checkOne','userSelectedDates','userSelectedcategory','available'),'Available Rooms');
+           $roomDetailsForAvailability = Room_Details::where('status',1)->orderBy('priority','asc')->get();
+           return $this->renderView($this->getView('booking.index'),compact('roomDetailsForAvailability','checkOne','userSelectedDates','userSelectedcategory','available'),'Available Rooms');
        }
        elseif($checkTwo){
            $checkOne=false;
            $available=false;
-
-        return $this->renderView($this->getView('booking.index'),compact('checkTwo','checkOne','userSelectedDates','userSelectedcategory','available'),'Available Rooms');
+           $roomDetailsForAvailability = Room_Details::where('status',1)->orderBy('priority','asc')->get();
+        return $this->renderView($this->getView('booking.index'),compact('roomDetailsForAvailability','checkTwo','checkOne','userSelectedDates','userSelectedcategory','available'),'Available Rooms');
        }
        else{
         $checkOne=false;
@@ -90,7 +90,8 @@ class BookingController extends BaseController
                ->get();
         // @dd($available);
         //  $userSelectedcategory;
-          return $this->renderView($this->getView('booking.index'),compact('available','checkOne','checkTwo','userSelectedDates','userSelectedcategory'),'Available Rooms');
+        $roomDetailsForAvailability = Room_Details::where('status',1)->orderBy('priority','asc')->get();
+          return $this->renderView($this->getView('booking.index'),compact('roomDetailsForAvailability','available','checkOne','checkTwo','userSelectedDates','userSelectedcategory'),'Available Rooms');
        }
    }
 
@@ -283,8 +284,8 @@ class BookingController extends BaseController
    public function clickToContinue()
    {
        alert()->success('payment success');
-
-       return view('pages.user.booking.payment.continueToHome');
+       $roomDetailsForAvailability = Room_Details::where('status',1)->orderBy('priority','asc')->get();
+       return view('pages.user.booking.payment.continueToHome', compact('roomDetailsForAvailability'));
    }
 
    public function paymentUnsuccessful()
@@ -361,7 +362,9 @@ public function bookingConfirmingView(Request $request)
 
     Session::forget('room_details');
 
-    return view('pages.user.booking.payment.paymentConfirm',compact('data','categoryName'));
+    $roomDetailsForAvailability = Room_Details::where('status',1)->orderBy('priority','asc')->get();
+
+    return view('pages.user.booking.payment.paymentConfirm',compact('roomDetailsForAvailability','data','categoryName'));
 
 }
 
