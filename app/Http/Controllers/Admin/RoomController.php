@@ -92,7 +92,7 @@ class RoomController extends BaseController
             'service' => $request['service'],
             'bedType' => $request['bedType'],
             'capacity' => $request['capacity'],
-            'category_name' => $request['category_name'],
+            'category' => $request['category_name'],
             'rate' => $request['rate'],
             'total_room_count' => $request['total_rooms'],
             'priority' => $request['priority'],
