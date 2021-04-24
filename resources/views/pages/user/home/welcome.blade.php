@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
-                
+
             </div>
         </div>
     </div>

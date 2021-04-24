@@ -258,7 +258,7 @@
                 <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
                 <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">News</a></li>
                 <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
-<li><button id="myBtn" class="btn btn-success" style="background-color: #cf8244;">Book Now</button></li>
+<li><button id="mobileBtn" class="btn btn-success" style="background-color: #cf8244;">Book Now</button></li>
 
             </ul>
         </nav>
@@ -282,14 +282,14 @@
 @include('pages.user.includes.footer')
 
 <!-- Search model Begin -->
-<div class="search-model">
+{{-- <div class="search-model">
     <div class="h-100 d-flex align-items-center justify-content-center">
         <div class="search-close-switch"><i class="icon_close"></i></div>
         <form class="search-model-form">
             <input type="text" id="search-input" placeholder="Search here.....">
         </form>
     </div>
-</div>
+</div> --}}
 <!-- Search model end -->
 <script>
     // Get the modal
@@ -297,6 +297,11 @@
 
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
+
+    var mobileBtn = document.getElementById("myBtn");
+    mobileBtn.onclick = function() {
+        modal.style.display = "block";
+    }
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
