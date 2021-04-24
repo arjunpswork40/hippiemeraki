@@ -66,7 +66,7 @@
             <div class="col-lg-6">
                 <div class="hero-text">
                     <h1 class="header__headingPrimary">Zubis Inn </h1>
-                    <p class="header__headingSub">Make yourself at home , Luxury 3 star hotel</p>
+                    <p class="header__headingSub">Make yourself at home, Luxury 3 star hotel</p>
                     {{-- <a href="#" class="primary-btn">Discover Now</a> --}}
                 </div>
             </div>

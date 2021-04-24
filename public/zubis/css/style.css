@@ -7,7 +7,6 @@
   Created: Colorlib
 ******************************************************************/
 
-
 /*------------------------------------------------------------------
 [Table of contents]
 
@@ -28,9 +27,7 @@
 
 -------------------------------------------------------------------*/
 
-
 /*----------------------------------------*/
-
 
 /* Template default CSS
 /*----------------------------------------*/
@@ -77,11 +74,14 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+span,
+div,
+p {
     margin: 0;
     color: #111111;
     font-weight: 400;
-    font-family: "Lora", serif;
+    font-family: "Roboto", sans-serif !important;
 }
 
 h1 {
@@ -141,7 +141,6 @@ ol {
     margin: 0;
 }
 
-
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -195,7 +194,6 @@ ol {
     color: #fff;
 }
 
-
 /* buttons */
 
 .primary-btn {
@@ -217,7 +215,6 @@ ol {
     background: #dfa974;
     content: "";
 }
-
 
 /* Preloder */
 
@@ -347,7 +344,6 @@ ol {
     -ms-flex-pack: center;
     justify-content: center;
 }
-
 
 /*---------------------
   Header
@@ -528,7 +524,7 @@ ol {
     opacity: 1;
 }
 
-.menu-item .nav-menu .mainmenu li:hover>a:after {
+.menu-item .nav-menu .mainmenu li:hover > a:after {
     opacity: 1;
 }
 
@@ -625,7 +621,6 @@ ol {
     display: none;
 }
 
-
 /*---------------------
   Hero
 -----------------------*/
@@ -649,14 +644,14 @@ ol {
     font-size: 80px;
     line-height: 90px;
     color: #ffffff;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .hero-text p {
     font-size: 18px;
     color: #ffffff;
     line-height: 28px;
-    margin-bottom: 35px;
+    margin-bottom: 109px;
 }
 
 .booking-form {
@@ -805,7 +800,6 @@ ol {
     height: 100%;
 }
 
-
 /*---------------------
   About US
 -----------------------*/
@@ -835,7 +829,6 @@ ol {
 .about-pic img {
     min-width: 100%;
 }
-
 
 /*---------------------
   Service Section
@@ -898,7 +891,6 @@ ol {
     -o-transition: all 0.3s;
     transition: all 0.3s;
 }
-
 
 /*------------------------
   Home Page Room Section
@@ -973,7 +965,6 @@ ol {
 .hp-room-items .hp-room-item .hr-text .primary-btn:after {
     background: #ffffff;
 }
-
 
 /*---------------------
   Testimonial Slider
@@ -1053,7 +1044,6 @@ ol {
     display: inline-block;
 }
 
-
 /*---------------------
   Blog and Event
 -----------------------*/
@@ -1065,7 +1055,6 @@ ol {
 .blog-section .section-title {
     margin-bottom: 36px;
 }
-
 
 /*---------------------
   Footer Section
@@ -1213,9 +1202,7 @@ ol {
     text-align: right;
 }
 
-
 /* --------------------------------- Other Pages Styles ----------------------------------- */
-
 
 /*---------------------
   Breadcrumb Section
@@ -1260,7 +1247,6 @@ ol {
     font-size: 18px;
     color: #aaaab3;
 }
-
 
 /*------------------------
   About Us Page Section
@@ -1338,7 +1324,6 @@ ol {
     color: #ffffff;
 }
 
-
 /*---------------------
   Video Section
 -----------------------*/
@@ -1367,7 +1352,6 @@ ol {
 .video-section .video-text .play-btn {
     display: inline-block;
 }
-
 
 /*---------------------
   Gallery Section
@@ -1439,7 +1423,6 @@ ol {
 .gallery-item .gi-text h3 {
     color: #ffffff;
 }
-
 
 /*---------------------
   Room Section
@@ -1527,7 +1510,6 @@ ol {
     background: #dfa974;
     color: #ffffff;
 }
-
 
 /*-----------------------
   Room Details Section
@@ -1884,7 +1866,6 @@ ol {
     margin-top: 30px;
 }
 
-
 /*---------------------
   Blog Section
 -----------------------*/
@@ -1950,7 +1931,6 @@ ol {
     color: #19191a;
 }
 
-
 /*----------------------------
   Blog Details Hero Section
 ----------------------------*/
@@ -1999,7 +1979,6 @@ ol {
 .bd-hero-text ul li.b-time {
     text-transform: uppercase;
 }
-
 
 /*---------------------
   Blog Details Section
@@ -2123,7 +2102,10 @@ ol {
     padding-left: 22px;
 }
 
-.blog-details-text .comment-option .single-comment-item.first-comment .sc-text:before {
+.blog-details-text
+    .comment-option
+    .single-comment-item.first-comment
+    .sc-text:before {
     position: absolute;
     left: 0;
     top: 0;
@@ -2138,11 +2120,17 @@ ol {
     margin-bottom: 52px;
 }
 
-.blog-details-text .comment-option .single-comment-item.second-comment .sc-text {
+.blog-details-text
+    .comment-option
+    .single-comment-item.second-comment
+    .sc-text {
     padding-left: 22px;
 }
 
-.blog-details-text .comment-option .single-comment-item.second-comment .sc-text:before {
+.blog-details-text
+    .comment-option
+    .single-comment-item.second-comment
+    .sc-text:before {
     position: absolute;
     left: 0;
     top: 0;
@@ -2265,7 +2253,6 @@ ol {
     border-radius: 2px;
 }
 
-
 /*---------------------
   Recommend Blog
 -----------------------*/
@@ -2282,7 +2269,6 @@ ol {
 .recommend-blog-section .section-title h2 {
     margin-top: 0;
 }
-
 
 /*---------------------
   Contact Section
@@ -2400,7 +2386,6 @@ ol {
     width: 100%;
 }
 
-
 /*-------------------------------- Respinsive Media Styles --------------------------------*/
 
 @media only screen and (min-width: 1554px) and (max-width: 1920px) {
@@ -2420,7 +2405,6 @@ ol {
         max-width: 1170px;
     }
 }
-
 
 /* Medium Device: 1200px */
 
@@ -2525,7 +2509,10 @@ ol {
         position: relative;
         margin-bottom: 10px;
     }
-    .offcanvas-menu-wrapper .header-configure-area .language-option:hover .flag-dropdown {
+    .offcanvas-menu-wrapper
+        .header-configure-area
+        .language-option:hover
+        .flag-dropdown {
         top: 40px;
         opacity: 1;
         visibility: visible;
@@ -2542,7 +2529,10 @@ ol {
         text-transform: uppercase;
         font-weight: 500;
     }
-    .offcanvas-menu-wrapper .header-configure-area .language-option .flag-dropdown {
+    .offcanvas-menu-wrapper
+        .header-configure-area
+        .language-option
+        .flag-dropdown {
         position: absolute;
         left: 0;
         top: 60px;
@@ -2559,11 +2549,22 @@ ol {
         transition: all 0.3s;
         z-index: 99;
     }
-    .offcanvas-menu-wrapper .header-configure-area .language-option .flag-dropdown ul li {
+    .offcanvas-menu-wrapper
+        .header-configure-area
+        .language-option
+        .flag-dropdown
+        ul
+        li {
         list-style: none;
         text-align: left;
     }
-    .offcanvas-menu-wrapper .header-configure-area .language-option .flag-dropdown ul li a {
+    .offcanvas-menu-wrapper
+        .header-configure-area
+        .language-option
+        .flag-dropdown
+        ul
+        li
+        a {
         font-size: 14px;
         text-transform: uppercase;
         font-weight: 500;
@@ -2572,7 +2573,13 @@ ol {
         -o-transition: all 0.3s;
         transition: all 0.3s;
     }
-    .offcanvas-menu-wrapper .header-configure-area .language-option .flag-dropdown ul li a:hover {
+    .offcanvas-menu-wrapper
+        .header-configure-area
+        .language-option
+        .flag-dropdown
+        ul
+        li
+        a:hover {
         color: #dfa974;
     }
     .offcanvas-menu-wrapper .header-configure-area .bk-btn {
@@ -2639,7 +2646,11 @@ ol {
     .offcanvas-menu-wrapper .slicknav_menu .slicknav_nav .slicknav_row:hover a {
         color: #dfa974;
     }
-    .offcanvas-menu-wrapper .slicknav_menu .slicknav_nav .slicknav_row:hover span {
+    .offcanvas-menu-wrapper
+        .slicknav_menu
+        .slicknav_nav
+        .slicknav_row:hover
+        span {
         color: #dfa974;
     }
     .offcanvas-menu-wrapper .top-social {
@@ -2697,7 +2708,6 @@ ol {
     }
 }
 
-
 /* Tablet Device: 768px */
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2714,7 +2724,6 @@ ol {
         margin-bottom: 15px;
     }
 }
-
 
 /* Large Mobile: 480px */
 
@@ -2755,7 +2764,6 @@ ol {
     }
 }
 
-
 /* Small Mobile: 320px */
 
 @media only screen and (max-width: 479px) {
@@ -2774,16 +2782,28 @@ ol {
         position: relative;
     }
     .rd-reviews .review-item .ri-text,
-    .blog-details-text .comment-option .single-comment-item.second-comment .sc-text,
-    .blog-details-text .comment-option .single-comment-item.first-comment .sc-text {
+    .blog-details-text
+        .comment-option
+        .single-comment-item.second-comment
+        .sc-text,
+    .blog-details-text
+        .comment-option
+        .single-comment-item.first-comment
+        .sc-text {
         padding-left: 0;
     }
     .blog-details-text .comment-option .single-comment-item.reply-comment {
         padding-left: 30px;
     }
     .rd-reviews .review-item .ri-text:before,
-    .blog-details-text .comment-option .single-comment-item.first-comment .sc-text:before,
-    .blog-details-text .comment-option .single-comment-item.second-comment .sc-text:before {
+    .blog-details-text
+        .comment-option
+        .single-comment-item.first-comment
+        .sc-text:before,
+    .blog-details-text
+        .comment-option
+        .single-comment-item.second-comment
+        .sc-text:before {
         display: none;
     }
     .blog-details-hero {
@@ -2803,9 +2823,7 @@ ol {
     }
 }
 
-
 /* new styles */
-
 
 /*
 .room-custom img {
@@ -2940,7 +2958,7 @@ ol {
     animation: moveInRight 1s ease-out;
 }
 
-.hero-slider .owl-stage-outer {
+/* .hero-slider .owl-stage-outer {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 }
 
@@ -2948,7 +2966,7 @@ ol {
     .hero-section {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0 97%);
     }
-}
+} */
 
 .paymentSuccessInfo {
     height: 192px;
@@ -2981,7 +2999,7 @@ ol {
 
 .refund-policy ul li {
     margin: 4px;
-    font-size: 25px;
+    font-size: 21px;
 }
 
 .refund-policy ul {
@@ -3003,8 +3021,13 @@ ol {
 
 .policies h1 {
     color: #d08336;
+    margin-bottom: 8px;
+    font-size: 66px;
 }
-
+.policies p {
+    padding: 0 77px;
+    text-align: initial;
+}
 
 /* The Modal (background) */
 
@@ -3032,7 +3055,6 @@ ol {
     /* Black w/ opacity */
 }
 
-
 /* Modal Content */
 
 .modal-content {
@@ -3047,34 +3069,32 @@ ol {
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 1s;
     animation-name: animatetop;
-    animation-duration: 1s
+    animation-duration: 1s;
 }
-
 
 /* Add Animation */
 
 @-webkit-keyframes animatetop {
     from {
         top: -300px;
-        opacity: 0
+        opacity: 0;
     }
     to {
         top: 0;
-        opacity: 1
+        opacity: 1;
     }
 }
 
 @keyframes animatetop {
     from {
         top: -300px;
-        opacity: 0
+        opacity: 0;
     }
     to {
         top: 0;
-        opacity: 1
+        opacity: 1;
     }
 }
-
 
 /* The Close Button */
 
@@ -3106,4 +3126,22 @@ ol {
     padding: 2px 16px;
     background-color: #cf8244;
     color: white;
+}
+@media only screen and (max-width: 800px) {
+    .policiesBox {
+        margin-top: 30px;
+    }
+
+    .refund-policy {
+        margin: 0px;
+        padding-left: 18px;
+        padding-right: 0px;
+    }
+    .policies h1 {
+        font-size: 34px;
+    }
+    .policies p {
+        padding: 0 0;
+        text-align: center;
+    }
 }

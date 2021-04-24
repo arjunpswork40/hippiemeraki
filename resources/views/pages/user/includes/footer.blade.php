@@ -44,7 +44,7 @@
                 </div>
 
 
-                <div class="col-lg-3">
+                <div class="col-lg-3 policiesBox">
                         <div class="ft-contact ">
                             <h6>For you</h6>
                             <ul>

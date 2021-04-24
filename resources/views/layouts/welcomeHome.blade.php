@@ -37,10 +37,7 @@
     @stack('styles')
 
     <style>
-        body,p,h1,h2,h3,h4,h5,h6,span,div{
-            font-family: 'Roboto', sans-serif !important;
-
-        }
+        
 
         .menu-item .logo img{
             object-fit: contain;
@@ -87,13 +84,18 @@
         }
         .fa-social a{
             color:#ff9200;
+            margin-right: 25px;
         }
         .ft-contact a{
-            color: #fff;
+            color: #aaaab3;
             /* background: -webkit-linear-gradient(319.11deg,#f98f15 0%,#a7905b 100%);
             font-weight: 600;
             -webkit-background-clip: text;
              -webkit-text-fill-color: transparent; */
+        }
+        
+        .ft-contact a:hover{
+            color: #fff;
         }
         .blog-item{
             box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
@@ -152,11 +154,10 @@
             background: #cf8031;}
             .hero-text h1{
                 font-size: 124px;
-                margin-bottom: 30px;
-                font-family: 'Roboto-Bold' !important;
+                 font-family: 'Roboto-Bold' !important;
             }
             .hero-text p{
-                font-family: 'Dancing Script', cursive !important;
+                /* font-family: 'Dancing Script', cursive !important; */
                 font-size: 31px;
             }
 
