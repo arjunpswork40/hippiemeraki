@@ -259,7 +259,7 @@
                 <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
                 <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">News</a></li>
                 <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
-<li><button id="mobileBtn" ontouchend="mobileMoal()" class="btn btn-success mobileBtn" style="background-color: #cf8244;">Book Now</button></li>
+                <li style="margin-top: 10px;"><button id="mobileBtn" ontouchend="mobileMoal()" class="btn btn-success mobileBtn" style="background-color: #cf8244;">Book Now</button></li>
 
             </ul>
         </nav>
@@ -326,6 +326,24 @@
     //     modal.style.display = "none";
     //   }
     // }
+
+
+        window.onscroll = function() {checkScroll()};
+        let navbar = document.querySelector(".header-section");
+        let sticky = 670;
+
+        function checkScroll() {
+        if (window.pageYOffset >= sticky) {
+        navbar.classList.add("enhance-header");
+        // console.log("add")
+        } else {
+        navbar.classList.remove("enhance-header");
+        // console.log("remove")
+        }
+        }
+
+
+
     </script>
 <!-- Js Plugins -->
 {{-- <script src="{{ asset('/zubis/js/jquery-3.3.1.min.js') }}"></script> --}}
