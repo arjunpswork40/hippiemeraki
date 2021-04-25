@@ -364,12 +364,16 @@ ol {
 .header-section {
     position: fixed;
     z-index: 99;
-    background: white;
+    background: rgba(0, 0, 0, 0.7) !important;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     width: 100%;
 }
 
 .top-nav {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #cf8244;
+    margin-bottom: -8px;
+    margin-top: -5px;
 }
 
 .top-nav .tn-left li {
@@ -419,7 +423,7 @@ ol {
 .top-nav .tn-right .top-social a {
     display: inline-block;
     font-size: 16px;
-    color: #19191a;
+    color: white;
     margin-left: 15px;
 }
 
@@ -502,6 +506,7 @@ ol {
 .menu-item {
     position: relative;
     z-index: 9;
+    margin-bottom: -13px;
 }
 
 .menu-item .logo {
@@ -543,7 +548,7 @@ ol {
 
 .menu-item .nav-menu .mainmenu li a {
     font-size: 16px;
-    color: #19191a;
+    color: white;
     margin-right: 42px;
     font-weight: 500;
     display: inline-block;
@@ -2472,8 +2477,8 @@ ol {
         font-size: 22px;
         width: 30px;
         height: 30px;
-        color: #19191a;
-        border: 1px solid #19191a;
+        color: white;
+        border: 1px solid white;
         border-radius: 2px;
         line-height: 33px;
         text-align: center;
@@ -3134,4 +3139,38 @@ ol {
         padding: 0 0;
         text-align: center;
     }
+}
+
+.left-img {
+    height: 34%;
+    width: 34%;
+    float: left;
+    margin-left: -129px;
+    margin-top: 84px;
+}
+
+.right-img {
+    height: 34%;
+    width: 34%;
+    float: right;
+    margin-right: -101px;
+    margin-top: 429px;
+}
+
+.confrmPage-left-img {
+    /* height: 59%; */
+    width: 35%;
+    float: left;
+    margin-left: -129px;
+    margin-top: 313px;
+    margin-right: -218px;
+}
+
+.confrmPage-right-img {
+    height: 34%;
+    width: 34%;
+    float: right;
+    margin-right: -101px;
+    margin-top: 739px;
+    margin-left: -267px;
 }

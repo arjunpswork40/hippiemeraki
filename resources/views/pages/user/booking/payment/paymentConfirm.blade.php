@@ -77,6 +77,8 @@ u{
     <!-- Rooms Section Begin -->
     <section class="rooms-section spad">
         <div class="container">
+        <img class="confrmPage-left-img" src="{{ asset('zubis/img/body/undraw_Processing_re_tbdu.svg') }}">
+        <img class="confrmPage-right-img" src="{{ asset('zubis/img/body/undraw_Travelers_re_y25a.svg') }}">
             <div class="bookedRoomDetails">
 
             <div class="row bookedRoomDetails__customerInfo">
@@ -102,11 +104,11 @@ u{
                                     <td>{{$data->guest_phone_number}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">No of rooms selected:</td>
+                                    <td class="r-o">Number of rooms selected:</td>
                                     <td>{{$data->booked_room_count}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Guest Count:</td>
+                                    <td class="r-o">Number Of Pax:</td>
                                     <td>{{$data->guest_count}}</td>
                                 </tr>
                                 <tr>
@@ -199,7 +201,7 @@ u{
        <div id="preloder">
         <div class="loader"></div>
     </div>
-           
+
 <script>
 
 function checkEnteredDate(){

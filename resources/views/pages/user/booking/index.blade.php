@@ -184,6 +184,8 @@ input{
                 @endif
 
                 <div class="col-lg-12">
+                    <img class="left-img" src="{{ asset('zubis/img/body/undraw_personal_information_re_vw8a.svg') }}">
+                    <img class="right-img" src="{{ asset('zubis/img/body/undraw_Secure_server_re_8wsq (1).svg') }}">
                     <div class="bookingForm">
                     @if($checkOne || $available)
                         <form method="POST" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}" onsubmit="return validateForm()">
@@ -246,7 +248,7 @@ input{
                               <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label >Room Count</label>
+                                        <label >Number Of Rooms</label>
                                         <input type="number" name="roomCount" class="form-control roomCount" min="1" max="100"  >
                                         @error('roomCount')
                                         <span id="roomCount-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
@@ -255,7 +257,7 @@ input{
                                 </div>
                                 <div class="col">
                                     <div class="form-group">
-                                        <label >Guest Count</label>
+                                        <label >Number Of Pax</label>
                                         <input type="number" name="guestCount" class="form-control" min="1" max="500" >
                                           @error('guestCount')
                                           <span id="guestCount-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
@@ -269,7 +271,7 @@ input{
                               <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label >Your Name</label>
+                                        <label >Name</label>
                                         <input type="text" name="username" class="form-control" >
                                           @error('username')
                                           <span id="username-error" class="error invalid-feedback" style="display: block">{{$message}}</span>
@@ -371,7 +373,7 @@ input{
        <div id="preloder">
         <div class="loader"></div>
     </div>
-           
+
 <script>
 
 function checkEnteredDate(){
@@ -495,7 +497,7 @@ function validateForm(){
     return false;
   }
 
-  let phoneNoPattern = /^\d{10}$/;
+  let phoneNoPattern = /^[0-9]{9,13}$/;
   if(!contactNumber.match(phoneNoPattern))
         {
 
@@ -525,12 +527,10 @@ function validateForm(){
 @if($available)
 @push('payment')
 
-
     <script>
 
         swal("Room not available","It seems the selected category is completely booked👨‍👩‍👧‍👦! Please select any of the below categories🙂","warning");
     </script>
-
 
 
 @endpush

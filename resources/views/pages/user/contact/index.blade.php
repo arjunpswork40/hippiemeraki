@@ -14,7 +14,7 @@
                         <tr>
                             <td class="c-o"><i class="fa fa-building-o"></i></td>
                             <td>Hotel Zubisinn
-                                Red cross road, Near New Bus stand
+                                Red cross road, Near Leo Hospital
                                 Kalpetta
                                 Wayanad - 673121</td>
                         </tr>

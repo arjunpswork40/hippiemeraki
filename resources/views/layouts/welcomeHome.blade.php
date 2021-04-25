@@ -37,14 +37,14 @@
     @stack('styles')
 
     <style>
-        
+
 
         .menu-item .logo img{
             object-fit: contain;
             margin-top: -8px;
             width: 100%;
             max-width: 164px;
-            background: #fff;
+            /* background:  rgba(0, 0, 0, 0.7) !important; */
             padding: 6px;
             height: 79px;
         }
@@ -76,7 +76,7 @@
             height:85px;
         }
         .tn-left a{
-            color:#000;
+            color:white;
         }
         .footer-section {
             background: #012d1f;
@@ -93,7 +93,7 @@
             -webkit-background-clip: text;
              -webkit-text-fill-color: transparent; */
         }
-        
+
         .ft-contact a:hover{
             color: #fff;
         }

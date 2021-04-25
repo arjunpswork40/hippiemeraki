@@ -40,7 +40,7 @@ class HomeController extends BaseController
     public function index()
     {
         // $paymentStatus="success";
-        $blogs = Blog::orderBy('id', 'desc')->take(3)->get();
+        $blogs = Blog::orderBy('priority', 'asc')->take(3)->get();
         $roomDetails = Room_Details::where('status',1)->select('category','id')->get();
         $roomDeteailsRecent = Room_Details::where('status', 1)->orderBy('priority')->take(4)->get();
         $categoryNo = Room_Details::where('status',1)->select('category','id')->first();
