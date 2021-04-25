@@ -259,7 +259,7 @@
                 <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
                 <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">News</a></li>
                 <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
-<li><button id="mobileBtn" class="btn btn-success" style="background-color: #cf8244;">Book Now</button></li>
+<li><button id="mobileBtn" ontouchend="mobileMoal()" class="btn btn-success mobileBtn" style="background-color: #cf8244;">Book Now</button></li>
 
             </ul>
         </nav>
@@ -299,9 +299,10 @@
     // Get the button that opens the modal
     var btn = document.getElementById("myBtn");
 
-    var mobileBtn = document.getElementById("myBtn");
-    mobileBtn.onclick = function() {
+    var mobileBtn = document.querySelector(".mobileBtn");
+    function mobileMoal(){
         modal.style.display = "block";
+        console.log('modal style applied00');
     }
 
     // Get the <span> element that closes the modal
@@ -314,15 +315,17 @@
 
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
+        console.log('span')
       modal.style.display = "none";
     }
 
     // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
+    // window.onclick = function(event) {
+    //   if (event.target == modal) {
+    //     console.log('window')
+    //     modal.style.display = "none";
+    //   }
+    // }
     </script>
 <!-- Js Plugins -->
 {{-- <script src="{{ asset('/zubis/js/jquery-3.3.1.min.js') }}"></script> --}}
