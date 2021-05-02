@@ -24,7 +24,7 @@
                     <div class="ft-contact">
                         <h6>Contact Us</h6>
                         <ul>
-                            <li><a href="tel:+91 7796888444">+91 7796888444</a> </li>
+                            <li><a href="tel:+91 7796888444">+91 7796 888 444</a> </li>
                             <li><a href="mailto:info@zubisinn.com">info@zubisinn.com</a></li>
                             <li>Red Cross Road, Near Leo Hospital, Kalpetta, 673121</li>
                         </ul>

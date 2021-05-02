@@ -76,7 +76,7 @@
             height:85px;
         }
         .tn-left a{
-            color:white;
+            color:#cf8244;
         }
         .footer-section {
             background: #012d1f;

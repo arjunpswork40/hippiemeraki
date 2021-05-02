@@ -82,7 +82,7 @@ u{
             <div class="bookedRoomDetails">
 
             <div class="row bookedRoomDetails__customerInfo">
-                <h1 class="bookedRoomDetails__header">Confirm your details</h1>
+                <h1 class="bookedRoomDetails__header">Confirm And Proceed</h1>
                 <div class="col-lg-6 col-md-6 bookedRoomDetails__customerInfoContainer">
                     <div class="room-item">
                         <img src="{{ \App\Http\Helpers\PageHelper::getRoomsImagePath($categoryName->thumbnail_image) }}" alt="">

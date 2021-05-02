@@ -5,8 +5,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <ul class="tn-left">
-                        <li><i class="fa fa-phone"></i><a href="tel:+91 7796888444">+91 7796888444</a></li>
-                        <li><i class="fa fa-envelope"></i><a href="mailto:info@zubisinn.com">info@zubisinn.com</a></li>
+                        <li><i class="fa fa-phone"></i><a href="tel:+91 7796888444">+91 7796 888 444</a></li>
+                        <li><i class="fa fa-envelope"></i><a href="mailto:info@zubisinn.com">reservations@zubisinn.com</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
