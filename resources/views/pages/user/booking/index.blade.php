@@ -96,7 +96,15 @@ input{
 /* .rooms-section{
     background-image: url("{{ asset('/zubis/img/vector/payIndex__bg.jpg') }}");
 } */
+@media only screen and (min-width: 901px) {
 
+body{
+    background-image:url('zubis/img/logo/z-grey.png');
+     background-repeat: no-repeat;
+    background-position: -105% -230%;
+
+}
+}
         </style>
 
 
@@ -184,8 +192,8 @@ input{
                 @endif
 
                 <div class="col-lg-12">
-                    <img class="left-img" src="{{ asset('zubis/img/body/undraw_personal_information_re_vw8a.svg') }}">
-                    <img class="right-img" src="{{ asset('zubis/img/body/undraw_Secure_server_re_8wsq (1).svg') }}">
+                    {{-- <img class="left-img" src="{{ asset('zubis/img/body/undraw_personal_information_re_vw8a.svg') }}">
+                    <img class="right-img" src="{{ asset('zubis/img/body/undraw_Secure_server_re_8wsq (1).svg') }}"> --}}
                     <div class="bookingForm">
                     @if($checkOne || $available)
                         <form method="POST" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}" onsubmit="return validateForm()">
