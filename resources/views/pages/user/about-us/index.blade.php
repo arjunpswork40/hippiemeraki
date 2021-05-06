@@ -84,21 +84,17 @@
 
 
                 <div class="col-lg-12 about-text">
-                   <p> If you are a leisure traveller seeking solace from the hectic schedule or treating your
-                    family to pure luxury and comfort away from the hustle and bustle of city life,<b>Zubisinn Hotel</b>
-                    Offers the perfect destination that fulfills every need of your family. Or, if you are a corporate
-                    business traveller seeking achievement on your corporate endeavours, Zubisinn Hotel offers
-                    maximum comfort and care that exceeds your highest expectations.
-                    <b>Zubisinn Hotel</b>, a Three Star Deluxe offering ideally located tastefully furnished rooms with
-                    stunning views. The hotel is ideally located at very close proximity to several internationally
-                    recognized tourist and adventure sites and destinations and is accessible by air from the Calicut
-                    International Airport – just 54 Kms. away, by train from the Kozhikode Railway Station, just 45
-                    Kms. away.</p>
-                   <p><b> Zubisinn Hotel</b> offers everything you ever sought from a leisure resort and a city hotel. From
-                    rejuvenating, fitness centre and exotic rooms to a lavish multi-cuisine restaurant and function room
-                    that can cater to every program, may it be private or corporate. All our accommodation facilities,
-                    including the executive rooms, deluxe rooms, junior suits and grand suites have been elegantly
-                    designed inspired by traditional Indian culture</p>
+                <p><b>  Zubis Inn</b> luxury hotel beckons travellers keeping in mind the pleasing and
+                    ecological attributes of the surrounding topography. Utmost priority has been given
+                    to maintain the natural habitat of the flora and fauna that are endemic to Wayanad
+                    and which makes the hotel premises a 'Heaven of Solace'.</p>
+                <p>The elegant interiors of a cosy auberge with all modern aminities provided by <b>Zubis Inn</b>
+                     let you have a soothing stay which rejuvenates your soul. Each and every appointed rooms and
+                      suites with enough staffs enable us to serve you better.</p>
+                <p>Rooms are well furnished and organized with the breathtaking panoramic view of nature which lets
+                     you enjoy your sojourn to the fullest.<p>
+                <p>We assure you the excellent hospitality of a luxury hotel in Kalpetta which makes you
+                    experience Wayanad like never before.</p>
                 </div>
             </div>
         </div>

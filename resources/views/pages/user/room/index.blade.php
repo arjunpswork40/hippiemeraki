@@ -12,30 +12,30 @@
                              <img src="{{ \App\Http\Helpers\PageHelper::getRoomsImagePath($roomDetail->thumbnail_image) }}" alt="">
                         {{-- </a> --}}
                             <div class="ri-text">
-                            <h4>{{$roomDetail->category}}</h4>
-                            <h3>{{ $roomDetail->rate }} Rs<span>/Pernight</span></h3>
+                            <h4 class="custom-r-o">{{$roomDetail->category}}</h4>
+                            <h3>{{ $roomDetail->rate }} Rs<span class="custom-r-o">/Pernight</span></h3>
                             <table>
                                 <tbody>
                                 <tr>
-                                    <td class="r-o">Available Rooms:</td>
-                                    <td>{{$roomDetail->available_room_count}}</td>
+                                    <td class="r-o custom-r-o">Available Rooms:</td>
+                                    <td style="color: white">{{$roomDetail->available_room_count}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Capacity:</td>
-                                    <td>Maximum {{ $roomDetail->capacity }} Persons </td>
+                                    <td class="r-o custom-r-o">Capacity:</td>
+                                    <td style="color: white">Maximum {{ $roomDetail->capacity }} Persons </td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Bed:</td>
-                                    <td>{{ $roomDetail->bedType}}</td>
+                                    <td class="r-o custom-r-o">Bed:</td>
+                                    <td style="color: white">{{ $roomDetail->bedType}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Services:</td>
-                                    <td>{{ $roomDetail->service}}</td>
+                                    <td class="r-o custom-r-o">Services:</td>
+                                    <td style="color: white">{{ $roomDetail->service}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Room Status:</td>
-                                    <td>@if($roomDetail->status == 1)
-                                            <span>Available</span>
+                                    <td class="r-o custom-r-o">Room Status:</td>
+                                    <td style="color: white">@if($roomDetail->status == 1)
+                                            <span style="color: white">Available</span>
                                         @else
                                             <span style="color: red">Currently not available</span>
                                         @endif</td>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
                 @endforeach
-               
+
 
             </div>
         </div>
@@ -106,7 +106,7 @@
        <div id="preloder">
         <div class="loader"></div>
     </div>
-    
+
 <script>
 
 function checkEnteredDate(){

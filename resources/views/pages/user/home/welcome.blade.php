@@ -79,7 +79,7 @@
         <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner1.jpg') }}"></div>
         <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner2.jpg') }}"></div>
         <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner3.jpg') }}"></div>
-        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner4.jpg') }}"></div>
+        {{-- <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner4.jpg') }}"></div> --}}
     </div>
 </section>
 <!-- Hero Section End -->

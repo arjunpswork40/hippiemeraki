@@ -20,8 +20,7 @@
  }
 
     .bookingAmountDetails{
-    height: 116px;
-    width: 100%;
+    width: 49%;
     display: flex;
     color: #fff;
     justify-content: center;
@@ -30,6 +29,7 @@
     background: #d08437;
     box-shadow: 0 0 7px -4px #000;
     margin-bottom: 37px;
+    height: 40px;
     }
     .bookingAmountDetails h3{
         font-weight: 600;
@@ -93,17 +93,19 @@ input{
     margin-top: 102px;
 }
 
-/* .rooms-section{
-    background-image: url("{{ asset('/zubis/img/vector/payIndex__bg.jpg') }}");
-} */
+.rooms-section{
+    background-image: url("{{ asset('/zubis/img/logo/z-logo-only.png') }}");
+    background-repeat: no-repeat;
+    background-position: -245px 1275px;
+}
 @media only screen and (min-width: 901px) {
 
-body{
+/* body{
     background-image:url('zubis/img/logo/z-grey.png');
      background-repeat: no-repeat;
     background-position: -105% -230%;
 
-}
+} */
 }
         </style>
 
@@ -115,29 +117,29 @@ body{
             <div class="row availableRooms">
                 @if($checkOne)
                 <div class="col-lg-4 col-md-6">
-                    <div class="room-item">
+                    <div class="room-item room-custom">
                         <img src="{{ \App\Http\Helpers\PageHelper::getRoomsImagePath($checkOne->thumbnail_image) }}" alt="">
                         <div class="ri-text">
-                            <h4>{{ $checkOne->category }}</h4>
-                            <h3>{{ $checkOne->rate}} Rs<span>/Pernight</span></h3>
+                            <h4 class="custom-r-o">{{ $checkOne->category }}</h4>
+                            <h3>{{ $checkOne->rate}} Rs<span class="custom-r-o">/Pernight</span></h3>
 
                             <table>
                                 <tbody>
                                 <tr>
-                                    <td class="r-o">No of rooms available:</td>
-                                    <td>{{ $checkOne->available_room_count }}</td>
+                                    <td class="r-o custom-r-o">No of rooms available:</td>
+                                    <td style="color: white">{{ $checkOne->available_room_count }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Capacity:</td>
-                                    <td>Maximum {{ $checkOne->capacity }}</td>
+                                    <td class="r-o custom-r-o">Capacity:</td>
+                                    <td style="color: white">Maximum {{ $checkOne->capacity }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Bed:</td>
-                                    <td>{{ $checkOne->bedType}}</td>
+                                    <td class="r-o custom-r-o">Bed:</td>
+                                    <td style="color: white">{{ $checkOne->bedType}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Services:</td>
-                                    <td>{{ $checkOne->service}}</td>
+                                    <td class="r-o custom-r-o">Services:</td>
+                                    <td style="color: white">{{ $checkOne->service}}</td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -159,27 +161,27 @@ body{
 
                 @foreach($available as $available_room)
                 <div class="col-lg-4 col-md-6">
-                    <div class="room-item">
+                    <div class="room-item room-custom">
                         <img src="{{ \App\Http\Helpers\PageHelper::getRoomsImagePath($available_room->thumbnail_image) }}" alt="">
                         <div class="ri-text">
-                            <h4>{{ $available_room->category }}</h4>
-                            <h3>{{ $available_room->rate}} Rs<span>/Pernight</span></h3>
+                            <h4 class="custom-r-o">{{ $available_room->category }}</h4>
+                            <h3>{{ $available_room->rate}} Rs<span class="custom-r-o">/Pernight</span></h3>
                             <table>
                                 <tbody>
                                 <tr>
-                                    <td class="r-o">Available Room:</td>
+                                    <td class="r-o custom-r-o">Available Room:</td>
                                     <td>{{ $available_room->available_room_count }}</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Capacity:</td>
+                                    <td class="r-o custom-r-o">Capacity:</td>
                                     <td>Maximum {{ $available_room->capacity }} Persons</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Bed:</td>
+                                    <td class="r-o custom-r-o">Bed:</td>
                                     <td>{{ $available_room->bedType}}</td>
                                 </tr>
                                 <tr>
-                                    <td class="r-o">Services:</td>
+                                    <td class="r-o custom-r-o">Services:</td>
                                     <td>{{ $available_room->service}}</td>
                                 </tr>
                                 </tbody>
@@ -196,13 +198,9 @@ body{
                     <img class="right-img" src="{{ asset('zubis/img/body/undraw_Secure_server_re_8wsq (1).svg') }}"> --}}
                     <div class="bookingForm">
                     @if($checkOne || $available)
-                        <form method="POST" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}" onsubmit="return validateForm()">
+                        <form method="POST" class="col-12" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}" onsubmit="return validateForm()">
                             @csrf
 
-                            <div class="bookingAmountDetails">
-                                <h4>Total Amount &nbsp;</h4>
-                                <h4 id="totalAmount"> Rs. 0</h4>
-                            </div>
 
                             <input type="hidden" class="totalAmount" name="totalAmount" value="0">
 
@@ -318,6 +316,10 @@ body{
                                 </div>
                               </div>
 
+                              <div class="bookingAmountDetails">
+                                <h4>Total Amount &nbsp;</h4>
+                                <h4 id="totalAmount"> Rs. 0</h4>
+                            </div>
                               <div class="row bookingForm__actions">
                             <button type="submit" class="btn btn-default btn-block bookingForm__button ">Submit</button>
                               </div>

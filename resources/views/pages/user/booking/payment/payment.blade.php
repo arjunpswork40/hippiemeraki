@@ -8,7 +8,7 @@ var options = {
     "currency": "INR",
     "name": "Zubis Inn",
     "description": "Wayanad",
-    "image": "{{ asset('/zubis/img/logo/z-logo-full-horizontal.png') }}",
+    "image": "{{ asset('/zubis/img/logo/z-logo-only.png') }}",
     "order_id": "{{$response['orderId']}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
     "handler": function (response){
 
@@ -84,16 +84,16 @@ document.getElementById('rzp-button1').onclick = function(e){
                     top: 40%;
                     left: 50%;
                     transform: translate(-50%, -50%);
-              
+
                 }
                 #rzp-button1:focus{
                   box-shadow: unset;
                   outline: none;
-              
+
               }
                .refresh{
                 display: flex;
                 justify-content: center;
                }
-              
+
               </style>

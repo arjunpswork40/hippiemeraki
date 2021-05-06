@@ -873,7 +873,7 @@ ol {
 }
 
 .service-item:hover {
-    background: #dfa974;
+    background: #012d1f;
 }
 
 .service-item:hover i {
@@ -1474,7 +1474,7 @@ ol {
 }
 
 .room-item .ri-text {
-    border: 1px solid #ebebeb;
+    /* border: 1px solid #ebebeb; */
     border-top: none;
     padding: 24px 24px 30px 28px;
 }
@@ -3067,7 +3067,7 @@ ol {
     padding-top: 60px;
     /* Location of the box */
     left: 0;
-    top: 18%;
+    top: 112px;
     width: 100%;
     /* Full width */
     height: 100%;
@@ -3207,4 +3207,17 @@ ol {
     margin-right: -101px;
     margin-top: 739px;
     margin-left: -267px;
+}
+
+.custom-r-o {
+    color: #cf8244 !important;
+}
+
+.room-custom {
+    background-color: #012d1f;
+    border-radius: 20px;
+}
+
+.room-custom img {
+    border-radius: 20px;
 }
