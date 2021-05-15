@@ -93,11 +93,11 @@ input{
     margin-top: 102px;
 }
 
-.rooms-section{
+/* .rooms-section{
     background-image: url("{{ asset('/zubis/img/logo/z-logo-only.png') }}");
     background-repeat: no-repeat;
     background-position: -245px 1275px;
-}
+} */
 @media only screen and (min-width: 901px) {
 
 /* body{
