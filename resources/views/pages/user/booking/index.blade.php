@@ -98,7 +98,7 @@ input{
     background-repeat: no-repeat;
     background-position: -245px 1275px;
 }
-@media only screen and (min-width: 901px) {
+/* @media only screen and (min-width: 901px) { */
 
 /* body{
     background-image:url('zubis/img/logo/z-grey.png');
@@ -106,6 +106,12 @@ input{
     background-position: -105% -230%;
 
 } */
+/* } */
+@media only screen and (max-width: 800px) {
+.bookingAmountDetails{
+    width: 100%;
+}
+
 }
         </style>
 
@@ -233,7 +239,7 @@ input{
 
                               </div>
 
-                              <div class="row">
+                              <div class="row mt-3">
                                 <div class="col">
                                     <div class="form-group">
                                         <label >Check In</label>
