@@ -97,13 +97,8 @@ input{
     background-image: url("{{ asset('/zubis/img/logo/z-logo-only.png') }}");
     background-repeat: no-repeat;
     background-position: -245px 1275px;
-<<<<<<< HEAD
-} */
-@media only screen and (min-width: 901px) {
-=======
 }
 /* @media only screen and (min-width: 901px) { */
->>>>>>> 01e4e3576a886629e78e67450a7998cdd6baf807
 
 /* body{
     background-image:url('zubis/img/logo/z-grey.png');
