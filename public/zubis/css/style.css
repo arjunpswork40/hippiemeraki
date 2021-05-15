@@ -3193,21 +3193,31 @@ ol {
 
 .confrmPage-left-img {
     /* height: 59%; */
-    width: 35%;
+    width: 41%;
     float: left;
     margin-left: -129px;
-    margin-top: 313px;
+    margin-top: -101px;
     margin-right: -218px;
 }
 
 .confrmPage-right-img {
     height: 34%;
-    width: 34%;
+    width: 41%;
     float: right;
     margin-right: -101px;
     margin-top: 739px;
     margin-left: -267px;
 }
+
+
+/* @media only screen and (max-width: 1000px) {
+    .confrmPage-left-img {
+        display: none;
+    }
+    .confrmPage-right-img {
+        display: none;
+    }
+} */
 
 .custom-r-o {
     color: #cf8244 !important;
