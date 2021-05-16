@@ -10,7 +10,7 @@
                                 <img src="{{ asset('/zubis/img/logo/logo.png') }}" alt="">
                             </a>
                         </div>
-                        <p>We inspire and reach millions of travelers<br /> across 90 local websites</p>
+                        <p>Make yourself at home , Luxury 3 star hotel </p>
                         {{-- <div class="fa-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
