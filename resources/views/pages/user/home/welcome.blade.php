@@ -65,12 +65,15 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="hero-text">
-                    <div class="star">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    </div>
-                    <h1 class="header__headingPrimary">Zubis Inn </h1>
+                     
+                    <h1 class="header__headingPrimary">
+                        
+                        <div class="star">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star starIcon__last"></i>
+                            </div>
+                        Zubis Inn</h1>
                     {{-- <img class="imageZubis" src="{{ asset('/zubis/img/logo/Zubis_logo_white.png') }}" alt=""> --}}
                     <p class="header__headingSub">Make yourself at home , Luxury 3 star hotel</p>
 
