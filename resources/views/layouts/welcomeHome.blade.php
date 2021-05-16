@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Zubis INN </title>
-    <meta name="description" content="Make your trips unforgettable with Zubis INN, 3 Star Hotel">
+    <meta name="description" content="Make your trips unforgettable with Zubis INN, Hotel with 3 star facilities">
     <meta property="og:type" content="website" key="ogtype" />
     <link rel="canonical" href="https://zubisinn.com/" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />

@@ -75,7 +75,7 @@
                             </div>
                         Zubis Inn</h1>
                     {{-- <img class="imageZubis" src="{{ asset('/zubis/img/logo/Zubis_logo_white.png') }}" alt=""> --}}
-                    <p class="header__headingSub">Make yourself at home , Luxury 3 star hotel</p>
+                    <p class="header__headingSub">A luxury hotel with 3 star facilities</p>
 
                 </div>
             </div>
