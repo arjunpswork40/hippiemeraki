@@ -6,9 +6,12 @@
                 <div class="col-lg-3 ">
                     <div class="ft-about">
                         <div class="logo" style="max-width: 100%; height: auto;  ">
-                            <a href="#">
+                            <a href="#" class="desktopView">
                                 <img src="{{ asset('/zubis/img/logo/logo.png') }}" alt="">
                             </a>
+                            {{-- <a href="#" class="mobileView">
+                                <img src="{{ asset('/zubis/img/logo/zubis_logo_star.png') }}" alt="">
+                            </a> --}}
                         </div>
                         <p>Make yourself at home , Luxury 3 star hotel </p>
                         {{-- <div class="fa-social">
