@@ -65,7 +65,13 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="hero-text">
+                    <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    </div>
                     <h1 class="header__headingPrimary">Zubis Inn </h1>
+                    {{-- <img class="imageZubis" src="{{ asset('/zubis/img/logo/Zubis_logo_white.png') }}" alt=""> --}}
                     <p class="header__headingSub">Make yourself at home , Luxury 3 star hotel</p>
 
                 </div>
@@ -77,8 +83,8 @@
     </div>
     <div class="hero-slider owl-carousel">
         <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner1.jpg') }}"></div>
-        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner2.jpg') }}"></div>
-        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner3.jpg') }}"></div>
+        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/Landing2.jpg') }}"></div>
+        <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/Landing3.jpg') }}"></div>
         {{-- <div class="hs-item set-bg" data-setbg="{{ asset('/zubis/img/hero/banner4.jpg') }}"></div> --}}
     </div>
 </section>

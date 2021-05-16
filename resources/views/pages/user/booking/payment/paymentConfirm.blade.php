@@ -77,8 +77,8 @@ u{
     <!-- Rooms Section Begin -->
     <section class="rooms-section spad">
         <div class="container">
-        <img class="confrmPage-left-img" src="{{ asset('zubis/img/vector/vectorw.svg') }}">
-        <img class="confrmPage-right-img" src="{{ asset('zubis/img/vector/vectorw2.svg') }}">
+        <img class="confrmPage-left-img" src="{{ asset('zubis/img/vector/vectorw.png') }}">
+        <img class="confrmPage-right-img" src="{{ asset('zubis/img/vector/vectorw2.png') }}">
             <div class="bookedRoomDetails">
 
             <div class="row bookedRoomDetails__customerInfo">

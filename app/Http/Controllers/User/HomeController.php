@@ -66,7 +66,8 @@ class HomeController extends BaseController
      */
     public function contact()
     {
-        return $this->renderView($this->getView('contact.index'),[],'Contact');
+        $roomDetails = Room_Details::where('status',1)->select('category','id')->get();
+        return $this->renderView($this->getView('contact.index'),compact('roomDetails'),'Contact');
     }
 
     /**

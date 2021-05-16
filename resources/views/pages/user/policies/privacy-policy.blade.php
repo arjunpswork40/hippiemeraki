@@ -4,7 +4,7 @@
 
 <div class="jumbotron text-center policies">
     <h1>Privacy Policy</h1>
-     
+
   </div>
 
   <div class="row refund-policy">
@@ -32,10 +32,10 @@
       <p>For product and services requiring payment, we collect a billing name, phone number and email address, we also collect a billing address for invoicing purpose. If you elect to pay by credit card, zubis inn may engage a third part to securely process your payment all payment through website will process by RAZORPAY payment gateway. Zubis inn will store an encrypted token along with the last four digits  of the credit card and the expiration month and year of the card will not store or retain any other billing information about you </p>
      </div>
     <div class="col-md-2"></div>
-     
- 
+
+
   </div>
-    
+
 <div id="myModal" class="modal">
 
         <!-- Modal content -->
@@ -88,7 +88,7 @@
        <div id="preloder">
         <div class="loader"></div>
     </div>
-           
+
 <script>
 
 function checkEnteredDate(){

@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="bd-hero-text">
-                       
+
                         {{-- <span>{{ $details->title }}</span> --}}
                         {{-- <h2>{{ $details->title }}</h2> --}}
                         {{-- <ul>
@@ -21,7 +21,7 @@
         </div>
     </section>
     <!-- Blog Details Hero End -->
-    <style> 
+    <style>
   /* .bd-hero-text{
         width: fit-content;
     display: flex;
@@ -31,7 +31,7 @@
     } */
 
     /* .bd-hero-text h2{
-    text-shadow: 2px 1px #2c2c2c; 
+    text-shadow: 2px 1px #2c2c2c;
     padding: 0 12px;
     border-radius: 2px;
     }  */
@@ -86,8 +86,8 @@
                                 <a href="#"><i class="fa fa-youtube-play"></i></a>
                             </div>
                         </div> --}}
-                       
-                      
+
+
                     </div>
                 </div>
             </div>
@@ -106,23 +106,23 @@
                 </div>
             </div>
             <div class="row">
-              
+
 
                 @foreach ($blogs as $blog)
-                
+
 
                 <div class="col-lg-4">
                     <div class="blog-item set-bg" data-setbg="{{ \App\Http\Helpers\PageHelper::getImagePath($blog->thumbnail_image) }}">
                         <div class="bi-text">
-                             
+
                             <h4><a href="{{ route('news.blog-details',$blog->id) }}">{{ $blog->title}}</a></h4>
                             <div class="b-time"><i class="icon_clock_alt"></i> {{ date('F jS, Y', strtotime($blog->created_at))}}</div>
                         </div>
                     </div>
                 </div>
-    
+
                 @endforeach
-  
+
 
             </div>
         </div>
@@ -179,7 +179,7 @@
        <div id="preloder">
         <div class="loader"></div>
     </div>
-    
+
 <script>
 
 function checkEnteredDate(){

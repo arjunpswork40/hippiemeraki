@@ -19,7 +19,7 @@
                     </div>
                     </a>
                 </div>
-             
+
 
                 @endforeach
 
@@ -157,7 +157,7 @@
        <div id="preloder">
         <div class="loader"></div>
     </div>
-           
+
 <script>
 
 function checkEnteredDate(){

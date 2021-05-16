@@ -1485,7 +1485,7 @@ ol {
 }
 
 .room-item .ri-text h3 {
-    color: #dfa974;
+    color: #cf8244;
     font-weight: 700;
     margin-bottom: 14px;
 }
@@ -3054,6 +3054,14 @@ ol {
     text-align: initial;
 }
 
+.star {
+    color: white;
+    /* right: -2%; */
+    margin-right: -17px;
+    position: absolute;
+    left: 68%;
+}
+
 
 /* The Modal (background) */
 
@@ -3062,7 +3070,7 @@ ol {
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
-    z-index: 9999999999;
+    z-index: 9999;
     /* Sit on top */
     padding-top: 60px;
     /* Location of the box */
@@ -3158,6 +3166,14 @@ ol {
 }
 
 @media only screen and (max-width: 800px) {
+    .star {
+        color: white;
+        /* right: -2%; */
+        margin-right: -17px;
+        position: absolute;
+        left: 62%;
+        top: 36%;
+    }
     .policiesBox {
         margin-top: 30px;
     }
@@ -3195,8 +3211,8 @@ ol {
     /* height: 59%; */
     width: 41%;
     float: left;
-    margin-left: -129px;
-    margin-top: -101px;
+    margin-left: -184px;
+    margin-top: 95px;
     margin-right: -218px;
 }
 
@@ -3205,19 +3221,18 @@ ol {
     width: 41%;
     float: right;
     margin-right: -101px;
-    margin-top: 739px;
-    margin-left: -267px;
+    margin-top: 688px;
+    margin-left: -270px;
 }
 
-
-/* @media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
     .confrmPage-left-img {
         display: none;
     }
     .confrmPage-right-img {
         display: none;
     }
-} */
+}
 
 .custom-r-o {
     color: #cf8244 !important;

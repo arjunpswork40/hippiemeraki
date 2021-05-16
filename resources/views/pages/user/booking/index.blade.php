@@ -200,9 +200,8 @@ input{
                 @endif
 
                 <div class="col-lg-12">
-                    {{-- <img class="left-img" src="{{ asset('zubis/img/body/undraw_personal_information_re_vw8a.svg') }}">
-                    <img class="right-img" src="{{ asset('zubis/img/body/undraw_Secure_server_re_8wsq (1).svg') }}"> --}}
-                    <div class="bookingForm">
+
+                    {{-- <div class="bookingForm">
                     @if($checkOne || $available)
                         <form method="POST" class="col-12" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}" onsubmit="return validateForm()">
                             @csrf
@@ -218,7 +217,7 @@ input{
                                         <label >Category</label>
                                         <select  name="category" class="form-control btn btn-lg categoryId" style="display: block">
                                           @foreach($available as $availableCategory)
-                                          {{-- @dd($userSelectedcategory) --}}
+
                                           @if($availableCategory->id != $userSelectedcategory)
                                           <option  value="{{$availableCategory->id}}" >{{$availableCategory->category}}</option>
                                           @endif
@@ -227,10 +226,9 @@ input{
                                       @else
 
                                       <select  name="category" class="form-control btn btn-lg categoryId"  style="display: none">
-                                          {{-- @foreach(App\Http\Constants\RoomCategory::TYPES as $key=>$type) --}}
-                                          {{-- @dd($userSelectedcategory) --}}
+
                                           <option  value="{{$checkOne->id}}" {{$userSelectedcategory == $checkOne->id?'selected':''}} >{{$checkOne->category}}</option>
-                                          {{-- @endforeach --}}
+
                                       </select>
                                         @endif
 
@@ -333,9 +331,27 @@ input{
                         @endif
                     </div>
 
-                </div>
+                </div> --}}
+
+                  <div class="card">
+                    <div class="card-header" style="background-color: #cf8244">
+                        Info
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Online Bookings Are Temeperarly Not Available</h5>
+                      <p class="card-text"></p>
+                      <p class="card-text"> Please do contact <a href="tel:+91 7796888444" class="testClass">+91 7796 888 444</a> for booking</p>
+                      <a href="{{ route('home') }}" class="btn btn-primary" style="background-color: #012d1f">Go back to home</a>
+                    </div>
+                  </div>
             </div>
         </div>
+<style>
+
+.testClass:hover {
+                        color: #cf8244;}
+                        </style>
+
 
 <div id="myModal" class="modal">
 
