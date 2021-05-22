@@ -18,7 +18,6 @@ class ConfirmEmail extends Mailable
      */
     public function __construct($status)
     {
-         
         $this->status = $status;
     }
 

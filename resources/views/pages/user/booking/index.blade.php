@@ -201,9 +201,9 @@ input{
 
                 <div class="col-lg-12">
 
-                    {{-- <div class="bookingForm">
+                    <div class="bookingForm">
                     @if($checkOne || $available)
-                        <form method="POST" class="col-12" role="form" enctype="multipart/form-data" action="{{ route('payment-confirming-view')}}" onsubmit="return validateForm()">
+                        <form method="POST" class="col-12" role="form" enctype="multipart/form-data" action="{{ route('booking-confirming-view')}}" onsubmit="return validateForm()">
                             @csrf
 
 
@@ -331,9 +331,9 @@ input{
                         @endif
                     </div>
 
-                </div> --}}
+                </div>
 
-                  <div class="card">
+                  {{-- <div class="card">
                     <div class="card-header" style="background-color: #cf8244">
                         Info
                     </div>
@@ -343,7 +343,7 @@ input{
                       <p class="card-text"> Please do contact <a href="tel:+91 7796888444" class="testClass">+91 7796 888 444</a> for booking</p>
                       <a href="{{ route('home') }}" class="btn btn-primary" style="background-color: #012d1f">Go back to home</a>
                     </div>
-                  </div>
+                  </div> --}}
             </div>
         </div>
 <style>

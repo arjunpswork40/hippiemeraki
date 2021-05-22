@@ -36,11 +36,11 @@ Route::group(['middleware' => ['guest'], 'namespace' => 'App\Http\Controllers\Us
     Route::post('/checkAvailability','BookingController@availability')->name('checkAvailability');
     Route::post('/payement-initiation','BookingController@payementInitiation')->name('payment-initiation');
     Route::post('/calculate-room-amount','BookingController@calculateRoomAmount')->name('calculateRoomAmount');
-    Route::post('/payment-response', 'BookingController@paymentConfirmation')->name('payment-confirmation');
-    Route::get('/payment-failed', 'BookingController@paymentfailed')->name('payment-failed');
-    Route::post('/payment-confirm', 'BookingController@bookingConfirmingView')->name('payment-confirming-view');
+    // Route::post('/payment-response', 'BookingController@paymentConfirmation')->name('payment-confirmation');
+    // Route::get('/payment-failed', 'BookingController@paymentfailed')->name('payment-failed');
+    Route::post('/bookin-confirm', 'BookingController@bookingConfirmingView')->name('booking-confirming-view');
     Route::get('/clickToContinue', 'BookingController@clickToContinue')->name('clickToContinue');
-    Route::get('/paymentUnsuccessful', 'BookingController@paymentUnsuccessful')->name('paymentUnsuccessful');
+    // Route::get('/paymentUnsuccessful', 'BookingController@paymentUnsuccessful')->name('paymentUnsuccessful');
     Route::get('/privacy-policy','HomeController@privacyPolicy')->name('privascy-policy');
     Route::get('/terms-and-conditions','HomeController@termsAndConditions')->name('terms-and-conditions');
     Route::get('/refund-policy','HomeController@refundPolicy')->name('refund-policy');

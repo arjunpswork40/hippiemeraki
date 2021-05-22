@@ -284,8 +284,8 @@ class BookingController extends BaseController
    public function clickToContinue()
    {
        alert()->success('payment success');
-       $roomDetailsForAvailability = Room_Details::where('status',1)->orderBy('priority','asc')->get();
-       return view('pages.user.booking.payment.continueToHome', compact('roomDetailsForAvailability'));
+    //    $roomDetailsForAvailability = Room_Details::where('status',1)->orderBy('priority','asc')->get();
+       return view('pages.user.booking.payment.continueToHome');
    }
 
    public function paymentUnsuccessful()
@@ -318,21 +318,20 @@ public function paymentfailed(){
     return $this->renderView($this->getView('payment_status.paymentFailed'), [], 'Home');
 }
 
+
+
+
+
 public function bookingConfirmingView(Request $request)
 {
-
-//    $rr= $request->validate([
-//         'contactNumber'=>'required',
-//     ]);
 
     $amount = Room_Details::where('id',$request->category)->select('rate','available_room_count')->first();
 
     $totalAmount = (int)$request->roomCount *(float)$amount->rate;
 
-    // Generate random receipt id
+    // // Generate random receipt id
     $receiptId = Str::random(20);
-    //   save data to db
-//    dd($request->idProof);
+
 
     $data = Booked::create([
        'check_in' => $request->checkIn,
@@ -356,15 +355,27 @@ public function bookingConfirmingView(Request $request)
             $data->save();
         }
     }
+    \Mail::to($data->email)->send(new \App\Mail\ConfirmEmail([
+        'check_in' => $request->checkIn,
+        'check_out' => $request->checkOut,
+        'guest_count' => $request->guestCount,
+       'guest_name' => $request->username,
+       'booked_room_count' => $request->roomCount,
+       'totalPrice' => $totalAmount,
+       'guest_phone_number' => $request->contactNumber,
+       'email' => $request->email,
+       'category' => Room_Details::where('id', $request->category)->select('category')->first(),
+       'id' => $data->id,
+       'created_at' => $data->created_at
+    ]));
 
+    // $categoryName = Room_Details::where('id',$request->category)->select('category','thumbnail_image')->first();
 
-    $categoryName = Room_Details::where('id',$request->category)->select('category','thumbnail_image')->first();
+    // Session::forget('room_details');
 
-    Session::forget('room_details');
+    // $roomDetailsForAvailability = Room_Details::where('status',1)->orderBy('priority','asc')->get();
 
-    $roomDetailsForAvailability = Room_Details::where('status',1)->orderBy('priority','asc')->get();
-
-    return view('pages.user.booking.payment.paymentConfirm',compact('roomDetailsForAvailability','data','categoryName'));
+    return redirect()->route('clickToContinue');
 
 }
 

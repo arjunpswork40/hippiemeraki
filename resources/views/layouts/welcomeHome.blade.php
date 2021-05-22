@@ -253,14 +253,14 @@
                 <li><a href="./rooms.html">Rooms</a></li>
                 <li><a href="./blog.html">News</a></li>
                 <li><a href="./contact.html">Contact</a></li> --}}
-
                 <li class="{{ request()->is('/') || request()->is('/*')? 'active' : '' }}"><a href="{{ route('home') }}">Home</a></li>
                 <li class="{{ request()->is('about-us') || request()->is('about-us/*')? 'active' : '' }}"><a href="{{ route('about-us') }}">About Us</a></li>
                 <li class="{{ request()->is('room') || request()->is('room/*')? 'active' : '' }}"><a href="{{ route('room') }}">Rooms</a></li>
                 <li class="{{ request()->is('news') || request()->is('news/*')? 'active' : '' }}"><a href="{{ route('news.blog') }}">News</a></li>
                 <li class="{{ request()->is('contact') || request()->is('contact/*')? 'active' : '' }}"><a href="{{ route('contact') }}">Contact</a></li>
-                <li style="margin-top: 10px;"><button id="mobileBtn" ontouchend="mobileMoal()" class="btn btn-success mobileBtn" style="background-color: #cf8244;">Book Now</button></li>
-
+                @if(\Route::current()->getName() != 'booking-confirming-view')
+                <li style="margin-top: 10px;"><button id="mobileBtn" ontouchend="mobileMoal()" class="btn btn-success mobileBtn" style="background-color: #cf8244;"> Now</button></li>
+                @endif
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
